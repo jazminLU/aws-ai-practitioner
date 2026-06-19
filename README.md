@@ -6,6 +6,8 @@
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
+**🚀 [Ver app en vivo](https://jazminlu.github.io/aws-ai-practitioner/)**
+
 App de práctica para el examen **AWS Certified AI Practitioner (AIF-C01)**. Sin dependencias externas ni servidor — abrís el archivo y empezás a estudiar.
 
 ---

@@ -128,7 +128,6 @@ function navigate(view, opts = {}) {
   }
 
   app.appendChild(div);
-  updateFooter(view);
 
   if (view === 'quiz') {
     initQuiz();
@@ -136,29 +135,6 @@ function navigate(view, opts = {}) {
   }
 }
 
-/* ─── Footer keyboard hints ────────────────────────────────────────────── */
-function updateFooter(view) {
-  const footer = document.getElementById('footer-hints');
-  const hints = {
-    flashcards: [
-      ['Space', 'Voltear'],
-      ['←', 'Anterior'],
-      ['→', 'Siguiente'],
-      ['1', 'Lo sabía'],
-      ['2', 'Regular'],
-      ['3', 'No sabía'],
-    ],
-    quiz: [
-      ['A B C D', 'Responder'],
-      ['Enter', 'Siguiente'],
-    ],
-  };
-
-  const list = hints[view] || [];
-  footer.innerHTML = list.map(([k, v]) =>
-    `<span class="kbd-hint"><kbd>${k}</kbd>${v}</span>`
-  ).join('');
-}
 
 /* ─── HOME ──────────────────────────────────────────────────────────────── */
 function renderHome() {
@@ -270,11 +246,11 @@ function renderFlashcards() {
   initFC();
 
   const pills = buildPills();
-  const s = State.fc.list[State.fc.index];
+  const rated = State.fc.list.filter(s => Progress.data[s.name]).length;
 
   return `
     <div class="page-title">Flashcards</div>
-    <div class="page-subtitle">Click en la tarjeta para ver la descripción.</div>
+    <div class="page-subtitle" id="fc-subtitle">${State.fc.list.length} servicios</div>
 
     <div class="pill-bar" id="pill-bar">${pills}</div>
 
@@ -282,55 +258,69 @@ function renderFlashcards() {
       <div class="progress-track">
         <div class="progress-fill" id="fc-prog" style="width:${fcProgress()}%"></div>
       </div>
-      <div class="progress-label" id="fc-prog-label">${State.fc.index + 1} / ${State.fc.list.length}</div>
+      <div class="progress-label" id="fc-prog-label">${rated} / ${State.fc.list.length} calificadas</div>
     </div>
 
-    <div class="fc-layout">
-      <div class="fc-hint">
-        <kbd>Space</kbd> voltear &nbsp;·&nbsp; <kbd>←</kbd><kbd>→</kbd> navegar
-      </div>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+      <button class="fc-shuffle-btn" onclick="shuffleFC()">⟳ Barajar</button>
+    </div>
 
-      ${buildFlipCard(s)}
+    <div class="fc-grid" id="fc-grid">
+      ${State.fc.list.map((s, idx) => buildGridCard(s, idx)).join('')}
+    </div>
+  `;
+}
 
-      <div class="fc-rating hidden" id="fc-rating">
-        <button class="rating-btn knew"   onclick="rateFC(true, true)"  title="1">✓ Lo sabía</button>
-        <button class="rating-btn unsure" onclick="rateFC(false, false)" title="2">~ Regular</button>
-        <button class="rating-btn didnt"  onclick="rateFC(false, true)"  title="3">✗ No sabía</button>
-      </div>
+function buildGridCard(s, idx) {
+  const tips = s.tips && s.tips.length
+    ? `<div class="fc-tips">${s.tips.map(t => `<div class="fc-tip">💡 ${t}</div>`).join('')}</div>`
+    : '';
 
-      <div class="fc-nav">
-        <button class="icon-btn" id="fc-prev" onclick="fcNav(-1)" ${State.fc.index === 0 ? 'disabled' : ''}>←</button>
-        <span class="fc-counter" id="fc-counter">${State.fc.index + 1} / ${State.fc.list.length}</span>
-        <button class="icon-btn" id="fc-next" onclick="fcNav(1)" ${State.fc.index === State.fc.list.length - 1 ? 'disabled' : ''}>→</button>
-        <button class="fc-shuffle-btn" onclick="shuffleFC()">⟳ Barajar</button>
+  const prog = Progress.get(s.name);
+  const total = prog.ok + prog.fail;
+  let stateClass = '';
+  if (total > 0) {
+    if (prog.ok > 0 && prog.fail === 0) stateClass = 'card-knew';
+    else if (prog.fail > 0 && prog.ok === 0) stateClass = 'card-didnt';
+    else stateClass = 'card-unsure';
+  }
+
+  return `
+    <div class="fc-grid-card ${stateClass}">
+      <span class="fc-cat-badge">${catLabel(s.cat)}</span>
+      <div class="fc-service-name">${s.name}</div>
+      <div class="fc-service-short">${s.short}</div>
+      <hr class="divider" style="margin:8px 0">
+      <div class="fc-desc">${s.desc}</div>
+      ${tips}
+      <div class="fc-card-rating">
+        <button class="rating-btn knew"   onclick="rateGridCard(${idx}, true,  true)">✓ Sabía</button>
+        <button class="rating-btn unsure" onclick="rateGridCard(${idx}, false, false)">~ Regular</button>
+        <button class="rating-btn didnt"  onclick="rateGridCard(${idx}, false, true)">✗ No sabía</button>
       </div>
     </div>
   `;
 }
 
-function buildFlipCard(s) {
-  const tips = s.tips && s.tips.length
-    ? `<div class="fc-tips">${s.tips.map(t => `<div class="fc-tip">💡 ${t}</div>`).join('')}</div>`
-    : '';
+function rateGridCard(idx, known, recordIt) {
+  const s = State.fc.list[idx];
+  if (recordIt) Progress.record(s.name, known);
 
-  return `
-    <div class="flip-scene" id="flip-scene" onclick="flipFC()">
-      <div class="flip-card" id="flip-card">
-        <div class="flip-face flip-face-front">
-          <span class="fc-cat-badge">${catLabel(s.cat)}</span>
-          <div class="fc-side-label">Servicio AWS</div>
-          <div class="fc-service-name">${s.name}</div>
-          <div class="fc-service-short">${s.short}</div>
-        </div>
-        <div class="flip-face flip-face-back">
-          <span class="fc-cat-badge">${catLabel(s.cat)}</span>
-          <div class="fc-side-label">Descripción</div>
-          <div class="fc-desc">${s.desc}</div>
-          ${tips}
-        </div>
-      </div>
-    </div>
-  `;
+  const cards = document.querySelectorAll('.fc-grid-card');
+  const card = cards[idx];
+  if (card) {
+    card.classList.remove('card-knew', 'card-unsure', 'card-didnt');
+    if (known) card.classList.add('card-knew');
+    else if (!recordIt) card.classList.add('card-unsure');
+    else card.classList.add('card-didnt');
+  }
+
+  const rated = State.fc.list.filter(sv => Progress.data[sv.name]).length;
+  const pct = State.fc.list.length > 0 ? (rated / State.fc.list.length) * 100 : 0;
+  const prog = document.getElementById('fc-prog');
+  const progLbl = document.getElementById('fc-prog-label');
+  if (prog) prog.style.width = pct + '%';
+  if (progLbl) progLbl.textContent = `${rated} / ${State.fc.list.length} calificadas`;
 }
 
 function initFC() {
@@ -344,57 +334,21 @@ function initFC() {
 
   State.fc.list = shuffle(services.length ? services : getFiltered());
   State.fc.index = 0;
-  State.fc.flipped = false;
   State.weakOnly = false;
 }
 
 function fcProgress() {
-  return ((State.fc.index + 1) / State.fc.list.length) * 100;
-}
-
-function flipFC() {
-  State.fc.flipped = !State.fc.flipped;
-  document.getElementById('flip-card').classList.toggle('flipped', State.fc.flipped);
-  document.getElementById('fc-rating').classList.toggle('hidden', !State.fc.flipped);
-}
-
-function fcNav(dir) {
-  const len = State.fc.list.length;
-  State.fc.index = Math.max(0, Math.min(len - 1, State.fc.index + dir));
-  State.fc.flipped = false;
-  refreshFC();
-}
-
-function rateFC(known, recordIt) {
-  if (recordIt) {
-    Progress.record(State.fc.list[State.fc.index].name, known);
-  }
-  fcNav(1);
+  if (!State.fc.list.length) return 0;
+  const rated = State.fc.list.filter(s => Progress.data[s.name]).length;
+  return (rated / State.fc.list.length) * 100;
 }
 
 function shuffleFC() {
   State.fc.list = shuffle(State.fc.list);
-  State.fc.index = 0;
-  State.fc.flipped = false;
-  refreshFC();
-}
-
-function refreshFC() {
-  const s = State.fc.list[State.fc.index];
-  const len = State.fc.list.length;
-
-  // Replace the flip scene in-place without losing references to siblings
-  const scene = document.getElementById('flip-scene');
-  const tmp = document.createElement('div');
-  tmp.innerHTML = buildFlipCard(s);
-  scene.replaceWith(tmp.firstElementChild);
-
-  document.getElementById('fc-rating').classList.add('hidden');
-  document.getElementById('fc-prev').disabled = State.fc.index === 0;
-  document.getElementById('fc-next').disabled = State.fc.index === len - 1;
-  document.getElementById('fc-counter').textContent = `${State.fc.index + 1} / ${len}`;
-  document.getElementById('fc-prog').style.width = fcProgress() + '%';
-  document.getElementById('fc-prog-label').textContent = `${State.fc.index + 1} / ${len}`;
+  const grid = document.getElementById('fc-grid');
+  if (grid) {
+    grid.innerHTML = State.fc.list.map((s, idx) => buildGridCard(s, idx)).join('');
+  }
 }
 
 /* ─── QUIZ ──────────────────────────────────────────────────────────────── */
@@ -664,14 +618,17 @@ function setFilter(cat, btn) {
 
   if (State.view === 'flashcards') {
     initFC();
-    State.fc.list = shuffle(getFiltered());
-    State.fc.index = 0;
-    State.fc.flipped = false;
-    refreshFC();
-    document.getElementById('fc-counter').textContent = `1 / ${State.fc.list.length}`;
-    document.getElementById('fc-prog-label').textContent = `1 / ${State.fc.list.length}`;
-    document.getElementById('fc-prev').disabled = true;
-    document.getElementById('fc-next').disabled = State.fc.list.length <= 1;
+    const grid = document.getElementById('fc-grid');
+    if (grid) {
+      grid.innerHTML = State.fc.list.map((s, idx) => buildGridCard(s, idx)).join('');
+    }
+    const rated = State.fc.list.filter(s => Progress.data[s.name]).length;
+    const prog = document.getElementById('fc-prog');
+    const progLbl = document.getElementById('fc-prog-label');
+    const sub = document.getElementById('fc-subtitle');
+    if (prog) prog.style.width = fcProgress() + '%';
+    if (progLbl) progLbl.textContent = `${rated} / ${State.fc.list.length} calificadas`;
+    if (sub) sub.textContent = `${State.fc.list.length} servicios`;
   } else if (State.view === 'quiz') {
     initQuiz();
     showQuestion();
@@ -681,15 +638,6 @@ function setFilter(cat, btn) {
 /* ─── Keyboard shortcuts ────────────────────────────────────────────────── */
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-
-  if (State.view === 'flashcards') {
-    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipFC(); }
-    if (e.key === 'ArrowLeft')  fcNav(-1);
-    if (e.key === 'ArrowRight') fcNav(1);
-    if (e.key === '1') rateFC(true,  true);
-    if (e.key === '2') rateFC(false, false);
-    if (e.key === '3') rateFC(false, true);
-  }
 
   if (State.view === 'quiz') {
     if (State.quiz.answered) {

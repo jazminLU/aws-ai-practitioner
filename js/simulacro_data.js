@@ -2427,5 +2427,2371 @@ const EXAMS = [
         "color": "#ec4899"
       }
     }
+  },
+  {
+    "id": "test2",
+    "title": "Simulacro Test 2",
+    "questions": [
+      {
+        "id": 1,
+        "text": "¿Qué problema intenta resolver el uso de modelos generativos con entrenamiento continuo?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Reducir el tiempo de ejecución de los modelos de inferencia",
+            "correct": false,
+            "explanation": "El tiempo de ejecución de inferencia no es directamente resuelto por el entrenamiento continuo."
+          },
+          {
+            "text": "Mantener el modelo actualizado con datos nuevos y evitar que se vuelva obsoleto",
+            "correct": true,
+            "explanation": "El entrenamiento continuo permite que los modelos generativos se actualicen con nuevos datos de manera regular, manteniendo su relevancia y evitando que se vuelvan obsoletos. Opciones incorrectas:"
+          },
+          {
+            "text": "Eliminar la necesidad de preprocesamiento de datos antes del entrenamiento",
+            "correct": false,
+            "explanation": "El preprocesamiento de datos sigue siendo necesario incluso en escenarios de entrenamiento continuo."
+          },
+          {
+            "text": "Optimizar el almacenamiento de grandes volúmenes de datos no estructurados",
+            "correct": false,
+            "explanation": "La optimización del almacenamiento de datos no es el objetivo del entrenamiento continuo."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/about-aws/whats-new/2023/11/continued-pre-training-amazon-bedrock-preview/"
+        ]
+      },
+      {
+        "id": 2,
+        "text": "¿Cuál de las siguientes técnicas de Machine Learning es la más adecuada para identificar grupos similares dentro de un conjunto de datos no etiquetados?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q49-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Reducción de dimensionalidad",
+            "correct": false,
+            "explanation": "La reducción de dimensionalidad es una técnica que se utiliza para simplificar grandes conjuntos de datos, pero no agrupa las observaciones como el Clustering."
+          },
+          {
+            "text": "Clustering",
+            "correct": true,
+            "explanation": "El clustering es una técnica de aprendizaje no supervisado utilizada para identificar grupos o patrones similares en conjuntos de datos no etiquetados. Opciones incorrectas:"
+          },
+          {
+            "text": "Clasificación",
+            "correct": false,
+            "explanation": "La clasificación es un método supervisado que requiere datos etiquetados para asignar clases a las observaciones, lo que no es adecuado para datos no etiquetados."
+          },
+          {
+            "text": "Regresión",
+            "correct": false,
+            "explanation": "La regresión se utiliza para predecir un valor continuo, no para identificar grupos."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/compare/the-difference-between-machine-learning-supervised-and-unsupervised/"
+        ]
+      },
+      {
+        "id": 3,
+        "text": "Un experto de IA ajusta un modelo fundacional (FM) para lograr una mayor precisión y cumplir con un nivel de aceptación específico. El practicante está considerando varias modificaciones al proceso de entrenamiento. ¿Cuál de los siguientes enfoques será más efectivo para lograr este objetivo?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Incrementar el tamaño del volumen de datos de entrenamineto",
+            "correct": false,
+            "explanation": "No sería la opción adecuada para conseguir una mayor precisión y cumplir con un nivel de aceptación específico."
+          },
+          {
+            "text": "Reducir el tamaño del modelo",
+            "correct": false,
+            "explanation": "Reducir el tamaño del modelo probablemente disminuiría su capacidad para aprender patrones complejos, lo que potencialmente reduciría su precisión."
+          },
+          {
+            "text": "Decrementar epochCount",
+            "correct": false,
+            "explanation": "Esto típicamente limita la exposición del modelo a los datos de entrenamiento, lo que puede resultar en un subajuste (underfitting) y una menor precisión."
+          },
+          {
+            "text": "Incrementar epochCount",
+            "correct": true,
+            "explanation": "Significa aumentar el número de veces que el modelo recorrerá el conjunto de datos completo durante el proceso de entrenamiento. Esto proporciona más oportunidades para que el modelo aprenda de los datos y mejore su precisión. Este enfoque ayuda a mejorar el rendimiento del modelo para cumplir con un nivel de precisión específico. Opciones incorrectas:"
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-lims-finetuning-hyperparameters.html",
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html"
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Una empresa de desarrollo de software está interesada en utilizar Amazon Q Developer para mejorar sus aplicaciones integrando funciones impulsadas por IA, como sugerencias automáticas de código, automatización de tareas y generación de contenido. El equipo de desarrollo busca comprender los fundamentos técnicos detrás de Amazon Q Developer y cómo aprovecha los servicios en la nube de AWS para ofrecer estas capacidades. Para ello, quieren identificar qué servicio de AWS impulsa las funcionalidades centrales de Amazon Q Developer. ¿Qué servicio de AWS alimenta a Amazon Q Developer?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q30-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Amazon Bedrock",
+            "correct": true,
+            "explanation": "Es el servicio que impulsa a Amazon Q Developer. Amazon Q Developer es un asistente conversacional de inteligencia artificial generativa diseñado para ayudar a los desarrolladores a comprender, construir, extender y operar aplicaciones en AWS. Utilizando los modelos fundacionales de Amazon Bedrock, Amazon Q Developer ofrece respuestas contextualmente relevantes y precisas a preguntas sobre la arquitectura de AWS, los recursos, mejores prácticas y más. Este servicio aprovecha el poder de la IA generativa de Amazon Bedrock para proporcionar soporte y capacidades avanzadas a los desarrolladores. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon SageMaker Jumpstart",
+            "correct": false,
+            "explanation": "Es una plataforma diseñada para acelerar el desarrollo y despliegue de modelos de machine learning. Aunque ofrece modelos preentrenados, no es el servicio que impulsa las capacidades de Amazon Q Developer. Jumpstart se enfoca en soluciones de machine learning listas para usar, pero no está diseñado para ser la base de un asistente conversacional de IA como Amazon Q Developer."
+          },
+          {
+            "text": "Amazon Q Apps",
+            "correct": false,
+            "explanation": "Permite a los usuarios crear aplicaciones ligeras y personalizadas dentro del ecosistema de Amazon Q Business para tareas específicas. Sin embargo, no es el servicio que impulsa las funcionalidades de IA generativa de Amazon Q Developer. Amazon Q Apps es una herramienta orientada a tareas específicas dentro de una experiencia web, mientras que Amazon Q Developer está impulsado por Amazon Bedrock para proporcionar IA avanzada."
+          },
+          {
+            "text": "Amazon Polly",
+            "correct": false,
+            "explanation": "Es un servicio que convierte texto en voz realista utilizando tecnología de síntesis de voz. Aunque es útil para convertir texto a voz, Polly no está relacionado con las capacidades de IA generativa o las funciones de asistencia de Amazon Q Developer, que se basan en modelos fundacionales y no en la conversión de texto a voz."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/bedrock/",
+          "https://aws.amazon.com/es/q/",
+          "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html",
+          "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/concepts-terms.html"
+        ]
+      },
+      {
+        "id": 5,
+        "text": "¿Qué es el 'prompt engineering' en el contexto de los modelos de IA generativa?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "El proceso de diseñar entradas precisas y efectivas para que los modelos generen respuestas deseadas",
+            "correct": true,
+            "explanation": "El prompt engineering es la práctica de diseñar las entradas o instrucciones proporcionadas a un modelo generativo con el fin de obtener resultados más precisos y útiles. Opciones incorrectas:"
+          },
+          {
+            "text": "El ajuste de los hiperparámetros de un modelo durante el entrenamiento",
+            "correct": false,
+            "explanation": "El ajuste de hiperparámetros es un proceso diferente que se realiza durante el entrenamiento del modelo, no tiene que ver con el diseño de prompts."
+          },
+          {
+            "text": "La técnica utilizada para clasificar imágenes generadas por IA",
+            "correct": false,
+            "explanation": "Clasificar imágenes no está relacionado con el concepto de prompt engineering."
+          },
+          {
+            "text": "El proceso de etiquetar grandes conjuntos de datos de texto para entrenar un modelo",
+            "correct": false,
+            "explanation": "Etiquetar conjuntos de datos es parte de la preparación de datos, no del prompt engineering."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/prompt-engineering/"
+        ]
+      },
+      {
+        "id": 6,
+        "text": "Un equipo de investigación médica está utilizando IA generativa para analizar grandes volúmenes de datos genómicos y mejorar el diagnóstico de enfermedades raras. Como parte de este trabajo, están evaluando modelos fundacionales (Foundation Models) para determinar cómo podrían aprovechar su capacidad de generar conocimientos y realizar predicciones más precisas. El equipo necesita aclarar algunos aspectos clave de los modelos fundacionales para decidir si son adecuados para sus objetivos. ¿Cuál de las siguientes afirmaciones es correcta respecto a los modelos fundacionales en el contexto de la IA generativa?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Los modelos fundacionales no requieren ajustes adicionales, ya que están completamente entrenados para cualquier tarea específica después de su pre-entrenamiento",
+            "correct": false,
+            "explanation": "Los modelos fundacionales requieren ajustes adicionales (fine-tuning) para adaptarse a tareas específicas, lo que invalida esta afirmación que sugiere que ya están completamente entrenados para cualquier tarea tras el pre-entrenamiento."
+          },
+          {
+            "text": "Los modelos fundacionales utilizan aprendizaje supervisado para crear etiquetas a partir de los datos de entrada, sin embargo, el ajuste fino de un modelo fundacional es un proceso de aprendizaje auto-supervisado",
+            "correct": false,
+            "explanation": "Esta opción confunde los procesos: los modelos fundacionales utilizan aprendizaje auto-supervisado para la creación de etiquetas, mientras que el ajuste fino es supervisado."
+          },
+          {
+            "text": "Los modelos fundacionales utilizan aprendizaje auto-supervisado para crear etiquetas a partir de los datos de entrada, sin embargo, el ajuste fino de un modelo fundacional es un proceso de aprendizaje supervisado",
+            "correct": true,
+            "explanation": "Los modelos fundacionales (Foundation Models) emplean aprendizaje auto-supervisado para crear etiquetas a partir de datos no estructurados. Esto significa que el modelo se entrena sin etiquetas manuales, identificando patrones por sí solo. Sin embargo, el ajuste fino (fine-tuning) requiere datos etiquetados y es un proceso supervisado que adapta el modelo a un dominio o tarea específica. Opciones incorrectas:"
+          },
+          {
+            "text": "Los modelos fundacionales utilizan aprendizaje supervisado para crear etiquetas a partir de los datos de entrada, y el ajuste fino de un modelo fundacional también es un proceso de aprendizaje supervisado",
+            "correct": false,
+            "explanation": "Esta opción es incorrecta en cuanto al método de etiquetado."
+          },
+          {
+            "text": "Los modelos fundacionales utilizan aprendizaje auto-supervisado para crear etiquetas a partir de los datos de entrada, y el ajuste fino de un modelo fundacional también es un proceso de aprendizaje auto-supervisado",
+            "correct": false,
+            "explanation": "Aunque los modelos fundacionales utilizan aprendizaje auto-supervisado para la creación de etiquetas, el ajuste fino no es auto-supervisado, sino un proceso supervisado que utiliza datos etiquetados."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/foundation-models/"
+        ]
+      },
+      {
+        "id": 7,
+        "text": "¿Qué hiperparámetro define la cantidad de veces que el modelo pasará por todo el conjunto de datos de entrenamiento?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "learningRateWarmupSteps",
+            "correct": false,
+            "explanation": "Este hiperparámetro define la cantidad de pasos en los que la tasa de aprendizaje aumenta gradualmente antes de estabilizarse, pero no define cuántas veces se recorre el conjunto de datos."
+          },
+          {
+            "text": "epochCount",
+            "correct": true,
+            "explanation": "Define la cantidad de veces que el modelo recorrerá todo el conjunto de datos de entrenamiento durante el proceso de entrenamiento. Una *época* es un solo recorrido a través de todo el conjunto de datos de entrenamiento. Durante cada época, el modelo ve todo el conjunto de datos una vez y actualiza sus parámetros internos (pesos y sesgos) en función de los errores que comete sobre los datos de entrenamiento. Opciones incorrectas:"
+          },
+          {
+            "text": "learningRate",
+            "correct": false,
+            "explanation": "La tasa de aprendizaje determina solo cuánto ajustar los pesos del modelo en respuesta a los errores, pero no cuántas veces se procesa el conjunto de datos."
+          },
+          {
+            "text": "batchSize",
+            "correct": false,
+            "explanation": "Define cuántos ejemplos de entrenamiento se procesan en una iteración, pero no indica cuántos pases completos se hacen sobre todo el conjunto de datos."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-lms-finetuning-hyperparameters.html",
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html"
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Una empresa de análisis minorista está estudiando un gran conjunto de datos que contiene el historial de compras de los clientes, detalles de productos y tendencias de ventas para obtener información sobre el comportamiento de los consumidores y optimizar la gestión del inventario. Para lograrlo, el equipo se está enfocando en calcular diversas medidas estadísticas para resumir las características de los datos y utilizando visualizaciones para descubrir patrones y tendencias. Estas tareas son fundamentales para comprender la estructura y dinámica de los datos antes de pasar al desarrollo de modelos o análisis predictivos. ¿A qué fase del proceso de ciencia de datos pertenece principalmente este trabajo?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q15-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Aumento de datos",
+            "correct": false,
+            "explanation": "El aumento de datos es una técnica usada principalmente en machine learning para incrementar artificialmente el tamaño y la variabilidad del conjunto de datos de entrenamiento, creando versiones modificadas de los datos existentes. No está relacionada con las actividades de análisis exploratorio descritas."
+          },
+          {
+            "text": "Preparación de datos",
+            "correct": false,
+            "explanation": "La preparación de datos se refiere al proceso de limpieza y preprocesamiento de los datos, como el manejo de valores faltantes, la eliminación de duplicados o la transformación de variables. Aunque es un paso importante, no abarca las actividades de análisis exploratorio descritas en la pregunta."
+          },
+          {
+            "text": "Evaluación del modelo",
+            "correct": false,
+            "explanation": "La evaluación del modelo es la fase en la que se mide el rendimiento de un modelo de machine learning mediante métricas como precisión, recall, F1 score, etc. No implica tareas exploratorias como el cálculo de estadísticas o la visualización de datos."
+          },
+          {
+            "text": "Análisis Exploratorio de Datos (EDA)",
+            "correct": true,
+            "explanation": "La empresa se encuentra en la fase de Análisis Exploratorio de Datos (EDA), que implica examinar los datos a través de resúmenes estadísticos y visualizaciones para identificar patrones, detectar anomalías y generar hipótesis. Esta fase es crucial para entender la estructura y las características del conjunto de datos antes de proceder a la construcción de modelos predictivos. Las tareas como el cálculo de estadísticas y la visualización de datos son fundamentales para el EDA. Opciones incorrectas:"
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-analyses.html",
+          "https://aws.amazon.com/blogs/machine-learning/exploratory-data-analysis-feature-engineering-and-operationalizing-your-data-flow-into-your-ml-pipeline-with-amazon-sagemaker-data-wrangler/"
+        ]
+      },
+      {
+        "id": 9,
+        "text": "¿Qué tipo de inferencia sería la más adecuada para un sistema de recomendaciones que debe proporcionar resultados en tiempo real?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q47-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Inferencia supervisada",
+            "correct": false,
+            "explanation": "La inferencia supervisada se refiere al uso de modelos entrenados con datos etiquetados, pero no es un tipo específico de proceso de inferencia en tiempo real."
+          },
+          {
+            "text": "Inferencia sin supervisión",
+            "correct": false,
+            "explanation": "Este término no es un tipo de inferencia, sino una categoría de aprendizaje que se refiere a modelos que no utilizan datos etiquetados."
+          },
+          {
+            "text": "Inferencia en tiempo real",
+            "correct": true,
+            "explanation": "La inferencia en tiempo real permite generar predicciones en el momento en que se reciben las solicitudes, siendo ideal para sistemas que requieren respuestas inmediatas, como los sistemas de recomendación. Opciones incorrectas:"
+          },
+          {
+            "text": "Inferencia por lotes",
+            "correct": false,
+            "explanation": "La inferencia por lotes es útil cuando las predicciones pueden procesarse de manera agrupada, pero no es adecuada para situaciones donde se necesita una respuesta instantánea."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/es_es/sagemaker/latest/dg/realtime-endpoints.html"
+        ]
+      },
+      {
+        "id": 10,
+        "text": "Una empresa de consultoría en IA está desarrollando un modelo de ML para mejorar su segmentación de clientes y estrategias de marketing. El equipo está trabajando con datos de clientes etiquetados y no etiquetados, y necesita entender claramente la diferencia entre ambos tipos de datos para seleccionar las técnicas de machine learning más adecuadas, como el aprendizaje supervisado o no supervisado. ¿Cuál es una diferencia clave entre los datos etiquetados y los no etiquetados en el contexto del ML?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Los datos etiquetados están anotados con etiquetas que proporcionan información específica sobre cada punto de datos y se utilizan para aprendizaje supervisado, mientras que los datos no etiquetados carecen de estas anotaciones y se utilizan para aprendizaje no supervisado",
+            "correct": true,
+            "explanation": "Los datos etiquetados vienen con anotaciones que proporcionan información específica sobre cada punto de datos. Estos datos se usan en el aprendizaje supervisado, donde el modelo aprende a predecir una salida basada en las etiquetas proporcionadas. En cambio, los datos no etiquetados no contienen esas anotaciones, lo que los hace adecuados para el aprendizaje no supervisado, donde el modelo identifica patrones sin una guía explícita. Opciones incorrectas:"
+          },
+          {
+            "text": "Los datos etiquetados son inherentemente más complejos de procesar debido a la falta de estructura, mientras que los datos no etiquetados son más fáciles de manejar porque tienen anotaciones claras",
+            "correct": false,
+            "explanation": "Los datos etiquetados son más fáciles de procesar para tareas específicas gracias a sus anotaciones, mientras que los datos no etiquetados son más difíciles porque el modelo debe encontrar patrones sin ninguna guía."
+          },
+          {
+            "text": "Los datos etiquetados solo pueden utilizarse para algoritmos de aprendizaje no supervisado, mientras que los datos no etiquetados son exclusivos para algoritmos de aprendizaje supervisado",
+            "correct": false,
+            "explanation": "Los datos etiquetados se utilizan para el aprendizaje supervisado, no para el no supervisado. Los datos no etiquetados se usan en el aprendizaje no supervisado, no en el supervisado."
+          },
+          {
+            "text": "Los datos etiquetados consisten en información sin etiquetas o anotaciones, mientras que los datos no etiquetados incluyen etiquetas que dan sentido a la información",
+            "correct": false,
+            "explanation": "Los datos etiquetados incluyen información con etiquetas, mientras que los datos no etiquetados no tienen etiquetas. La afirmación es incorrecta porque intercambia los conceptos de datos etiquetados y no etiquetados."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/data-labeling/"
+        ]
+      },
+      {
+        "id": 11,
+        "text": "Al personalizar un modelo fundacional para un caso de uso específico, ¿cuál es la principal ventaja de utilizar la técnica de 'few-shot learning' frente a 'fine-tuning' tradicional?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q61-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Asegura que el modelo mantenga una alta precisión en todas las tareas previas sin degradación del rendimiento",
+            "correct": false,
+            "explanation": "Aunque few-shot learning puede reducir la necesidad de datos, no garantiza que no haya una degradación del rendimiento en tareas previas."
+          },
+          {
+            "text": "Permite que el modelo funcione sin la necesidad de realizar inferencias en tiempo real",
+            "correct": false,
+            "explanation": "Few-shot learning no está relacionado directamente con la capacidad de realizar o no inferencias en tiempo real."
+          },
+          {
+            "text": "Permite adaptar el modelo a nuevas tareas con solo unos pocos ejemplos, lo que reduce la necesidad de grandes volúmenes de datos etiquetados",
+            "correct": true,
+            "explanation": "Few-shot learning es una técnica que permite al modelo aprender con solo unos pocos ejemplos, lo cual es especialmente útil cuando no hay grandes volúmenes de datos etiquetados disponibles. Opciones incorrectas:"
+          },
+          {
+            "text": "Reduce significativamente el tiempo de entrenamiento debido a la omisión del ajuste fino del modelo",
+            "correct": false,
+            "explanation": "El tiempo de entrenamiento puede reducirse, pero la personalización tradicional a menudo implica más ajustes detallados, como en el fine-tuning."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/blogs/machine-learning/few-shot-prompt-engineering-and-fine-tuning-for-llms-in-amazon-bedrock/"
+        ]
+      },
+      {
+        "id": 12,
+        "text": "Una empresa quiere implementar un modelo de inteligencia artificial generativa utilizando Amazon Bedrock. Necesitan personalizar el comportamiento del modelo sin modificar el código subyacente. ¿Qué parámetro clave deben ajustar para cambiar cómo responde el modelo a las consultas de los usuarios?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Temperatura",
+            "correct": true,
+            "explanation": "El parámetro 'Temperatura' controla el nivel de aleatoriedad en las respuestas generadas por el modelo. Al reducir este valor, el modelo genera respuestas más deterministas; al incrementarlo, las respuestas son más creativas. Opciones incorrectas:"
+          },
+          {
+            "text": "Learning Rate",
+            "correct": false,
+            "explanation": "'Learning Rate' se utiliza en el entrenamiento de modelos, pero Amazon Bedrock permite personalización sin necesidad de entrenar modelos desde cero."
+          },
+          {
+            "text": "Batch Size",
+            "correct": false,
+            "explanation": "'Batch Size' está relacionado con el procesamiento de datos en lotes, no con el comportamiento creativo del modelo."
+          },
+          {
+            "text": "Max Tokens",
+            "correct": false,
+            "explanation": "'Max Tokens' limita el tamaño de la respuesta, pero no afecta el comportamiento creativo del modelo."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/inference-parameters.html"
+        ]
+      },
+      {
+        "id": 13,
+        "text": "¿Cuál de las siguientes es una métrica común utilizada para evaluar el rendimiento de un modelo de clasificación binaria en machine learning?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q40-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "R-cuadrado (R²)",
+            "correct": false,
+            "explanation": "Es una métrica utilizada para evaluar la precisión de los modelos de regresión, no de clasificación."
+          },
+          {
+            "text": "Precisión de clusters",
+            "correct": false,
+            "explanation": "No es una métrica utilizada en modelos de clasificación binaria, sino en agrupamiento (clustering)."
+          },
+          {
+            "text": "Matriz de confusión",
+            "correct": true,
+            "explanation": "Es una herramienta común para evaluar el rendimiento de un modelo de clasificación binaria, mostrando las verdaderas predicciones positivas, falsas positivas, verdaderas negativas y falsas negativas. Opciones incorrectas:"
+          },
+          {
+            "text": "Error cuadrático medio (MSE)",
+            "correct": false,
+            "explanation": "Es una métrica utilizada principalmente para evaluar modelos de regresión, no de clasificación."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/es_es/rekognition/latest/customlabels-dg/im-confusion-matrix.html"
+        ]
+      },
+      {
+        "id": 14,
+        "text": "Una empresa de formación en diseño gráfico está buscando incorporar IA en sus procesos creativos para mejorar la creación de materiales visuales utilizados en sus cursos. El equipo de formación quiere utilizar IA para generar imágenes de alta calidad a partir de descripciones textuales proporcionadas por los estudiantes y los instructores. Estas imágenes se usarán en ejercicios prácticos, storyboards y en el desarrollo de materiales de marketing. La empresa ha decidido utilizar Amazon Bedrock para este propósito y necesita identificar el modelo fundacional más adecuado para generar imágenes realistas y detalladas basadas en las descripciones textuales. ¿Cuál de los siguientes modelos fundacionales recomendarías para generar imágenes a partir de prompts de texto en este caso de uso?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Stable Diffusion",
+            "correct": true,
+            "explanation": "Stable Diffusion es un modelo de IA generativa diseñado para crear imágenes fotorrealistas a partir de descripciones textuales. Es ideal para este caso de uso, ya que permite generar contenido visual detallado y único a partir de simples prompts de texto, lo que lo convierte en la herramienta perfecta para la empresa de formación en diseño gráfico. Este modelo se utiliza ampliamente para la creación de materiales visuales y es altamente valorado por su capacidad de producir imágenes coherentes y de alta calidad con base en descripciones precisas. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon Polly",
+            "correct": false,
+            "explanation": "Amazon Polly es un servicio de conversión de texto a voz que convierte descripciones escritas en voz hablada. Aunque es una potente herramienta para transformar texto en audio, no tiene la capacidad de generar imágenes a partir de descripciones textuales. Por tanto, no es útil en este caso de uso centrado en la generación visual."
+          },
+          {
+            "text": "SageMaker Clarify",
+            "correct": false,
+            "explanation": "SageMaker Clarify es una herramienta que se utiliza para detectar sesgos y proporcionar explicaciones en los modelos de machine learning. Aunque es muy útil para garantizar la transparencia y equidad en los modelos, no está diseñada para generar imágenes a partir de texto. Clarify se centra en la evaluación de la equidad en modelos de IA, lo que la convierte en una opción inadecuada para la tarea de generación de imágenes."
+          },
+          {
+            "text": "GPT-4",
+            "correct": false,
+            "explanation": "GPT-4 es uno de los modelos de lenguaje más avanzados disponibles, capaz de generar texto de alta calidad y responder a una variedad de tareas de procesamiento de lenguaje natural. Sin embargo, GPT-4 no está diseñado para crear imágenes a partir de texto. Su principal fortaleza reside en la generación de texto, no en la creación de contenido visual, lo que lo hace inapropiado para esta tarea."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/stable-diffusion/",
+          "https://aws.amazon.com/bedrock/",
+          "https://aws.amazon.com/bedrock/faqs/",
+          "https://aws.amazon.com/bedrock/sagemaker-clarify/",
+          "https://aws.amazon.com/polly/"
+        ]
+      },
+      {
+        "id": 15,
+        "text": "Una organización está usando Amazon Bedrock para generar respuestas automatizadas. Sin embargo, desean asegurarse de que las respuestas se mantengan dentro de un conjunto reducido de opciones muy probables. ¿Qué parámetro deberían ajustar para limitar las opciones de palabras más probables y así controlar mejor las respuestas?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Max Tokens",
+            "correct": false,
+            "explanation": "Controla la cantidad de tokens, no las probabilidades de las palabras."
+          },
+          {
+            "text": "Top-p",
+            "correct": true,
+            "explanation": "Ajusta el rango de palabras más probables que el modelo considerará al generar una respuesta, limitando las opciones a las más probables y reduciendo la variabilidad. Opciones incorrectas:"
+          },
+          {
+            "text": "Temperatura",
+            "correct": false,
+            "explanation": "Afecta la aleatoriedad, pero no limita directamente el conjunto de palabras."
+          },
+          {
+            "text": "Learning Rate",
+            "correct": false,
+            "explanation": "Está relacionado con el entrenamiento del modelo, no con la selección de palabras generadas."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/inference-parameters.html"
+        ]
+      },
+      {
+        "id": 16,
+        "text": "¿Qué instancia de Amazon EC2 ofrece instancias de alto rendimiento optimizadas explícitamente para el entrenamiento de modelos de aprendizaje automático, utilizando chips personalizados para aprendizaje profundo rentable?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q4-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Amazon EC2 Trn1",
+            "correct": true,
+            "explanation": "Están específicamente diseñadas para el entrenamiento de modelos de aprendizaje automático (ML) de alto rendimiento y utilizan los chips Trainium de AWS. Trainium es un chip personalizado de AWS optimizado para cargas de trabajo de aprendizaje profundo, lo que lo hace rentable y escalable para entrenar modelos grandes y complejos. Estas instancias son compatibles con marcos de ML populares como PyTorch, TensorFlow y Apache MXNet, lo que las hace versátiles para los profesionales de ML. Las instancias Trn1 ofrecen un alto ancho de banda de red y conexiones rápidas, lo que mejora la eficiencia de las cargas de trabajo distribuidas de entrenamiento y reduce el tiempo total de entrenamiento. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon EC2 M6g",
+            "correct": false,
+            "explanation": "Estas son instancias de propósito general que utilizan procesadores AWS Graviton2. Si bien son ideales para una amplia gama de cargas de trabajo, incluidas aplicaciones web, microservicios y bases de datos, no están optimizadas para cargas de trabajo de aprendizaje profundo, que requieren hardware especializado como GPUs o chips personalizados como Trainium."
+          },
+          {
+            "text": "Amazon EC2 P4",
+            "correct": false,
+            "explanation": "Aunque esta instancia está basada en GPU y optimizada para el entrenamiento de modelos de aprendizaje automático de alto rendimiento, utiliza GPUs NVIDIA A100 Tensor Core, que son costosas para el entrenamiento de modelos de aprendizaje profundo en comparación con los chips personalizados Trainium utilizados en las instancias Trn1."
+          },
+          {
+            "text": "Amazon EC2 G5",
+            "correct": false,
+            "explanation": "Está diseñado para aplicaciones intensivas en gráficos, como la representación de video, juegos y tareas de inferencia de IA. Aunque pueden manejar cargas de trabajo de aprendizaje automático, no están optimizadas explícitamente para el entrenamiento de modelos de aprendizaje profundo. Las instancias G5 utilizan GPUs NVIDIA, pero para el entrenamiento rentable a escala, las instancias Trn1 impulsadas por Trainium son la mejor opción."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/ec2/instance-types/trn1/"
+        ]
+      },
+      {
+        "id": 17,
+        "text": "Al seleccionar un modelo fundacional preentrenado para personalización, ¿cuál de los siguientes factores es crucial para minimizar el costo y maximizar el rendimiento en tareas multilingües?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "La cantidad de tokens procesados por segundo durante la inferencia",
+            "correct": false,
+            "explanation": "La velocidad de procesamiento por token es importante, pero no es el factor más crítico para tareas multilingües."
+          },
+          {
+            "text": "La compatibilidad del modelo con múltiples idiomas y la capacidad de ajuste fino en cada idioma de manera eficiente",
+            "correct": true,
+            "explanation": "Para tareas multilingües, es crucial elegir un modelo que soporte múltiples idiomas y que permita realizar ajustes finos específicos para cada idioma, optimizando tanto el costo como el rendimiento. Opciones incorrectas:"
+          },
+          {
+            "text": "La utilización de vectores de baja dimensionalidad para reducir el tamaño del modelo",
+            "correct": false,
+            "explanation": "La dimensionalidad de los vectores puede influir en el tamaño del modelo, pero no necesariamente en la capacidad del modelo para manejar múltiples idiomas."
+          },
+          {
+            "text": "El uso de datos no etiquetados para la fase de ajuste fino del modelo",
+            "correct": false,
+            "explanation": "Aunque los datos no etiquetados pueden ser útiles, la fase de ajuste fino normalmente requiere datos etiquetados, especialmente en tareas multilingües."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/bedrock-pricing.html"
+        ]
+      },
+      {
+        "id": 18,
+        "text": "Una empresa está desarrollando un sistema de preguntas y respuestas para sus empleados, basado en una extensa base de conocimientos interna que se actualiza constantemente. Están considerando dos enfoques: utilizar Retrieval-Augmented Generation (RAG) o hacer fine-tuning de un modelo generativo preentrenado. ¿Cuál es una consideración clave para elegir RAG en lugar de hacer fine-tuning?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q64-2.jpg",
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q64-3.jpg"
+        ],
+        "options": [
+          {
+            "text": "Fine-tuning proporciona respuestas más precisas y basadas en contexto cuando se trata de grandes volúmenes de información dinámica",
+            "correct": false,
+            "explanation": "Fine-tuning puede ser adecuado para datos más estáticos o específicos, pero RAG es más eficaz cuando la información debe mantenerse actualizada constantemente."
+          },
+          {
+            "text": "RAG es más adecuado cuando los datos de referencia cambian con frecuencia",
+            "correct": true,
+            "explanation": "RAG es ideal en situaciones donde los datos cambian frecuentemente o no están completamente disponibles durante el entrenamiento del modelo, ya que permite recuperar información actualizada en tiempo real sin necesidad de volver a entrenar el modelo. Esto ahorra tiempo y recursos en escenarios con datos dinámicos. Opciones incorrectas:"
+          },
+          {
+            "text": "RAG permite que el modelo aprenda nuevas habilidades sin necesidad de actualizar constantemente los datos en el repositorio",
+            "correct": false,
+            "explanation": "RAG no le enseña nuevas habilidades al modelo, simplemente recupera información relevante para generar respuestas."
+          },
+          {
+            "text": "Fine-tuning es la mejor opción cuando no es necesario acceder a información en tiempo real, y RAG solo debe usarse cuando los datos permanecen estáticos",
+            "correct": false,
+            "explanation": "Fine-tuning es útil cuando los datos no cambian con frecuencia, mientras que RAG es mejor cuando se necesita acceder a información en tiempo real o constantemente actualizada."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/what-is/retrieval-augmented-generation/",
+          "https://community.aws/content/2jNtByVshH7vnT20HEdPuMArTJL/mastering-amazon-bedrock-custom-models-fine-tuning-part-1-getting-started-with-fine-tuning"
+        ]
+      },
+      {
+        "id": 19,
+        "text": "Un equipo de investigación en biotecnología está utilizando IA generativa para analizar grandes volúmenes de datos genómicos y generar informes detallados. El equipo busca mejorar la precisión y relevancia de los resultados generados por la IA mediante el refinamiento de los prompts utilizados para interactuar con el modelo. Para garantizar que la IA proporcione respuestas coherentes y de alta calidad, necesitan entender los componentes clave para crear prompts efectivos. ¿Cuáles son los elementos esenciales de una técnica de prompting eficiente en este contexto?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Datos de entrada, Contexto, Métricas de rendimiento, Indicador de salida",
+            "correct": false,
+            "explanation": "Las métricas de rendimiento son útiles para evaluar la calidad de los resultados, pero no son un componente del prompting. El prompting se centra en cómo guiar al modelo para que genere las respuestas, no en la evaluación posterior de su desempeño."
+          },
+          {
+            "text": "Instrucciones, Hiperparámetros, Datos de entrada, Indicador de salida",
+            "correct": false,
+            "explanation": "Aunque las instrucciones y los datos de entrada son fundamentales, los hiperparámetros afectan el rendimiento del modelo a nivel de entrenamiento, no durante la interacción mediante prompts."
+          },
+          {
+            "text": "Instrucciones, Parámetros, Datos de entrada, Indicador de salida",
+            "correct": false,
+            "explanation": "Los parámetros del modelo son valores internos ajustados durante el entrenamiento y tampoco forman parte de un buen diseño de prompting."
+          },
+          {
+            "text": "Instrucciones, Contexto, Datos de entrada, Indicador de salida",
+            "correct": true,
+            "explanation": "Los componentes clave de una técnica de prompting eficaz incluyen: * **Instrucciones** : una descripción clara de la tarea que el modelo debe realizar, especificando cómo debe abordarla. * **Contexto** : información externa relevante que guiará al modelo para generar respuestas más ajustadas al caso de uso. * **Datos de entrada** : el conjunto de datos sobre el cual se espera que el modelo realice su análisis o generación de resultados. * **Indicador de salida** : el tipo o formato específico que debería tener la salida generada por el modelo, como un resumen, una predicción numérica o una clasificación. Opciones incorrectas:"
+          },
+          {
+            "text": "Hiperparámetros, Contexto, Datos de entrada, Indicador de salida",
+            "correct": false,
+            "explanation": "Los hiperparámetros son configuraciones que influyen en el entrenamiento del modelo, pero no son parte directa de los prompts. No se ajustan en tiempo real para guiar las respuestas del modelo durante la inferencia."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/prompt-engineering/"
+        ]
+      },
+      {
+        "id": 20,
+        "text": "Una empresa de medios está desarrollando una nueva plataforma impulsada por IA para mejorar la experiencia de sus usuarios. Esta plataforma utiliza Generación Aumentada por Recuperación (RAG) a través de Amazon Bedrock para proporcionar recomendaciones personalizadas y respuestas contextuales basadas en un gran conjunto de contenido multimedia. La empresa necesita una base de datos que permita realizar búsquedas rápidas y precisas, utilizando técnicas de indexación y búsqueda por similitud, para recuperar la información más relevante. La base de datos ideal debe ser capaz de gestionar grandes volúmenes de datos y clasificar los resultados de las búsquedas en función de su relevancia con respecto a la consulta del usuario. ¿Qué solución de base de datos sería la más adecuada para esta plataforma?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q29-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "La empresa debería usar Amazon S3 combinado con AWS Lambda para realizar búsquedas en grandes conjuntos de datos de forma eficiente",
+            "correct": false,
+            "explanation": "Amazon S3 es un servicio de almacenamiento diseñado para almacenar grandes cantidades de datos no estructurados. Aunque S3 puede combinarse con AWS Lambda para procesar consultas, no está diseñado para realizar búsquedas complejas o manejar búsquedas por similitud de manera eficiente. S3 se utiliza principalmente para el almacenamiento de datos, no para operaciones avanzadas de búsqueda y recuperación en tiempo real, lo que lo hace ineficiente para este tipo de plataforma que necesita respuestas rápidas y clasificadas por relevancia."
+          },
+          {
+            "text": "La empresa debería utilizar Amazon DocumentDB (con compatibilidad con MongoDB), un servicio de base de datos NoSQL administrado diseñado para almacenar datos semi-estructurados y facilitar capacidades de búsqueda",
+            "correct": false,
+            "explanation": "Amazon DocumentDB está optimizado para trabajar con datos semi-estructurados en formato JSON y es útil para aplicaciones que manejan grandes volúmenes de documentos. Sin embargo, no está diseñado específicamente para soportar búsquedas de texto completo o de similitud a gran escala, lo que lo hace menos eficiente para aplicaciones que requieren búsquedas rápidas y avanzadas, como en este caso. DocumentDB no tiene la capacidad nativa de indexación y puntuación avanzada que necesita la empresa para mejorar la experiencia del usuario en su plataforma de IA."
+          },
+          {
+            "text": "La empresa debería utilizar Amazon DynamoDB, un servicio de base de datos NoSQL completamente gestionado que ofrece una baja latencia en la recuperación de datos para manejar búsquedas rápidas e indexadas",
+            "correct": false,
+            "explanation": "Amazon DynamoDB es una base de datos NoSQL de baja latencia optimizada para accesos rápidos a datos basados en claves primarias. Si bien es excelente para operaciones de lectura y escritura rápidas, no ofrece capacidades nativas avanzadas de búsqueda o clasificación por similitud. DynamoDB no está diseñado para manejar búsquedas por similitud o búsqueda de texto completo, lo que lo hace menos adecuado para una plataforma que requiere estas funciones avanzadas para recuperar contenido multimedia relevante."
+          },
+          {
+            "text": "La empresa debería utilizar Amazon OpenSearch Service, que está diseñado para proporcionar capacidades de búsqueda rápida y soporta búsqueda de texto completo, indexación y puntuación de similitud",
+            "correct": true,
+            "explanation": "Amazon OpenSearch Service es la opción más adecuada para este caso, ya que está específicamente diseñado para manejar cargas de trabajo que requieren búsquedas rápidas y avanzadas, incluyendo búsqueda de texto completo, búsqueda por similitud y técnicas de indexación eficientes. Este servicio es perfecto para la arquitectura de Generación Aumentada por Recuperación (RAG), donde es esencial encontrar rápidamente los documentos más relevantes y clasificarlos por similitud con la consulta del usuario. OpenSearch soporta la búsqueda vectorial, lo que lo hace ideal para recuperar datos en aplicaciones de recomendación y personalización como las descritas en este escenario. Opciones incorrectas:"
+          },
+          {
+            "text": "La empresa debería utilizar Amazon Aurora, un servicio de base de datos relacional administrado optimizado para cargas de trabajo transaccionales de alto rendimiento, útil para operaciones de búsqueda",
+            "correct": false,
+            "explanation": "Amazon Aurora es una base de datos relacional de alto rendimiento diseñada principalmente para manejar cargas de trabajo transaccionales (OLTP), lo cual es excelente para consultas estructuradas y operaciones de bases de datos relacionales. Sin embargo, Aurora no está optimizada para búsquedas de texto completo ni para búsquedas basadas en similitudes o clasificación de relevancia, que son esenciales en este escenario. Su fortaleza radica en su capacidad para manejar transacciones, no búsquedas complejas de grandes volúmenes de datos."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/what-is/retrieval-augmented-generation/",
+          "https://docs.aws.amazon.com/es_es/sagemaker/latest/dg/jumpstart-foundation-models-customize-rag.html",
+          "https://aws.amazon.com/bedrock/knowledge-bases/"
+        ]
+      },
+      {
+        "id": 21,
+        "text": "Un asistente virtual impulsado por un Modelo de Lenguaje Extenso (LLM) responde a las consultas de manera convincente, pero algunas de sus respuestas, aunque suenan correctas, son completamente falsas. ¿Cómo se llama este fenómeno?",
+        "cat": "responsible_ai",
+        "catLabel": "Directrices para una IA Responsable",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Alucinación (hallucination)",
+            "correct": true,
+            "explanation": "El fenómeno de alucinación ocurre cuando un modelo de lenguaje genera respuestas que parecen confiables, pero que no están respaldadas por datos reales o son completamente falsas. Es un problema bien documentado en los modelos de lenguaje, que a veces crean contenido convincente basándose en patrones de entrenamiento en lugar de hechos verificados. Opciones incorrectas:"
+          },
+          {
+            "text": "Sobreajuste (overfitting)",
+            "correct": false,
+            "explanation": "El sobreajuste (overfitting) describe un escenario en el que un modelo aprende demasiado bien los detalles de los datos de entrenamiento, lo que resulta en una mala capacidad para generalizar con nuevos datos. Sin embargo, esto no explica la generación de respuestas plausibles pero incorrectas."
+          },
+          {
+            "text": "Subajuste (underfitting)",
+            "correct": false,
+            "explanation": "El subajuste (underfitting) se refiere a cuando un modelo es demasiado simple para aprender correctamente los patrones en los datos, lo que causa un mal desempeño tanto en los datos de entrenamiento como en los nuevos. Aunque el subajuste lleva a errores, no implica la generación de información falsa o inexacta."
+          },
+          {
+            "text": "Deriva de datos (data drift)",
+            "correct": false,
+            "explanation": "La deriva de datos (data drift) ocurre cuando las características estadísticas de los datos cambian con el tiempo, afectando la precisión del modelo. No explica por qué un LLM produciría respuestas que parecen correctas pero son falsas."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/blogs/machine-learning/best-practices-to-build-generative-ai-applications-on-aws/",
+          "https://aws.amazon.com/what-is/generative-ai/"
+        ]
+      },
+      {
+        "id": 22,
+        "text": "Un analista de negocios requiere una herramienta para hacer preguntas en lenguaje natural y generar gráficos rápidamente para visualizar los datos de ventas de la compañía. ¿Qué opción es la más adecuada para este caso de uso?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q7-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Amazon Q Developer en AWS Chatbot",
+            "correct": false,
+            "explanation": "AWS Chatbot es un servicio que típicamente se integra con Slack y Amazon Chime para ayudar en la toma de decisiones basada en la comunicación, pero no proporciona una interfaz directa para consultas en lenguaje natural o generación de gráficos."
+          },
+          {
+            "text": "Amazon Q en Amazon QuickSight",
+            "correct": true,
+            "explanation": "Permite a los usuarios de negocios obtener información clave de los datos de manera rápida, lo que ayuda a informar decisiones empresariales y acelera el trabajo de los analistas de negocios. Esto ayuda a las organizaciones a convertirse en empresas basadas en datos. Los usuarios pueden solicitar a Amazon Q que genere un documento compartible o una presentación en cuestión de minutos. Este documento explica los datos, extrae información clave y visuales, y recomienda las mejores acciones para mejorar el negocio. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon Q en Amazon Redshift",
+            "correct": false,
+            "explanation": "Amazon Redshift es un servicio de almacenamiento de datos que permite consultas rápidas y análisis de grandes conjuntos de datos. Sin embargo, no está diseñado para consultas en lenguaje natural ni generación de gráficos rápida."
+          },
+          {
+            "text": "Amazon Q en AWS Glue",
+            "correct": false,
+            "explanation": "WS Glue es un servicio totalmente administrado de ETL (extracción, transformación y carga) que prepara datos para análisis. No proporciona Amazon Q para consultas en lenguaje natural o visualización."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/quicksight/q/"
+        ]
+      },
+      {
+        "id": 23,
+        "text": "Una empresa quiere predecir cuántas unidades de un producto venderá en el próximo mes basado en los datos históricos de ventas. ¿Qué tipo de problema de machine learning están tratando de resolver?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Problema de clasificación",
+            "correct": false,
+            "explanation": "La clasificación se utiliza para predecir categorías, no valores numéricos continuos."
+          },
+          {
+            "text": "Problema de optimización",
+            "correct": false,
+            "explanation": "La optimización implica encontrar la mejor solución a un problema, no predecir valores futuros."
+          },
+          {
+            "text": "Problema de agrupamiento (clustering)",
+            "correct": false,
+            "explanation": "El agrupamiento (clustering) se utiliza para descubrir grupos en los datos sin etiquetas previas."
+          },
+          {
+            "text": "Problema de regresión",
+            "correct": true,
+            "explanation": "Un problema de regresión implica predecir un valor numérico continuo, como la cantidad de unidades que se venderán en el futuro. Opciones incorrectas:"
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/es_es/machine-learning/latest/dg/regression.html"
+        ]
+      },
+      {
+        "id": 24,
+        "text": "En el contexto de la ingeniería de prompts para modelos fundacionales, ¿qué técnica sería más adecuada para mejorar la precisión de las respuestas de un modelo generativo en tareas complejas que requieren razonamiento lógico?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Data augmentation",
+            "correct": false,
+            "explanation": "Data augmentation es una técnica utilizada para aumentar el conjunto de datos, no para mejorar el razonamiento lógico en las respuestas de un modelo."
+          },
+          {
+            "text": "Chain-of-thought",
+            "correct": true,
+            "explanation": "La técnica 'chain-of-thought prompting' (Cadena de Pensamiento) mejora la capacidad del modelo para realizar razonamientos complejos al desglosar la tarea en pasos lógicos, lo que puede aumentar la precisión en tareas que requieren razonamiento. Opciones incorrectas:"
+          },
+          {
+            "text": "Zero-shot",
+            "correct": false,
+            "explanation": "Zero-shot prompting es útil cuando no hay ejemplos disponibles, pero no es tan eficaz en tareas que requieren pasos lógicos complejos."
+          },
+          {
+            "text": "Few-shot",
+            "correct": false,
+            "explanation": "Few-shot prompting ayuda a reducir la cantidad de ejemplos necesarios, pero no necesariamente mejora el razonamiento lógico como 'chain-of-thought prompting'."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-prompt-engineering.html"
+        ]
+      },
+      {
+        "id": 25,
+        "text": "Una empresa de Big Data está utilizando un modelo fundacional (FM) en Amazon Bedrock para analizar datos complejos y obtener información para el desarrollo de nuevos productos. La empresa desea mejorar el rendimiento del modelo para que se convierta en un experto específicamente en el campo del Big Data, lo que le permitirá comprender mejor la terminología, los patrones y los conjuntos de datos específicos del dominio. ¿Cuáles de los siguientes enfoques serían los más efectivos para convertir el modelo fundacional en un experto de dominio específico? (Selecciona dos)",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": true,
+        "selectCount": 2,
+        "images": [],
+        "options": [
+          {
+            "text": "Aprendizaje supervisado",
+            "correct": false,
+            "explanation": "Aunque el aprendizaje supervisado puede ser útil para tareas específicas, no es la mejor opción para convertir un modelo en un experto de dominio, a menos que se disponga de una gran cantidad de datos etiquetados específicos del dominio."
+          },
+          {
+            "text": "Fine-Tuning",
+            "correct": true,
+            "explanation": "El Fine-Tuning de adaptación de dominio ajusta los parámetros del modelo utilizando datos específicos del dominio. Esto ayuda a que el modelo aprenda las particularidades, la terminología y el contexto específicos del dominio, lo que mejora su capacidad para generar resultados precisos y relevantes en ese campo."
+          },
+          {
+            "text": "Entrenamiento continuado",
+            "correct": true,
+            "explanation": "El entrenamiento continuado entrena el modelo con grandes cantidades de datos específicos del dominio, permitiendo que aprenda las características, patrones de lenguaje y conocimiento especializado del dominio objetivo. Es una estrategia efectiva para convertir un modelo en un experto sin reiniciar el entrenamiento desde cero. Opciones incorrectas:"
+          },
+          {
+            "text": "Aprendizaje incremental",
+            "correct": false,
+            "explanation": "El aprendizaje incremental ayuda a que los modelos se adapten a nuevos datos sin olvidar lo aprendido, pero no está diseñado específicamente para la especialización de dominio."
+          },
+          {
+            "text": "Aprendizaje por refuerzo",
+            "correct": false,
+            "explanation": "El aprendizaje por refuerzo no es adecuado para especializar un modelo en un dominio específico, ya que se centra en aprender comportamientos óptimos a través de recompensas y penalizaciones en escenarios interactivos, no en el entrenamiento con datos específicos del dominio."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/about-aws/whats-new/2023/11/continued-pre-training-amazon-bedrock-preview/"
+        ]
+      },
+      {
+        "id": 26,
+        "text": "Una empresa de desarrollo de videojuegos está explorando nuevas técnicas de machine learning para mejorar la inteligencia artificial (IA) de los personajes no jugables (NPCs) en sus juegos. El equipo está interesado en utilizar el aprendizaje por refuerzo, con la idea de que los NPCs puedan aprender y mejorar sus estrategias a medida que interactúan con los jugadores y el entorno del juego. Para tomar una decisión informada, necesitan una explicación detallada sobre cómo funciona el aprendizaje por refuerzo y en qué se diferencia de otros métodos de aprendizaje automático. ¿Cómo funciona el aprendizaje por refuerzo en este contexto?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q28-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "El aprendizaje por refuerzo se basa en técnicas de aprendizaje no supervisado para agrupar puntos de datos sin un mecanismo de retroalimentación específico",
+            "correct": false,
+            "explanation": "El aprendizaje por refuerzo no es un enfoque de aprendizaje no supervisado. Aunque no requiere etiquetas previas, se basa en recompensas o penalizaciones explícitas como mecanismo de retroalimentación, lo que lo distingue de los métodos de agrupamiento de datos típicos del aprendizaje no supervisado."
+          },
+          {
+            "text": "El aprendizaje por refuerzo implica que un agente interactúe con un entorno tomando acciones y recibiendo recompensas o penalizaciones, aprendiendo una política que maximiza las recompensas acumuladas a lo largo del tiempo",
+            "correct": true,
+            "explanation": "El aprendizaje por refuerzo se basa en un agente (en este caso, los NPCs del videojuego) que toma acciones dentro de un entorno, recibiendo recompensas o penalizaciones según los resultados de sus acciones. El agente aprende una política a lo largo del tiempo que le permite maximizar las recompensas acumuladas. Esta técnica es especialmente útil en entornos donde las decisiones secuenciales son clave y el agente puede mejorar su comportamiento de manera continua en función de la retroalimentación que recibe. En videojuegos, esto permitiría a los NPCs ajustar sus estrategias en función de las interacciones con los jugadores, ofreciendo una experiencia más inmersiva y desafiante. Opciones incorrectas:"
+          },
+          {
+            "text": "El aprendizaje por refuerzo se basa en grandes cantidades de datos previamente etiquetados para hacer predicciones basadas en patrones preexistentes",
+            "correct": false,
+            "explanation": "Esta opción describe el enfoque de los modelos de aprendizaje supervisado, donde los algoritmos aprenden patrones a partir de grandes conjuntos de datos etiquetados. El aprendizaje por refuerzo no requiere datos etiquetados previamente; se trata de aprender a partir de la interacción directa con el entorno y optimizar las acciones basadas en recompensas o penalizaciones, no en patrones preexistentes."
+          },
+          {
+            "text": "El aprendizaje por refuerzo utiliza algoritmos de aprendizaje supervisado para etiquetar datos y hacer predicciones basadas en esas etiquetas",
+            "correct": false,
+            "explanation": "A diferencia del aprendizaje supervisado, el aprendizaje por refuerzo no se basa en etiquetas predefinidas ni en un conjunto de entrenamiento tradicional. En lugar de hacer predicciones basadas en datos etiquetados, los agentes en aprendizaje por refuerzo toman decisiones y aprenden de las consecuencias de sus acciones dentro de un entorno dinámico."
+          },
+          {
+            "text": "El aprendizaje por refuerzo transforma los datos en bruto en un nuevo espacio de características para reducir la dimensionalidad y mejorar la precisión del modelo",
+            "correct": false,
+            "explanation": "Transformar datos en un nuevo espacio de características es una técnica asociada a la reducción de dimensionalidad y la ingeniería de características, más comúnmente utilizada en enfoques de aprendizaje supervisado o no supervisado. El aprendizaje por refuerzo, en cambio, se centra en la toma de decisiones basadas en retroalimentación constante del entorno, no en la transformación de datos."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/reinforcement-learning/"
+        ]
+      },
+      {
+        "id": 27,
+        "text": "Un especialista en IA utiliza un modelo de lenguaje grande (LLM) para la generación de texto. Durante las pruebas, el modelo produce resultados no relacionados con los prompts de entrada, como generar una receta cuando se le pregunta sobre eventos históricos. ¿Qué problema está experimentando el modelo?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Alucinación",
+            "correct": true,
+            "explanation": "Se refiere a cuando un modelo genera respuestas que no están basadas en los datos empresariales o son irrelevantes para la consulta del usuario. Por ejemplo, si un modelo genera una receta cuando se le pregunta sobre eventos históricos, se considera un ejemplo clásico de alucinación. En este caso, el modelo genera contenido no relacionado con el prompt original. Opciones incorrectas:"
+          },
+          {
+            "text": "Aumento de datos",
+            "correct": false,
+            "explanation": "Se refiere principalmente a la creación de nuevos ejemplos de entrenamiento aplicando transformaciones a los datos existentes. Esta técnica se utiliza para mejorar el rendimiento y la generalización del modelo, pero no está relacionada con el problema de generar resultados no relacionados con los prompts."
+          },
+          {
+            "text": "Underfitting",
+            "correct": false,
+            "explanation": "Ocurre cuando un modelo es demasiado simple para captar los patrones subyacentes en los datos, lo que resulta en un mal rendimiento tanto en los datos de entrenamiento como en los de prueba. Esto típicamente resulta en predicciones incorrectas de manera consistente, pero no en salidas no relacionadas."
+          },
+          {
+            "text": "Desviación del modelo",
+            "correct": false,
+            "explanation": "Este fenómeno se refiere a la degradación del rendimiento de un modelo con el tiempo debido a cambios en la distribución de los datos subyacentes. Aunque esto puede hacer que un modelo se vuelva menos preciso, no causa típicamente la generación de salidas completamente no relacionadas."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/latest/userguide/"
+        ]
+      },
+      {
+        "id": 28,
+        "text": "¿Cuál es una de las principales características de los modelos generativos basados en transformers?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Pueden procesar datos en paralelo, lo que los hace más eficientes que los modelos recurrentes",
+            "correct": true,
+            "explanation": "Los modelos generativos basados en transformers, como GPT, pueden procesar datos en paralelo, lo que les permite ser más eficientes y manejar secuencias largas de texto mejor que los modelos recurrentes. Opciones incorrectas:"
+          },
+          {
+            "text": "Solo se utilizan para generar imágenes",
+            "correct": false,
+            "explanation": "Los transformers se utilizan en una variedad de aplicaciones generativas, incluyendo texto, imágenes y audio."
+          },
+          {
+            "text": "Dependen exclusivamente de datos tabulares para su entrenamiento",
+            "correct": false,
+            "explanation": "Aunque los transformers pueden ser aplicados en diferentes tipos de datos, no dependen exclusivamente de datos tabulares."
+          },
+          {
+            "text": "Son incapaces de manejar secuencias largas de texto",
+            "correct": false,
+            "explanation": "Los modelos basados en transformers están diseñados específicamente para manejar secuencias largas de texto."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/what-is/transformers-in-artificial-intelligence/"
+        ]
+      },
+      {
+        "id": 29,
+        "text": "¿Qué enfoque de aprendizaje automático se utiliza para clasificar y organizar datos no etiquetados identificando patrones ocultos sin requerir categorías o etiquetas predefinidas?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q8-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Aprendizaje por refuerzo (Reinforcement Learning)",
+            "correct": false,
+            "explanation": "Se enfoca en aprender a través de interacciones con un entorno, donde un agente recibe retroalimentación en forma de recompensas o penalizaciones basadas en sus acciones. Este enfoque no es el adecuado para clasificar o agrupar datos no etiquetados."
+          },
+          {
+            "text": "Few-shot Learning",
+            "correct": false,
+            "explanation": "Implica entrenar modelos con una cantidad muy limitada de datos etiquetados, incluso con solo unos pocos ejemplos. Aunque es útil cuando hay pocos datos etiquetados, aún requiere datos etiquetados para funcionar, lo cual no es aplicable a situaciones con datos no etiquetados, como en el caso del aprendizaje no supervisado."
+          },
+          {
+            "text": "Aprendizaje por transferencia (Transfer Learning",
+            "correct": false,
+            "explanation": "Se usa cuando un modelo preentrenado en una tarea o dominio se aplica a un dominio relacionado. Transfer Learning se utiliza principalmente cuando hay una escasez de datos etiquetados en el dominio objetivo pero abundancia de datos etiquetados en otro dominio relacionado. No es adecuado para trabajar con datos no etiquetados ni para descubrir patrones ocultos en ellos."
+          },
+          {
+            "text": "Aprendizaje no supervisado (Unsupervised Learning)",
+            "correct": true,
+            "explanation": "Es una técnica de aprendizaje automático que se utiliza para analizar y agrupar datos no etiquetados. A diferencia del aprendizaje supervisado, donde los modelos se entrenan con conjuntos de datos etiquetados, los algoritmos de aprendizaje no supervisado operan sin categorías o etiquetas predefinidas. Estos algoritmos descubren patrones, estructuras y relaciones ocultas en los datos. Una de las aplicaciones más comunes del aprendizaje no supervisado es la agrupación o clustering, donde los puntos de datos con características similares se agrupan. Opciones incorrectas:"
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-unsupervised.html",
+          "https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/"
+        ]
+      },
+      {
+        "id": 30,
+        "text": "Una empresa tecnológica ha lanzado una aplicación de traducción automática que convierte texto del inglés a varios idiomas, como español, francés y alemán. El equipo de desarrollo ha implementado un modelo de machine learning para generar las traducciones, pero ahora están buscando formas de evaluar y mejorar la precisión y calidad de los resultados. Dado que la traducción automática requiere que las frases generadas mantengan el significado original y sean coherentes en el idioma de destino, el equipo necesita una métrica precisa que les permita medir qué tan bien el modelo está logrando esto. ¿Qué métrica sería la más adecuada para evaluar la precisión de las traducciones generadas por el modelo?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "BERT",
+            "correct": false,
+            "explanation": "Utiliza embeddings contextuales para evaluar la similitud semántica entre el texto generado y el de referencia. Aunque BERT es capaz de capturar matices semánticos más profundos que BLEU, todavía no es tan ampliamente utilizado como BLEU para la evaluación de traducciones automáticas. BERT score es útil para medir la similitud de significado en tareas donde el contexto es clave, pero BLEU sigue siendo el estándar en la evaluación de traducciones porque proporciona una medida clara y directa de las coincidencias entre las traducciones generadas y las referencias humanas en términos de n-gramas."
+          },
+          {
+            "text": "BLEU (Bilingual Evaluation Understudy)",
+            "correct": true,
+            "explanation": "Es una métrica ampliamente utilizada para evaluar la calidad de traducciones automáticas. Comparando las traducciones generadas por la máquina con una o más traducciones de referencia humanas, BLEU mide la coincidencia de n-gramas (secuencias de palabras) entre las dos versiones del texto. Esta métrica es adecuada porque ofrece una evaluación directa de la precisión lingüística, capturando la fluidez y la similitud contextual. Un puntaje BLEU más alto indica que la traducción generada es más cercana a la referencia humana, lo que implica mayor calidad y coherencia. BLEU es particularmente útil en este caso porque la empresa necesita un sistema para comparar el rendimiento del modelo de traducción frente a traducciones humanas de alta calidad. Opciones incorrectas:"
+          },
+          {
+            "text": "ROUGE (Recall-Oriented Understudy for Gisting Evaluation)",
+            "correct": false,
+            "explanation": "Se utiliza principalmente para evaluar la calidad de los resúmenes de texto, no las traducciones. ROUGE mide la superposición de n-gramas y frases entre el texto generado y un resumen de referencia. Aunque mide la similitud textual, ROUGE está diseñado para tareas de resumen automático y no captura de manera efectiva las complejidades lingüísticas y contextuales necesarias para evaluar traducciones. Para la traducción automática, que requiere precisión gramatical, sintáctica y semántica, ROUGE no es tan preciso como BLEU."
+          },
+          {
+            "text": "Accuracy",
+            "correct": false,
+            "explanation": "Es una métrica demasiado general y simplista para tareas de traducción automática. Se utiliza principalmente en problemas de clasificación, donde las respuestas se comparan con etiquetas correctas. En traducción automática, donde la precisión del contexto, la gramática y la semántica son esenciales, Accuracy no ofrece suficiente profundidad para capturar la calidad del texto traducido. No mide la coherencia de la frase o la estructura gramatical, lo que hace que sea una métrica inadecuada para este caso."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/blogs/machine-learning/build-a-multilingual-automatic-translation-pipeline-with-amazon-translate-active-custom-translation/"
+        ]
+      },
+      {
+        "id": 31,
+        "text": "Una empresa especialida en soluciones Blockchain está desarrollando modelos de machine learning para predecir la rotación de clientes y detectar transacciones fraudulentas. El equipo técnico necesita identificar cuáles de estos métodos pertenecen al aprendizaje supervisado, donde el modelo se entrena con datos etiquetados con resultados conocidos. Identificar las técnicas correctas de aprendizaje supervisado ayudará al equipo a seleccionar los modelos más adecuados para sus tareas predictivas. ¿Cuáles de los siguientes son ejemplos de aprendizaje supervisado? (Selecciona dos)",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": true,
+        "selectCount": 2,
+        "images": [],
+        "options": [
+          {
+            "text": "Clustering",
+            "correct": false,
+            "explanation": "Clustering es una técnica de aprendizaje no supervisado que agrupa entradas de datos para categorizarlas en su conjunto. Un ejemplo es identificar tipos de tráfico de red para predecir posibles incidentes de seguridad."
+          },
+          {
+            "text": "Regresión lineal",
+            "correct": true,
+            "explanation": "La regresión lineal es un modelo de aprendizaje supervisado que, basándose en una o más entradas, predice un valor de una escala continua. Por ejemplo, puedes predecir el precio de una casa en función de su ubicación, antigüedad y número de habitaciones después de entrenar un modelo con un conjunto de datos históricos etiquetados."
+          },
+          {
+            "text": "Clasificación de documentos",
+            "correct": false,
+            "explanation": "La clasificación de documentos es un ejemplo de aprendizaje semi-supervisado, que combina técnicas de aprendizaje supervisado y no supervisado. Utiliza una pequeña cantidad de datos etiquetados junto con una gran cantidad de datos no etiquetados para entrenar modelos."
+          },
+          {
+            "text": "Red neuronal",
+            "correct": true,
+            "explanation": "Las redes neuronales también son una técnica de aprendizaje supervisado más compleja. Utilizan entradas y realizan transformaciones matemáticas para predecir un resultado ajustando los pesos de los datos. Un ejemplo es la predicción de un dígito a partir de una imagen manuscrita. Opciones incorrectas:"
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/"
+        ]
+      },
+      {
+        "id": 32,
+        "text": "Una empresa quiere generar contenido de texto personalizado utilizando un modelo de inteligencia artificial generativa sin la necesidad de entrenar su propio modelo desde cero. Desean utilizar un servicio de AWS que permita acceder a modelos preentrenados. ¿Qué servicio de AWS es el más adecuado para este propósito?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q36-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Amazon Bedrock",
+            "correct": true,
+            "explanation": "Amazon Bedrock proporciona acceso a modelos de IA generativa preentrenados que permiten generar contenido de texto sin la necesidad de entrenar el modelo desde cero. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon SageMaker",
+            "correct": false,
+            "explanation": "Amazon SageMaker está diseñado para entrenar modelos personalizados, pero no proporciona directamente modelos preentrenados de IA generativa."
+          },
+          {
+            "text": "Amazon Lex",
+            "correct": false,
+            "explanation": "Amazon Lex se utiliza para crear chatbots, pero no es la mejor opción para generar contenido de texto con modelos de IA generativa."
+          },
+          {
+            "text": "Amazon Rekognition",
+            "correct": false,
+            "explanation": "Amazon Rekognition se utiliza para el análisis de imágenes y videos, no para generar contenido de texto."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/what-is-bedrock.html"
+        ]
+      },
+      {
+        "id": 33,
+        "text": "Una empresa quiere utilizar reconocimiento de imágenes para detectar y clasificar automáticamente objetos dentro de su almacén. Además, la empresa necesita una solución que permita la integración con otros servicios de AWS para procesar los datos de las imágenes, como almacenamiento y análisis. ¿Qué servicio de AWS es el más adecuado para implementar esta solución?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q21-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Amazon Rekognition",
+            "correct": true,
+            "explanation": "Amazon Rekognition es un servicio que permite el análisis de imágenes, incluyendo la detección y clasificación de objetos. Se integra con otros servicios de AWS como Amazon S3 para almacenamiento y AWS Lambda para procesamiento adicional. Opciones incorrectas:"
+          },
+          {
+            "text": "AWS Lambda",
+            "correct": false,
+            "explanation": "AWS Lambda es un servicio para ejecutar código sin servidores, pero no realiza reconocimiento de objetos en imágenes por sí mismo."
+          },
+          {
+            "text": "Amazon SageMaker",
+            "correct": false,
+            "explanation": "Amazon SageMaker es un servicio para construir, entrenar y desplegar modelos de machine learning, pero no es la opción más directa para reconocimiento de imágenes."
+          },
+          {
+            "text": "Amazon Comprehend",
+            "correct": false,
+            "explanation": "Amazon Comprehend es un servicio diseñado para el procesamiento de lenguaje natural, no para análisis de imágenes."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/rekognition/"
+        ]
+      },
+      {
+        "id": 34,
+        "text": "En una empresa que gestiona una red de sensores IoT para monitorizar el estado de maquinaria en tiempo real, necesitas elegir entre un modelo de lenguaje grande (LLM) y un modelo de lenguaje pequeño (SLM) para procesar los datos de texto generados por estos sensores. ¿Cuál es una consideración clave al decidir utilizar un SLM en lugar de un LLM para esta aplicación?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Los LLM son más adecuados para manejar grandes volúmenes de datos de sensores en tiempo real con alta precisión y menores requisitos de procesamiento",
+            "correct": false,
+            "explanation": "Los LLM son menos eficientes para procesar datos en tiempo real de manera ligera, ya que requieren más recursos y suelen estar diseñados para tareas más complejas."
+          },
+          {
+            "text": "Los SLM pueden ofrecer mayor capacidad para generar informes detallados basados en el análisis de datos de múltiples sensores en tiempo real",
+            "correct": false,
+            "explanation": "Aunque los SLM son más eficientes en tiempo real, no son ideales para generar informes detallados basados en análisis complejos."
+          },
+          {
+            "text": "Los SLM son más adecuados para tareas que requieren respuestas rápidas y ligeras en recursos, como la interpretación de datos sencillos de sensores en tiempo real, donde no se necesita un análisis complejo",
+            "correct": true,
+            "explanation": "En aplicaciones que requieren procesar rápidamente datos sencillos de sensores en tiempo real, como la detección de fallos básicos o el monitoreo de parámetros predefinidos, un SLM es una mejor opción debido a su eficiencia en términos de recursos y velocidad de respuesta. Opciones incorrectas:"
+          },
+          {
+            "text": "Un LLM sería más eficiente para procesar los datos en tiempo real de sensores, dado que maneja grandes volúmenes de datos con mayor velocidad",
+            "correct": false,
+            "explanation": "Los LLM son potentes para manejar grandes cantidades de datos y análisis complejos, pero son más lentos y costosos en términos de recursos para tareas sencillas y de respuesta rápida."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/blogs/industries/opportunities-for-telecoms-with-small-language-models/"
+        ]
+      },
+      {
+        "id": 35,
+        "text": "Una empresa de tecnología está explorando la posibilidad de integrar capacidades de IA generativa en sus productos mediante Amazon Bedrock. Actualmente, el equipo está en fase de experimentación, probando diferentes casos de uso para determinar cómo y con qué frecuencia utilizarán el servicio. Sin embargo, debido a la incertidumbre sobre sus futuras necesidades de uso, buscan un modelo de precios flexible que les permita ajustar su consumo sin comprometerse a contratos a largo plazo o a niveles de uso específicos. ¿Cuál sería el modelo de precios más adecuado para este escenario de incertidumbre?",
+        "cat": "security",
+        "catLabel": "Seguridad, normativa y gobernanza de las soluciones de IA",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q26-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Instancias spot",
+            "correct": false,
+            "explanation": "Las instancias spot permiten acceder a recursos de computación EC2 a precios reducidos, pero son vulnerables a interrupciones repentinas por parte de AWS. Dado que este modelo no aplica a Amazon Bedrock y conlleva riesgos de interrupción, no es una opción adecuada para esta situación."
+          },
+          {
+            "text": "Instancias reservadas",
+            "correct": false,
+            "explanation": "Las instancias reservadas son un modelo de precios diseñado para servicios de EC2, donde se compromete a largo plazo para obtener tarifas más bajas. Este modelo no es aplicable para Amazon Bedrock y no proporciona la flexibilidad requerida en este caso."
+          },
+          {
+            "text": "Precios bajo demanda",
+            "correct": true,
+            "explanation": "La empresa debería optar por precios bajo demanda, que ofrecen la mayor flexibilidad para situaciones de uso impredecible. Este modelo permite pagar únicamente por los recursos que se consumen, sin necesidad de comprometerse con pagos por adelantado ni contratos prolongados. Esto permite que el equipo pueda probar diferentes casos de uso y ajustar su consumo conforme a las necesidades que vayan surgiendo, ideal para un escenario donde el uso futuro es incierto. Opciones incorrectas:"
+          },
+          {
+            "text": "Rendimiento aprovisionado",
+            "correct": false,
+            "explanation": "El modelo de rendimiento aprovisionado reserva capacidad con antelación a cambio de una tarifa con descuento, lo cual es útil para escenarios con un uso predecible y constante. Sin embargo, en este caso, la empresa no tiene certeza sobre su futuro uso, por lo que este modelo podría resultar en costos innecesarios si el uso es inferior al previsto."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/pricing/"
+        ]
+      },
+      {
+        "id": 36,
+        "text": "¿Cuál de los siguientes modelos de embeddings sería más adecuado para diferenciar los significados contextuales de las palabras cuando se aplican a diferentes frases?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Bidirectional Encoder Representations from Transformers (BERT)",
+            "correct": true,
+            "explanation": "Está diseñado para capturar el significado contextual de las palabras considerando tanto las palabras que aparecen antes como después de ellas (contexto bidireccional). A diferencia de los modelos más antiguos que utilizan embeddings estáticos, BERT genera embeddings dinámicos que cambian según el texto circundante, lo que le permite entender los diferentes significados de la misma palabra en varios contextos. Opciones incorrectas:"
+          },
+          {
+            "text": "Word2Vec",
+            "correct": false,
+            "explanation": "Crea representaciones vectoriales de palabras basadas en su co-ocurrencia en un texto. Sin embargo, utiliza embeddings estáticos, lo que significa que cada palabra tiene una única representación vectorial sin tener en cuenta el contexto, lo que lo hace menos eficaz que BERT para diferenciar significados contextuales."
+          },
+          {
+            "text": "Descomposición en Valores Singulares (SVD)",
+            "correct": false,
+            "explanation": "Método de descomposición de matrices usado en aplicaciones como compresión de datos, pero no está diseñado para manejar significados dinámicos o contextuales de las palabras."
+          },
+          {
+            "text": "Análisis de Componentes Principales (PCA)",
+            "correct": false,
+            "explanation": "Método estadístico utilizado para reducir dimensiones en conjuntos de datos, pero no puede diferenciar los significados contextuales de las palabras en el procesamiento de lenguaje natural."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/embeddings-in-machine-learning/"
+        ]
+      },
+      {
+        "id": 37,
+        "text": "Una consultora especializada en soluciones cloud está utilizando modelos de machine learning en Amazon SageMaker para analizar los patrones de uso de sus clientes y predecir futuras necesidades de infraestructura. Los científicos de datos de la empresa trabajan con pequeños conjuntos de datos, de menos de 1 GB, que incluyen logs de actividad diaria y registros de interacción con clientes. Como los resultados de estos análisis no son urgentes y se utilizan principalmente en informes semanales para planificar estrategias de optimización de infraestructura, la empresa puede permitirse cierto retraso en la obtención de los resultados. ¿Qué método de inferencia sería más adecuado para procesar estos datos de manera eficiente y rentable?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q45-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Inferencia por lotes (Batch inference)",
+            "correct": false,
+            "explanation": "Suele utilizarse para procesar grandes volúmenes de datos de una sola vez, lo que la convierte en una opción menos adecuada para la consultora, que maneja regularmente datos de menos de 1 GB. Este método es más eficiente cuando se trabaja con conjuntos de datos significativamente más grandes y no sería necesario para los pequeños volúmenes de datos que se están analizando en este caso."
+          },
+          {
+            "text": "Inferencia asincrónica (Asynchronous inference)",
+            "correct": true,
+            "explanation": "Permite procesar las solicitudes sin la necesidad de obtener resultados en tiempo real. Este método encola las solicitudes y las gestiona en segundo plano, lo que es ideal cuando se pueden aceptar pequeños retrasos en los resultados, como en este escenario. Además, es una opción rentable que optimiza el uso de los recursos, permitiendo que la consultora obtenga los resultados a un costo menor, sin necesidad de mantener infraestructura activa continuamente. Opciones incorrectas:"
+          },
+          {
+            "text": "Inferencia en tiempo real (Real-time inference)",
+            "correct": false,
+            "explanation": "Está diseñada para casos en los que se requieren respuestas inmediatas y baja latencia, lo cual no es una prioridad para la consultora, ya que puede permitirse un pequeño retraso en la obtención de los resultados. Utilizar inferencia en tiempo real sería innecesariamente costoso y menos eficiente para este tipo de análisis."
+          },
+          {
+            "text": "Inferencia sin servidor (Serverless inference)",
+            "correct": false,
+            "explanation": "Es útil cuando el tráfico es impredecible o hay fluctuaciones en las solicitudes. Aunque puede ser beneficiosa en casos de cargas de trabajo esporádicas, la inferencia asincrónica sería una mejor opción cuando los volúmenes de trabajo son predecibles y los resultados no son urgentes, como es el caso de esta consultora."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/async-inference.html"
+        ]
+      },
+      {
+        "id": 38,
+        "text": "En el campo de la IA generativa, los modelos descomponen el texto en unidades discretas que pueden ser palabras completas, partes de palabras o incluso caracteres, lo que les permite procesar y generar lenguaje de manera más eficiente. ¿Cómo se denomina este concepto clave que permite al modelo manejar y comprender el texto?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q36-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Embeddings",
+            "correct": false,
+            "explanation": "Son representaciones matemáticas de los tokens, transformándolos en vectores que capturan relaciones semánticas. Aunque son vitales para que el modelo entienda el significado, no son las unidades de texto en sí."
+          },
+          {
+            "text": "Tokens",
+            "correct": true,
+            "explanation": "Son las unidades discretas de texto que el modelo procesa. Dependiendo de la estrategia de tokenización, los tokens pueden representar palabras completas, sub-palabras o caracteres individuales. Esto permite al modelo manejar la estructura y el contexto del lenguaje de manera efectiva, descomponiendo el texto en fragmentos más manejables. Opciones incorrectas:"
+          },
+          {
+            "text": "Vectores",
+            "correct": false,
+            "explanation": "Son representaciones numéricas que el modelo utiliza para describir relaciones entre palabras o tokens en un espacio de alta dimensión, pero no son las unidades discretas de texto que procesa el modelo."
+          },
+          {
+            "text": "Ventana de contexto (Context Window)",
+            "correct": false,
+            "explanation": "Se refiere al rango de texto (medido en tokens) que el modelo puede procesar simultáneamente, pero no alude a las unidades individuales de texto que maneja."
+          },
+          {
+            "text": "Gramáticas",
+            "correct": false,
+            "explanation": "Son sistemas de reglas que dictan cómo se estructura el lenguaje, pero no representan las unidades discretas de texto que el modelo utiliza para procesar la información."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/what-is/vector-databases/",
+          "https://aws.amazon.com/es/blogs/security/context-window-overflow-breaking-the-barrier/",
+          "https://aws.amazon.com/what-is/embeddings-in-machine-learning/"
+        ]
+      },
+      {
+        "id": 39,
+        "text": "Una empresa minorista planea implementar un sistema de recomendación para su plataforma de comercio electrónico utilizando un modelo fundacional (FM). El sistema debe manejar consultas sobre descripciones de productos e imágenes para proporcionar recomendaciones precisas basadas en entradas visuales y textuales. ¿Qué tipo de modelo fundacional (FM) es el más adecuado para este sistema de recomendación?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Multi-modal embedding model",
+            "correct": true,
+            "explanation": "Es un modelo fundacional que integra y procesa diferentes tipos de datos, como texto, imágenes y otras formas de datos estructurados. Este modelo es muy útil en escenarios donde se requiere analizar y comprender múltiples modalidades de datos simultáneamente. Al incrustar entradas visuales y textuales en un espacio de representación compartido, el modelo puede descubrir correlaciones y relaciones entre diferentes tipos de datos. Por ejemplo, una plataforma de comercio electrónico puede analizar imágenes de productos y descripciones para generar recomendaciones más precisas. Opciones incorrectas:"
+          },
+          {
+            "text": "Text embedding model",
+            "correct": false,
+            "explanation": "Está diseñado principalmente para procesar datos textuales convirtiéndolos en vectores numéricos que pueden ser analizados por algoritmos de aprendizaje automático. No admite la integración de entradas visuales como imágenes, lo cual es crucial en el escenario descrito."
+          },
+          {
+            "text": "Image embedding model",
+            "correct": false,
+            "explanation": "Está diseñado exclusivamente para procesar datos de imágenes. Aunque es efectivo para tareas como el reconocimiento de imágenes o la detección de objetos, este modelo no puede procesar ni comprender las descripciones textuales de productos, que son esenciales para proporcionar recomendaciones precisas en una plataforma de comercio electrónico."
+          },
+          {
+            "text": "Natural language processing (NLP) model",
+            "correct": false,
+            "explanation": "Se enfoca únicamente en procesar y comprender entradas basadas en texto, como el análisis de sentimientos, el reconocimiento de entidades y el procesamiento del lenguaje. Aunque útil para manejar descripciones de productos, un modelo NLP no podría procesar entradas de imágenes, lo cual es un requisito clave en el escenario dado."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-multimod-models.html"
+        ]
+      },
+      {
+        "id": 40,
+        "text": "¿Cuál es el principal desafío de utilizar 'Retrieval-Augmented Generation' (RAG) en aplicaciones empresariales que requieren respuestas en tiempo real?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "La latencia de la consulta y recuperación de información externa puede afectar la capacidad del sistema para responder rápidamente en aplicaciones en tiempo real",
+            "correct": true,
+            "explanation": "En RAG, la latencia de las consultas a bases de datos externas o fuentes de información puede retrasar la respuesta del sistema, lo cual es un desafío en aplicaciones que requieren respuestas en tiempo real. Opciones incorrectas:"
+          },
+          {
+            "text": "Es necesario entrenar modelos adicionales para que RAG funcione correctamente",
+            "correct": false,
+            "explanation": "No es necesario entrenar modelos adicionales para implementar RAG; la clave está en combinar la recuperación de información con la generación de texto."
+          },
+          {
+            "text": "La falta de transparencia en el proceso de recuperación hace que los resultados sean difíciles de explicar",
+            "correct": false,
+            "explanation": "La transparencia es un problema en algunos casos, pero no es el mayor desafío para aplicaciones en tiempo real."
+          },
+          {
+            "text": "El proceso de recuperación de información puede aumentar significativamente el costo computacional del sistema",
+            "correct": false,
+            "explanation": "Aunque el costo computacional es un factor a considerar, el principal desafío de RAG en aplicaciones en tiempo real es la latencia."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+        ]
+      },
+      {
+        "id": 41,
+        "text": "Una empresa minorista utiliza modelos de aprendizaje automático para predecir las ventas trimestrales y optimizar la gestión del inventario. En respuesta a las solicitudes de los interesados, el equipo de ciencia de datos debe proporcionar un informe detallado que garantice la transparencia y explique la lógica detrás de las decisiones del modelo. ¿Qué debería presentar el equipo de ciencia de datos para explicar claramente el proceso de recomendación del modelo?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Partial dependence plots (PDPs)",
+            "correct": true,
+            "explanation": "Son una poderosa herramienta para explicar los modelos de aprendizaje automático al mostrar la relación entre las características (features) y las predicciones del modelo. Proporcionan transparencia al mostrar cómo el cambio en una característica afecta la predicción mientras otras características permanecen constantes. Los PDPs ayudan a comprender la influencia de cada característica en las decisiones del modelo, lo cual es particularmente útil para explicar el comportamiento del modelo a los interesados. Opciones incorrectas:"
+          },
+          {
+            "text": "Tablas de convergencia del modelo",
+            "correct": false,
+            "explanation": "Solo proporcionan información sobre el progreso del entrenamiento del modelo, pero no ofrecen información sobre la lógica detrás de las predicciones del modelo."
+          },
+          {
+            "text": "Scripts de ingeniería de características",
+            "correct": false,
+            "explanation": "Solo involucran pasos de preprocesamiento de datos y transformaciones aplicadas a los datos brutos. Si bien estos scripts son cruciales para la construcción del modelo, no explican directamente cómo el modelo toma decisiones."
+          },
+          {
+            "text": "Resultados de ajuste de hiperparámetros",
+            "correct": false,
+            "explanation": "Se centran principalmente en la optimización del modelo en lugar de explicar el proceso de toma de decisiones a los interesados. Los ajustes de hiperparámetros mejoran el rendimiento, pero no contribuyen directamente a la explicabilidad del modelo."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-processing-job-analysis-results.html#clarify-processing-job-analysis-results-pdp",
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-processing-job-configure-analysis.html",
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html"
+        ]
+      },
+      {
+        "id": 42,
+        "text": "Un profesional de IA utiliza Amazon Bedrock para tareas diarias de procesamiento del lenguaje natural (NLP), aprovechando el few-shot prompting con 20 ejemplos en el prompt actual. El profesional quiere reducir los costos mensuales. ¿Qué acción reducirá eficazmente los costos mensuales?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Reducir el número de tokens utilizados",
+            "correct": true,
+            "explanation": "Reducir el número de tokens utilizados en los prompts y respuestas puede ayudar a reducir los costos, ya que afecta directamente la facturación, que a menudo se escala con el uso de tokens. Los tokens son las unidades de texto (palabras o caracteres) que el modelo procesa, y un mayor uso de tokens generalmente resulta en costos más altos. Optimizar la longitud del prompt y las respuestas para reducir el consumo de tokens es una estrategia efectiva para la reducción de costos. Opciones incorrectas:"
+          },
+          {
+            "text": "Utilizar Throughput Provisionado",
+            "correct": false,
+            "explanation": "Esto podría resultar en costos más altos debido a los niveles de rendimiento garantizados. Está más orientado a escenarios con cargas de trabajo de alta demanda, por lo que es menos efectivo para reducir los costos mensuales."
+          },
+          {
+            "text": "Agregar más ejemplos para aumentar el uso de tokens",
+            "correct": false,
+            "explanation": "Aumentar el número de ejemplos aumenta directamente el número de tokens utilizados, lo que lleva a costos más altos en lugar de reducirlos."
+          },
+          {
+            "text": "Disminuir el tamaño del lote para procesar los prompts",
+            "correct": false,
+            "explanation": "Esto podría no generar ahorros significativos en los costos y, en algunos casos, podría aumentar los costos por prompt si genera más solicitudes."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/",
+          "https://aws.amazon.com/bedrock/pricing/"
+        ]
+      },
+      {
+        "id": 43,
+        "text": "Un equipo de investigación en ciencias climáticas está desarrollando múltiples modelos de machine learning para predecir patrones climáticos, evaluar riesgos de desastres naturales y analizar datos ambientales. Para mejorar la colaboración entre los científicos de datos y asegurar el uso coherente de variables clave en todos los proyectos, necesitan una solución que permita centralizar y gestionar las características utilizadas en estos modelos. El objetivo es crear un repositorio unificado donde estas características puedan ser accesibles y reutilizadas por distintos equipos, manteniendo la consistencia de los datos y mejorando la productividad. ¿Cuál de las siguientes herramientas de AWS sería la más adecuada para lograr este objetivo?",
+        "cat": "security",
+        "catLabel": "Seguridad, normativa y gobernanza de las soluciones de IA",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q34-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "SageMaker Feature Store",
+            "correct": true,
+            "explanation": "SageMaker Feature Store es la solución ideal para centralizar y gestionar características de machine learning, permitiendo que equipos distribuidos puedan acceder y reutilizar las mismas variables de manera eficiente. Con esta herramienta, los científicos de datos pueden crear un conjunto estándar de características, lo que asegura consistencia en los modelos y reduce la duplicación de esfuerzos. Además, incluye soporte para versionado y gobernanza de características. Opciones incorrectas:"
+          },
+          {
+            "text": "SageMaker Model Monitor",
+            "correct": false,
+            "explanation": "Se centra en el monitoreo de modelos en producción, como el seguimiento de drift de datos o cambios en el rendimiento del modelo. No está diseñado para almacenar o compartir características en la fase de desarrollo."
+          },
+          {
+            "text": "SageMaker Clarify",
+            "correct": false,
+            "explanation": "Se especializa en detectar y mitigar sesgos en los datos y en proporcionar explicaciones transparentes sobre las predicciones del modelo. No es adecuado para la centralización de características compartidas."
+          },
+          {
+            "text": "SageMaker Data Wrangler",
+            "correct": false,
+            "explanation": "Es una herramienta potente para la preparación y transformación de datos, pero no ofrece una solución centralizada para gestionar y compartir características entre diferentes equipos y proyectos."
+          },
+          {
+            "text": "SageMaker Studio Lab",
+            "correct": false,
+            "explanation": "Es un entorno gratuito y colaborativo para experimentar con machine learning, pero no está diseñado para gestionar repositorios centralizados de características utilizadas en múltiples modelos y equipos."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/sagemaker/feature-store/"
+        ]
+      },
+      {
+        "id": 44,
+        "text": "¿Cuál es el principal riesgo asociado con la ingeniería de prompts en modelos fundacionales cuando se utilizan en aplicaciones empresariales?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Los prompts no se pueden ajustar para reducir el sesgo en las respuestas generadas por el modelo",
+            "correct": false,
+            "explanation": "La ingeniería de prompts puede ser utilizada para mitigar sesgos si se aplica correctamente."
+          },
+          {
+            "text": "La manipulación inadecuada de los prompts puede resultar en la 'jailbreaking' del modelo",
+            "correct": true,
+            "explanation": "Uno de los mayores riesgos en la ingeniería de prompts es el jailbreaking, donde los usuarios pueden manipular los prompts para que el modelo genere contenido no deseado o que viole las políticas de la empresa. Opciones incorrectas:"
+          },
+          {
+            "text": "El modelo puede generar respuestas demasiado específicas para adaptarse a múltiples dominios",
+            "correct": false,
+            "explanation": "La especificidad de las respuestas puede ser controlada mediante ajustes en los prompts."
+          },
+          {
+            "text": "La longitud del prompt es irrelevante para la calidad de las respuestas generadas",
+            "correct": false,
+            "explanation": "La longitud del prompt sí puede afectar la calidad de las respuestas; prompts más claros y concisos suelen generar mejores resultados."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/blogs/machine-learning/secure-rag-applications-using-prompt-engineering-on-amazon-bedrock/"
+        ]
+      },
+      {
+        "id": 45,
+        "text": "Una empresa de servicios financieros está desarrollando modelos de machine learning para predecir el riesgo crediticio de los clientes y detectar transacciones fraudulentas. Después de implementar los modelos, la empresa observa que las predicciones no son tan precisas como se esperaba, lo que podría causar pérdidas financieras o pasar por alto fraudes. Para mejorar la precisión de estos modelos, la empresa te ha contratado como Practicante de IA. ¿Qué enfoque recomendarías para mejorar la precisión de los modelos de machine learning de la empresa?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "La empresa debería aumentar el número de épocas (epochs), lo que implica entrenar el modelo por más iteraciones sobre el conjunto de datos",
+            "correct": true,
+            "explanation": "Aumentar el número de épocas (epochs) permite que el modelo aprenda durante más tiempo a partir de los datos de entrenamiento, capturando patrones y relaciones más complejas que pueden mejorar la precisión. Entrenar el modelo durante múltiples épocas puede ayudar a que alcance un nivel de precisión aceptable o a que la tasa de error caiga por debajo de un umbral aceptable. Opciones incorrectas:"
+          },
+          {
+            "text": "La empresa debería disminuir la tasa de aprendizaje, lo que reduce el tamaño de los pasos tomados durante la optimización",
+            "correct": false,
+            "explanation": "Disminuir la tasa de aprendizaje puede ayudar a que el modelo converja más lentamente y con más estabilidad, evitando sobrepasar el punto óptimo. Sin embargo, una tasa de aprendizaje demasiado pequeña puede hacer que el entrenamiento sea extremadamente lento y que el modelo quede atrapado en mínimos locales, lo que no necesariamente mejorará la precisión."
+          },
+          {
+            "text": "La empresa debería reducir el tamaño del lote, lo que significa procesar menos muestras en cada paso de entrenamiento",
+            "correct": false,
+            "explanation": "Reducir el tamaño del lote puede hacer que el proceso de entrenamiento sea más ruidoso, ya que cada actualización de los pesos del modelo se basa en menos ejemplos. Si bien esto podría ayudar al modelo a escapar de mínimos locales durante la optimización, no necesariamente mejora la precisión y podría ralentizar la convergencia o hacer que el entrenamiento sea menos estable."
+          },
+          {
+            "text": "La empresa debería aumentar la regularización para mejorar la precisión del modelo",
+            "correct": false,
+            "explanation": "Aumentar la regularización es útil cuando el modelo está sobreajustado, ya que añade restricciones que penalizan la complejidad, incentivando al modelo a generalizar mejor. Sin embargo, si el modelo ya está subajustado (es decir, no está capturando los patrones correctamente), aumentar la regularización podría empeorar su rendimiento en lugar de mejorar la precisión."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-fine-tune.html"
+        ]
+      },
+      {
+        "id": 46,
+        "text": "Una compañía global de comercio electrónico está utilizando un modelo fundacional a través de Amazon Bedrock para optimizar su chatbot de atención al cliente. Este chatbot automatizado proporciona asistencia 24/7, respondiendo preguntas y resolviendo inquietudes de los usuarios de manera eficiente. No obstante, el equipo de la empresa está preocupado por los riesgos asociados con la generación de contenido inapropiado, sensible o malicioso por parte del modelo, lo que podría dañar la reputación de la empresa y perjudicar la experiencia del cliente. Con la expansión del uso de IA generativa en sus sistemas, el equipo busca una estrategia eficaz para garantizar que las respuestas del chatbot sean seguras, pertinentes y apropiadas. ¿Cuál sería el enfoque más efectivo para mitigar estos riesgos y asegurar que el modelo genere respuestas consistentes con los estándares de seguridad y calidad?",
+        "cat": "responsible_ai",
+        "catLabel": "Directrices para una IA Responsable",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Ajustar los hiperparámetros del modelo para proteger las respuestas generadas",
+            "correct": false,
+            "explanation": "Ajustar los hiperparámetros del modelo, como la temperatura o Top-P, puede influir en la creatividad o diversidad de las respuestas, pero no aborda específicamente el riesgo de generar contenido malicioso o inapropiado. Esta no es una solución confiable para garantizar la seguridad del contenido."
+          },
+          {
+            "text": "Reentrenar el modelo fundacional desde cero para evitar riesgos de exposición",
+            "correct": false,
+            "explanation": "Reentrenar el modelo fundacional desde cero es una solución impráctica y costosa. Implicaría el uso de grandes cantidades de datos, poder computacional y tiempo, lo que sería innecesario cuando el objetivo es aplicar medidas de seguridad más simples y directas como la ingeniería de prompts. Además, en Amazon Bedrock no es posible entrenar el modelo fundacional desde cero, solo se pueden personalizar."
+          },
+          {
+            "text": "Instruir al modelo para que se ciña estrictamente al prompt añadiendo instrucciones explícitas para ignorar cualquier contenido irrelevante o potencialmente malicioso",
+            "correct": true,
+            "explanation": "Instruir explícitamente al modelo para que se mantenga dentro del contexto del prompt mediante indicaciones claras ayuda a controlar su comportamiento, reduciendo la probabilidad de que genere contenido inapropiado. Al agregar estas instrucciones, la empresa puede guiar al modelo para que ignore contenido irrelevante o malicioso, estableciendo límites que se alinean con sus estándares de seguridad. Este enfoque utiliza técnicas de ingeniería de prompts para mitigar los riesgos de manera efectiva y sencilla. Opciones incorrectas:"
+          },
+          {
+            "text": "Desarrollar una API que procese todas las respuestas del modelo y verifique los riesgos de exposición, creando una capa personalizada que filtre las salidas del modelo antes de que lleguen al usuario final",
+            "correct": false,
+            "explanation": "Desarrollar una API que filtre las respuestas del modelo antes de que lleguen al usuario podría ser útil, pero es una solución más compleja y menos eficiente. Requiere monitoreo continuo, aumenta la latencia y solo detecta contenido problemático después de haber sido generado, sin evitar que se produzca en primer lugar."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/guardrails/"
+        ]
+      },
+      {
+        "id": 47,
+        "text": "Un centro deportivo ha implementado un sistema de cámaras de seguridad con IA para analizar imágenes en tiempo real y señalar comportamientos sospechosos. Sin embargo, se ha observado que el sistema señala de manera desproporcionada a personas de un grupo étnico específico más que a otros, lo que ha generado inquietudes sobre un posible bias en el modelo de IA. El equipo sospecha que este problema podría deberse a que ciertos grupos están infra-representados o sobre-representados en los datos utilizados para entrenar el modelo. ¿Qué tipo de bias es el más probable en este caso?",
+        "cat": "responsible_ai",
+        "catLabel": "Directrices para una IA Responsable",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Bias de muestreo",
+            "correct": true,
+            "explanation": "El bias de muestreo ocurre cuando los datos utilizados para entrenar el modelo no representan correctamente la diversidad del mundo real. Si ciertos grupos están infra-representados o sobre-representados en los datos de entrenamiento, el modelo puede aprender patrones sesgados y marcar a personas de esos grupos con más frecuencia, causando resultados injustos. Opciones incorrectas:"
+          },
+          {
+            "text": "Bias del observador",
+            "correct": false,
+            "explanation": "El bias del observador ocurre cuando hay errores humanos o subjetividad en la recolección o análisis de datos. Dado que el modelo de IA opera sin intervención humana directa, este tipo de bias no es relevante aquí."
+          },
+          {
+            "text": "Bias de confirmación",
+            "correct": false,
+            "explanation": "El bias de confirmación implica interpretar datos de manera que refuercen creencias preexistentes. En este caso, no hay evidencia de que el modelo esté diseñado para validar preconcepciones sobre la etnia."
+          },
+          {
+            "text": "Bias de medición",
+            "correct": false,
+            "explanation": "El bias de medición se refiere a errores en la recolección de datos, como instrumentos defectuosos o inconsistencias en las mediciones. Este tipo de bias no afecta directamente la composición demográfica de los datos y no es la causa principal del bias étnico en este caso."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/about-aws/whats-new/2020/12/detect-bias-in-ml-models-and-explain-model-behavior-with-amazon-sagemaker-clarify/"
+        ]
+      },
+      {
+        "id": 48,
+        "text": "¿Cuál de las siguientes es una limitación común de los modelos generativos actuales?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q53-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Solo se pueden aplicar en tareas de clasificación de texto",
+            "correct": false,
+            "explanation": "Los modelos generativos tienen aplicaciones mucho más amplias que solo la clasificación de texto, como la generación de contenido y la síntesis de lenguaje natural."
+          },
+          {
+            "text": "No se pueden utilizar para la generación de contenido visual",
+            "correct": false,
+            "explanation": "Los modelos generativos también se utilizan para generar imágenes, audio y otros tipos de contenido, no solo texto."
+          },
+          {
+            "text": "Pueden generar información inexacta o 'alucinaciones'",
+            "correct": true,
+            "explanation": "Una limitación común de los modelos generativos es que a veces pueden producir resultados inexactos o \"alucinaciones\", donde generan información que no es verdadera o coherente con los datos de entrada. Opciones incorrectas:"
+          },
+          {
+            "text": "No son capaces de aprender de grandes conjuntos de datos",
+            "correct": false,
+            "explanation": "Los modelos generativos actuales pueden entrenarse con grandes volúmenes de datos, lo cual es una de sus fortalezas."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/about-aws/whats-new/2024/07/guardrails-bedrock-hallucinations-safeguard-apps-fm/?nc1=h_ls"
+        ]
+      },
+      {
+        "id": 49,
+        "text": "En el contexto de la interpretabilidad de modelos, se utilizan diferentes métodos para comprender cómo las características influyen en las predicciones. Los valores de Shapley y los Gráficos de Dependencia Parcial (PDP) son dos técnicas populares. ¿Cuál de las siguientes descripciones explica de mejor forma las diferencias entre estos dos métodos y cómo se deben aplicar?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Tanto Shapley como PDP son útiles para entender el impacto de las características en las predicciones, pero Shapley es más rápido en términos computacionales",
+            "correct": false,
+            "explanation": "Ambos métodos no son puramente herramientas de explicabilidad global. Los valores de Shapley proporcionan una explicación local, y además, son más costosos computacionalmente que PDP debido a la cantidad de cálculos necesarios para determinar las contribuciones de cada característica en múltiples permutaciones."
+          },
+          {
+            "text": "Shapley muestra el impacto promedio de cada característica en el modelo completo, mientras que PDP se enfoca en el efecto de una característica específica en una predicción. Usa Shapley para entender el impacto global y PDP para casos individuales",
+            "correct": false,
+            "explanation": "Esta opción es incorrecta porque invierte los conceptos de local y global. Shapley es una técnica de interpretabilidad local que explica la contribución de las características en predicciones individuales, mientras que **PDP** es una técnica de interpretabilidad global que muestra el efecto promedio de una característica en todo el conjunto de datos."
+          },
+          {
+            "text": "Shapley explica cómo cada característica afecta a una predicción específica, mientras que PDP muestra cómo las características impactan a nivel general en todo el conjunto de datos",
+            "correct": true,
+            "explanation": "Los valores de Shapley proporcionan una explicación local cuantificando cómo contribuye cada característica a la predicción para una instancia específica. Esta técnica asigna un puntaje a cada característica en función de su efecto marginal en la predicción, lo que es útil cuando se necesita explicar por qué el modelo tomó una decisión particular en un caso específico. Por otro lado, los Gráficos de Dependencia Parcial (PDP) proporcionan una explicación global al mostrar el efecto promedio de una característica en las predicciones del modelo a través de todo el conjunto de datos. PDP ilustra cómo cambia el resultado predicho a medida que se varía una característica, manteniendo las demás constantes. Esto ayuda a los usuarios a entender la relación general entre una característica y la salida del modelo en todo el dataset. Shapley es más adecuado cuando se quiere entender el comportamiento del modelo en un solo caso, mientras que PDP ayuda a identificar tendencias globales y cómo una característica influye en las predicciones en general. Opciones incorrectas:"
+          },
+          {
+            "text": "Los valores de Shapley muestran cómo contribuyen las características al modelo usando gráficos, mientras que PDP muestra números que indican cómo influyen las características en las predicciones. Usa Shapley para visualizar y PDP para el análisis numérico",
+            "correct": false,
+            "explanation": "Es incorrecto afirmar que los valores de Shapley son puramente visuales, ya que ofrecen un análisis cuantitativo de la importancia de las características. Además, PDP no proporciona únicamente valores numéricos; su principal utilidad radica en su representación visual de cómo una característica afecta la predicción en promedio."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html"
+        ]
+      },
+      {
+        "id": 50,
+        "text": "¿Cuál es la principal diferencia entre el aprendizaje supervisado y el aprendizaje no supervisado en el contexto del Machine Learning?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q46-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "El aprendizaje supervisado utiliza datos etiquetados para entrenar el modelo, mientras que el aprendizaje no supervisado no requiere etiquetas en los datos",
+            "correct": true,
+            "explanation": "El aprendizaje supervisado se basa en utilizar un conjunto de datos etiquetados para entrenar el modelo, permitiendo que este haga predicciones precisas sobre los datos no vistos. Por otro lado, el Aprendizaje No Supervisado no requiere etiquetas en los datos y se utiliza para identificar patrones o grupos dentro de los datos. Opciones incorrectas:"
+          },
+          {
+            "text": "El aprendizaje supervisado es más eficiente para el procesamiento de imágenes, mientras que el aprendizaje no supervisado es más eficiente para el procesamiento de texto",
+            "correct": false,
+            "explanation": "Tanto el aprendizaje supervisado como el no supervisado pueden aplicarse en imágenes y texto dependiendo del caso de uso."
+          },
+          {
+            "text": "El aprendizaje no supervisado se enfoca en clasificar datos, mientras que el aprendizaje supervisado solo se usa para clustering",
+            "correct": false,
+            "explanation": "Aunque el clustering es una técnica de aprendizaje no supervisado, el aprendizaje supervisado no se limita solo a la clasificación; también puede realizar tareas de regresión."
+          },
+          {
+            "text": "El aprendizaje supervisado no utiliza datos etiquetados, mientras que el aprendizaje no supervisado utiliza datos etiquetados",
+            "correct": false,
+            "explanation": "Esta afirmación es incorrecta, ya que es el aprendizaje supervisado el que utiliza datos etiquetados."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/compare/the-difference-between-machine-learning-supervised-and-unsupervised/"
+        ]
+      },
+      {
+        "id": 51,
+        "text": "¿Qué tipo de datos son los más utilizados en problemas de procesamiento de lenguaje natural (NLP)?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Datos tabulares",
+            "correct": false,
+            "explanation": "Los datos tabulares son comunes en análisis financieros o de negocios, pero no en NLP."
+          },
+          {
+            "text": "Datos de texto",
+            "correct": true,
+            "explanation": "Los problemas de procesamiento de lenguaje natural (NLP) se basan en datos de texto, ya que tratan de analizar, interpretar y generar lenguaje humano. Opciones incorrectas:"
+          },
+          {
+            "text": "Datos de imágenes",
+            "correct": false,
+            "explanation": "Los datos de imágenes son utilizados en problemas de visión por computadora, no en NLP."
+          },
+          {
+            "text": "Datos de series temporales",
+            "correct": false,
+            "explanation": "Las series temporales son útiles en predicciones basadas en tiempo, como en análisis de stocks o clima, pero no en NLP."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/what-is/nlp/"
+        ]
+      },
+      {
+        "id": 52,
+        "text": "¿Qué término se refiere a un proceso dentro de un modelo de aprendizaje automático que ajusta los parámetros del modelo para reducir la diferencia entre las predicciones y los valores reales?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Validación",
+            "correct": false,
+            "explanation": "La validación se refiere al proceso de evaluar el rendimiento del modelo en un conjunto de datos separado, no al ajuste de parámetros."
+          },
+          {
+            "text": "Generalización",
+            "correct": false,
+            "explanation": "La generalización se refiere a la capacidad de un modelo para desempeñarse bien en datos no vistos, pero no es parte del proceso de ajuste de parámetros."
+          },
+          {
+            "text": "Entrenamiento",
+            "correct": true,
+            "explanation": "El entrenamiento es el proceso en el que el modelo ajusta sus parámetros con el objetivo de minimizar el error entre las predicciones y los valores reales. Opciones incorrectas:"
+          },
+          {
+            "text": "Regularización",
+            "correct": false,
+            "explanation": "La regularización es una técnica utilizada durante el entrenamiento para evitar el sobreajuste, pero no es el proceso central de ajuste de parámetros."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/es_es/machine-learning/latest/dg/training-ml-models.html"
+        ]
+      },
+      {
+        "id": 53,
+        "text": "¿Qué describe mejor un modelo de aprendizaje supervisado?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q50-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Un modelo que es entrenado con datos etiquetados para hacer predicciones",
+            "correct": true,
+            "explanation": "Un modelo de Aprendizaje Supervisado utiliza datos etiquetados, donde el objetivo es aprender a predecir las etiquetas para datos no vistos en base a un entrenamiento con ejemplos conocidos. Opciones incorrectas:"
+          },
+          {
+            "text": "Un modelo que realiza predicciones sin necesidad de un conjunto de datos de entrenamiento",
+            "correct": false,
+            "explanation": "Todos los modelos de Machine Learning requieren algún tipo de datos de entrenamiento para hacer predicciones."
+          },
+          {
+            "text": "Un modelo que agrupa datos no etiquetados en diferentes categorías",
+            "correct": false,
+            "explanation": "Esto describe Clustering, que es un tipo de aprendizaje no supervisado."
+          },
+          {
+            "text": "Un modelo que ajusta automáticamente sus parámetros sin intervención humana",
+            "correct": false,
+            "explanation": "Aunque los modelos pueden ajustar sus parámetros durante el entrenamiento, esto no es exclusivo del aprendizaje supervisado."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/compare/the-difference-between-machine-learning-supervised-and-unsupervised/"
+        ]
+      },
+      {
+        "id": 54,
+        "text": "Una empresa desea desarrollar, entrenar y desplegar un modelo de machine learning sin necesidad de administrar la infraestructura subyacente. ¿Qué servicio de AWS es el más adecuado para lograr esto de manera eficiente?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "AWS Lambda",
+            "correct": false,
+            "explanation": "AWS Lambda ejecuta funciones sin servidor, pero no está diseñado para entrenar o desplegar modelos de machine learning."
+          },
+          {
+            "text": "Amazon SageMaker",
+            "correct": true,
+            "explanation": "Amazon SageMaker es un servicio completo que permite a los desarrolladores y científicos de datos crear, entrenar y desplegar modelos de machine learning sin gestionar la infraestructura subyacente. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon Rekognition",
+            "correct": false,
+            "explanation": "Amazon Rekognition es específico para el análisis de imágenes y no permite desarrollar o entrenar modelos desde cero."
+          },
+          {
+            "text": "Amazon Comprehend",
+            "correct": false,
+            "explanation": "Amazon Comprehend es un servicio para el análisis de texto y no se utiliza para entrenar y desplegar modelos."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/sagemaker/"
+        ]
+      },
+      {
+        "id": 55,
+        "text": "Una organización de salud ha creado un modelo de aprendizaje automático para la clasificación de imágenes médicas. La organización planea implementar el modelo en producción para que se integre en su sistema existente. Requieren una solución para generar predicciones sin manejar el mantenimiento de la infraestructura subyacente. ¿Cuál solución cumplirá con estos requisitos?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q12-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Aprovecha Amazon SageMaker Serverless Inference para desplegar el modelo",
+            "correct": true,
+            "explanation": "Opción de inferencia de aprendizaje automático completamente administrada que te permite desplegar modelos sin necesidad de manejar el mantenimiento de la infraestructura. Provisiona y escala automáticamente los recursos de cómputo basados en el tráfico entrante, lo que lo convierte en una opción ideal para cargas de trabajo con patrones de tráfico intermitente o impredecible. Esto permite a la organización integrar el modelo en su sistema existente sin manejar la infraestructura subyacente. Opciones incorrectas:"
+          },
+          {
+            "text": "Despliega AWS Batch para alojar el modelo y servir predicciones",
+            "correct": false,
+            "explanation": "Esta opción se utiliza típicamente para procesar trabajos por lotes, no para inferencia de aprendizaje automático en tiempo real o casi en tiempo real."
+          },
+          {
+            "text": "Implementa el servicio de entrenamiento de Amazon SageMaker para desplegar el modelo",
+            "correct": false,
+            "explanation": "Está destinado únicamente para el entrenamiento de modelos, no para desplegarlos para inferencia en tiempo real."
+          },
+          {
+            "text": "Utiliza AWS Lambda combinado con Elastic Load Balancing para ejecutar y gestionar el modelo",
+            "correct": false,
+            "explanation": "Está diseñado principalmente para tareas de corta duración y no está optimizado para la inferencia de modelos de aprendizaje automático a gran escala. Elastic Load Balancing se utiliza típicamente para distribuir tráfico en varias instancias EC2, no para desplegar modelos."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/serverless-endpoints.html",
+          "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-sagemaker-serverless-inference-benchmarking-toolkit/"
+        ]
+      },
+      {
+        "id": 56,
+        "text": "Una organización de salud está desarrollando múltiples modelos de aprendizaje automático en Amazon SageMaker. Los equipos involucrados necesitan una solución centralizada para almacenar y reutilizar las características de los modelos a lo largo de diferentes proyectos para mejorar la colaboración y la consistencia. ¿Qué característica de SageMaker deberían usar los equipos?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q3-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Amazon SageMaker Feature Store",
+            "correct": true,
+            "explanation": "Proporciona un repositorio centralizado para almacenar, gestionar y compartir las características de aprendizaje automático entre diferentes proyectos y equipos, garantizando la consistencia. Permite a los equipos de ciencia de datos reutilizar las mismas características tanto en el entrenamiento de modelos como en inferencias en tiempo real, lo que asegura precisión y reduce la necesidad de repetir la ingeniería de características. Al ofrecer acceso tanto online como offline a las características, SageMaker Feature Store facilita la colaboración y asegura la reutilización eficiente de las características, promoviendo la consistencia y escalabilidad en los flujos de trabajo de aprendizaje automático. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon SageMaker Model Monitor",
+            "correct": false,
+            "explanation": "Está diseñado simplemente para rastrear y monitorear el rendimiento de los modelos en producción, específicamente buscando desviaciones en los datos, sesgos y problemas de calidad del modelo a lo largo del tiempo. Ayuda a asegurar la calidad del modelo, pero no gestiona ni almacena características."
+          },
+          {
+            "text": "Amazon SageMaker Autopilot",
+            "correct": false,
+            "explanation": "Esta función solo automatiza el proceso de construcción de modelos de aprendizaje automático, incluyendo la ingeniería de características, la selección de modelos y el ajuste de hiperparámetros, pero no proporciona una solución centralizada para gestionar y reutilizar características a través de proyectos."
+          },
+          {
+            "text": "Amazon SageMaker Clarify",
+            "correct": false,
+            "explanation": "Está diseñado principalmente para detectar sesgos en los datos y modelos y proporcionar explicabilidad para los modelos de aprendizaje automático. No ofrece una solución para el almacenamiento de características ni para compartir y reutilizar características en proyectos."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html",
+          "https://aws.amazon.com/sagemaker/feature-store/"
+        ]
+      },
+      {
+        "id": 57,
+        "text": "¿Qué tipo de aprendizaje utiliza un algoritmo de machine learning cuando se entrena con datos etiquetados, donde se conoce la respuesta correcta, para predecir un resultado en nuevos datos?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q37-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Aprendizaje supervisado",
+            "correct": true,
+            "explanation": "El aprendizaje supervisado utiliza un conjunto de datos etiquetados en el que se conocen las respuestas correctas, permitiendo al modelo aprender patrones y realizar predicciones en nuevos datos. Opciones incorrectas:"
+          },
+          {
+            "text": "Aprendizaje profundo",
+            "correct": false,
+            "explanation": "El aprendizaje profundo es una subcategoría de machine learning que usa redes neuronales profundas, pero puede ser tanto supervisado como no supervisado."
+          },
+          {
+            "text": "Aprendizaje no supervisado",
+            "correct": false,
+            "explanation": "El aprendizaje no supervisado se utiliza cuando los datos no están etiquetados y el objetivo es encontrar patrones o relaciones ocultas."
+          },
+          {
+            "text": "Aprendizaje por refuerzo",
+            "correct": false,
+            "explanation": "El aprendizaje por refuerzo entrena a un agente para tomar decisiones en base a recompensas y penalizaciones."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/compare/the-difference-between-machine-learning-supervised-and-unsupervised/"
+        ]
+      },
+      {
+        "id": 58,
+        "text": "¿Cuál de los siguientes servicios de AWS está diseñado para facilitar la implementación de modelos generativos en aplicaciones?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "AWS Lambda",
+            "correct": false,
+            "explanation": "AWS Lambda es un servicio sin servidor para ejecutar código en respuesta a eventos, pero no está diseñado para la implementación de modelos generativos."
+          },
+          {
+            "text": "Amazon Bedrock",
+            "correct": true,
+            "explanation": "Amazon Bedrock es un servicio de AWS diseñado específicamente para facilitar la implementación de modelos de IA generativa, permitiendo a los usuarios crear aplicaciones con estos modelos de manera más sencilla. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon DynamoDB",
+            "correct": false,
+            "explanation": "Amazon DynamoDB es una base de datos NoSQL, no un servicio relacionado con modelos generativos."
+          },
+          {
+            "text": "Amazon Redshift",
+            "correct": false,
+            "explanation": "Amazon Redshift es un servicio de almacenamiento y análisis de datos, no de implementación de modelos generativos."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/bedrock/",
+          "https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/what-is-bedrock.html"
+        ]
+      },
+      {
+        "id": 59,
+        "text": "Una compañía de consultoría necesita analizar el feedback de los clientes a partir de respuestas de encuestas para entender el sentimiento general. La solución debe detectar automáticamente si el sentimiento es positivo, negativo o neutral en los datos de texto. ¿Cuáles son los servicios más adecuados de AWS para esta solución? (Selecciona dos).",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": true,
+        "selectCount": 2,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q2-1.jpg",
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q2-2.jpg"
+        ],
+        "options": [
+          {
+            "text": "Amazon Polly",
+            "correct": false,
+            "explanation": "Este servicio simplemente convierte texto escrito en voz hablada natural. Aunque es útil para crear aplicaciones con capacidad de voz, no ofrece funciones para el análisis de sentimiento ni la interpretación del texto, como se pide en el escenario."
+          },
+          {
+            "text": "Amazon Translate",
+            "correct": false,
+            "explanation": "Este servicio está diseñado típicamente para traducir texto entre diferentes idiomas en tiempo real. Aunque es útil para traducir el feedback de los clientes a varios idiomas, no proporciona funciones para el análisis de sentimiento. Por lo tanto, no satisface el requisito de detectar si el feedback de los clientes es positivo, negativo o neutral."
+          },
+          {
+            "text": "Amazon Bedrock",
+            "correct": true,
+            "explanation": "Servicio completamente administrado que proporciona acceso a modelos fundacionales de IA para procesamiento del lenguaje natural (NLP), incluida la detección de sentimientos. Simplifica el proceso de integración de IA en las aplicaciones al ofrecer modelos preentrenados capaces de entender el sentimiento del texto. Bedrock ayuda con tareas como identificar emociones y tono en el feedback de los clientes, lo que lo convierte en una excelente opción para analizar las respuestas de encuestas y detectar si los sentimientos son positivos, negativos o neutrales. Opciones incorrectas:"
+          },
+          {
+            "text": "Amazon Comprehend",
+            "correct": true,
+            "explanation": "Servicio de AWS que utiliza aprendizaje automático para realizar tareas de procesamiento del lenguaje natural (NLP), incluida la detección de sentimiento. Está específicamente diseñado para analizar texto y entender el sentimiento detrás de él, ya sea positivo, negativo, neutral o mixto. En este escenario, donde el objetivo es analizar el feedback de los clientes a partir de respuestas de encuestas, **Amazon Comprehend** es perfectamente adecuado porque puede detectar y categorizar automáticamente el sentimiento en los datos de texto. Esto lo convierte en una opción ideal para el requisito de la empresa de entender los sentimientos de los clientes."
+          },
+          {
+            "text": "Amazon Textract",
+            "correct": false,
+            "explanation": "Está diseñado principalmente para extraer automáticamente texto y datos de documentos escaneados e imágenes, como PDFs o imágenes que contienen formularios y tablas. Sin embargo, no puede realizar análisis de sentimiento ni entender el contexto del texto extraído."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/",
+          "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html"
+        ]
+      },
+      {
+        "id": 60,
+        "text": "En el contexto de aplicaciones que utilizan modelos generativos fundacionales, ¿qué papel juegan los vectores de embeddings dentro de un motor de búsqueda mejorado con IA?",
+        "cat": "fm_apps",
+        "catLabel": "Aplicaciones de los modelos fundacionales",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Los embeddings permiten la clasificación jerárquica de los documentos en la base de datos",
+            "correct": false,
+            "explanation": "Los embeddings no se utilizan para la clasificación jerárquica de documentos, sino para la representación semántica."
+          },
+          {
+            "text": "Los embeddings son necesarios únicamente para la generación de imágenes en modelos fundacionales",
+            "correct": false,
+            "explanation": "Los embeddings no se limitan a la generación de imágenes; son cruciales para múltiples aplicaciones, incluyendo texto y búsqueda semántica."
+          },
+          {
+            "text": "Los embeddings representan las palabras y frases como vectores en un espacio dimensional, lo que facilita la búsqueda semántica en lugar de la búsqueda basada en palabras clave exactas",
+            "correct": true,
+            "explanation": "Los vectores de embeddings permiten a los motores de búsqueda comprender mejor el significado semántico de las palabras y frases, lo que facilita la búsqueda semántica en lugar de una búsqueda literal basada en palabras clave exactas. Opciones incorrectas:"
+          },
+          {
+            "text": "Los embeddings transforman texto en datos tabulares para una búsqueda más rápida",
+            "correct": false,
+            "explanation": "Los embeddings no convierten el texto en datos tabulares, sino en representaciones vectoriales."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/embeddings-in-machine-learning/"
+        ]
+      },
+      {
+        "id": 61,
+        "text": "Una empresa está utilizando Amazon Bedrock y desea ajustar la cantidad de opciones más probables que el modelo considera para predecir la próxima palabra en sus resultados. ¿Cuál de los siguientes parámetros de inferencia recomendarías para limitar o ampliar ese grupo de candidatos?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Top K",
+            "correct": true,
+            "explanation": "El número de candidatos más probables que el modelo considera para el siguiente token. Elige un valor más bajo para reducir el tamaño del conjunto y limitar las opciones a las salidas más probables. Elige un valor más alto para aumentar el tamaño del conjunto y permitir que el modelo considere salidas menos probables. Por ejemplo, si eliges un valor de 50 para Top K, el modelo seleccionará entre 50 de los tokens más probables que podrían ser los siguientes en la secuencia. Opciones incorrectas:"
+          },
+          {
+            "text": "Temperature",
+            "correct": false,
+            "explanation": "Regula el nivel de aleatoriedad o creatividad en las respuestas del modelo. Un valor bajo ofrece respuestas más predecibles y deterministas, mientras que un valor alto genera respuestas más diversas y creativas."
+          },
+          {
+            "text": "Stop sequences",
+            "correct": false,
+            "explanation": "Especifica secuencias de caracteres que detendrán al modelo de generar más tokens. Si el modelo genera una secuencia de detención que hayas especificado, dejará de generar después de esa secuencia."
+          },
+          {
+            "text": "Top P",
+            "correct": false,
+            "explanation": "Ajusta el modelo para considerar un porcentaje acumulado de los candidatos más probables para el siguiente token. Un valor bajo reduce el rango a los candidatos más seguros, mientras que un valor más alto permite que el modelo explore opciones menos probables."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"
+        ]
+      },
+      {
+        "id": 62,
+        "text": "Una empresa de IoT está migrando sus operaciones al cloud de AWS y quiere utilizar el servicio de Amazon Bedrock para mejorar sus recomendaciones automáticas de productos y servicios basados en los datos recogidos por dispositivos conectados. La empresa planea proporcionar su propio conjunto de datos etiquetados para entrenar el modelo fundacional (FM) seleccionado y personalizarlo según las necesidades específicas de su plataforma IoT. ¿Cuál de las siguientes soluciones sería la más adecuada para este caso de uso?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Utilizar Amazon Bedrock para descartar el FM seleccionado y crear un nuevo modelo desde cero utilizando el conjunto de datos etiquetados",
+            "correct": false,
+            "explanation": "Descartar el FM seleccionado y crear un nuevo modelo desde cero no es posible con Amazon Bedrock, ya que esta plataforma está diseñada para facilitar la personalización de modelos fundacionales preexistentes y no para el desarrollo de nuevos modelos desde cero. Si la empresa de IoT quisiera crear un modelo completamente nuevo, necesitaría utilizar herramientas como Amazon SageMaker, que permite entrenar modelos personalizados desde el principio. Bedrock está orientado a la adaptación de modelos ya entrenados, no a la creación de uno completamente nuevo."
+          },
+          {
+            "text": "Utilizar Amazon Bedrock para entrenar directamente el modelo base utilizando el conjunto de datos etiquetados",
+            "correct": false,
+            "explanation": "Entrenar directamente el modelo base** no es una opción viable en Amazon Bedrock. El modelo base no puede ser modificado ni personalizado directamente. Bedrock permite crear copias separadas y privadas del modelo para ser entrenadas con datos propios. Entrenar el modelo base sin hacer una copia también eliminaría la flexibilidad necesaria para que la empresa ajuste el modelo a sus necesidades sin arriesgarse a alterar el comportamiento general del modelo original, que podría seguir siendo utilizado para otros fines."
+          },
+          {
+            "text": "Utilizar Amazon Bedrock para ajustar el modelo sin hacer una copia del FM base y entrenarlo directamente con los datos de entrada sin etiquetas",
+            "correct": false,
+            "explanation": "Intentar ajustar el modelo sin hacer una copia o entrenarlo con datos sin etiquetas no sería adecuado para este caso. Para mejorar un modelo en base a un conjunto de datos etiquetados, es necesario hacer una copia privada y personalizarla mediante técnicas como el fine-tuning. Entrenar un modelo con datos sin etiquetas implicaría un enfoque de aprendizaje no supervisado, que no está alineado con el objetivo de la empresa de IoT, que es utilizar datos etiquetados para mejorar la precisión de las recomendaciones."
+          },
+          {
+            "text": "Utilizar Amazon Bedrock para hacer una copia privada del modelo base y entrenar esta copia privada utilizando el conjunto de datos etiquetados",
+            "correct": true,
+            "explanation": "La solución más adecuada es **hacer una copia privada del modelo base y entrenar esa copia con el conjunto de datos etiquetados** . Amazon Bedrock permite a las empresas personalizar modelos fundacionales de manera privada sin modificar el modelo base original. Esta es una ventaja clave para una empresa de IoT que desea mejorar sus recomendaciones de productos basadas en datos específicos de dispositivos IoT. La personalización privada de un modelo garantiza que los datos sensibles de la empresa, como los recogidos por sensores IoT, permanezcan completamente bajo control y no sean expuestos. Además, Amazon Bedrock cifra los datos en tránsito y en reposo, lo que es fundamental para cumplir con normativas de privacidad y seguridad en entornos IoT. Crear una copia separada del modelo base también permite realizar pruebas sin riesgo de afectar el rendimiento general del modelo original. Por último, las personalizaciones realizadas con Bedrock permanecen en la misma región de AWS donde se procesan las llamadas a la API, garantizando que los datos no se transfieran fuera de los límites geográficos establecidos. Opciones incorrectas:"
+          },
+          {
+            "text": "Utilizar Amazon Bedrock para hacer una copia pública del modelo base y entrenar esta copia pública utilizando el conjunto de datos etiquetados",
+            "correct": false,
+            "explanation": "Hacer una copia pública del modelo base y entrenarla con los datos etiquetados no es una opción recomendada. Publicar una copia del modelo base comprometería la seguridad y confidencialidad de los datos privados de la empresa de IoT. Además, en un entorno donde los datos IoT pueden ser altamente sensibles (como información sobre ubicación de dispositivos, consumo energético, etc.), exponer el modelo y los datos utilizados en su personalización a un entorno público podría generar riesgos significativos en términos de seguridad y privacidad de la información."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/faqs/",
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+        ]
+      },
+      {
+        "id": 63,
+        "text": "¿Qué ventaja ofrece el uso de AWS Bedrock para el desarrollo de aplicaciones con IA generativa?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Proporciona herramientas para ajustar manualmente los parámetros de los modelos generativos",
+            "correct": false,
+            "explanation": "Aunque AWS Bedrock facilita el uso de modelos, no está diseñado para el ajuste manual de parámetros."
+          },
+          {
+            "text": "Ofrece servicios de almacenamiento sin necesidad de una infraestructura administrada",
+            "correct": false,
+            "explanation": "AWS Bedrock no es un servicio de almacenamiento, su foco está en modelos generativos."
+          },
+          {
+            "text": "Permite la creación de bases de datos relacionales para almacenar grandes volúmenes de texto generado por IA",
+            "correct": false,
+            "explanation": "La creación de bases de datos relacionales no es una característica central de AWS Bedrock."
+          },
+          {
+            "text": "Facilita el acceso a modelos de IA generativa preentrenados y permite integrarlos en aplicaciones sin la necesidad de entrenar desde cero",
+            "correct": true,
+            "explanation": "AWS Bedrock permite acceder a modelos de IA generativa ya entrenados, lo que facilita su integración en aplicaciones sin la necesidad de entrenar modelos desde cero, ahorrando tiempo y recursos. Opciones incorrectas:"
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/bedrock/",
+          "https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/what-is-bedrock.html"
+        ]
+      },
+      {
+        "id": 64,
+        "text": "¿Cuál de los siguientes servicios está diseñado específicamente para proporcionar información sobre las predicciones de un modelo explicando cómo las características de entrada contribuyen al resultado final?",
+        "cat": "genai",
+        "catLabel": "Fundamentos de IA Generativa",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q18-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Amazon SageMaker Feature Store",
+            "correct": false,
+            "explanation": "Amazon SageMaker Feature Store es un repositorio gestionado para almacenar y compartir características de machine learning, pero no está diseñado para explicar las predicciones de los modelos."
+          },
+          {
+            "text": "Amazon SageMaker Model Monitor",
+            "correct": false,
+            "explanation": "Amazon SageMaker Model Monitor se utiliza para supervisar la calidad de los modelos de machine learning en producción, pero no está diseñado para proporcionar explicaciones detalladas sobre las predicciones."
+          },
+          {
+            "text": "Amazon SageMaker Canvas",
+            "correct": false,
+            "explanation": "Amazon SageMaker Canvas permite crear modelos de machine learning sin necesidad de codificación, pero no está enfocado en explicar cómo las características de entrada afectan las predicciones."
+          },
+          {
+            "text": "Amazon SageMaker Clarify",
+            "correct": true,
+            "explanation": "Amazon SageMaker Clarify proporciona herramientas para explicar cómo los modelos de machine learning hacen predicciones. Utiliza un enfoque de atribución de características independiente del modelo, lo que permite a los usuarios entender por qué un modelo hizo una predicción. Incluye una implementación eficiente de SHAP (Shapley Additive Explanations) para asignar un valor de importancia a cada característica en una predicción específica. Opciones incorrectas:"
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html"
+        ]
+      },
+      {
+        "id": 65,
+        "text": "¿Cuál es la función de un modelo de machine learning en un flujo de trabajo supervisado?",
+        "cat": "aiml",
+        "catLabel": "Fundamentos de IA y ML",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [
+          "https://blockstellart.com/wp-content/uploads/aws-ai-practitioner-foundational/pt2-q39-1.jpg"
+        ],
+        "options": [
+          {
+            "text": "Detectar patrones en datos no etiquetados y agruparlos en clusters",
+            "correct": false,
+            "explanation": "Detectar patrones en datos no etiquetados es una tarea de aprendizaje no supervisado."
+          },
+          {
+            "text": "Aprender de datos etiquetados para hacer predicciones en nuevos datos",
+            "correct": true,
+            "explanation": "En un flujo de trabajo supervisado, el modelo aprende de un conjunto de datos etiquetados, es decir, datos donde se conocen las respuestas, para luego hacer predicciones en datos nuevos. Opciones incorrectas:"
+          },
+          {
+            "text": "Optimizar la infraestructura utilizada durante el entrenamiento",
+            "correct": false,
+            "explanation": "Optimizar la infraestructura no es función directa de un modelo de ML, sino de herramientas de soporte."
+          },
+          {
+            "text": "Generar nuevas etiquetas para datos sin procesar",
+            "correct": false,
+            "explanation": "Los modelos supervisados no generan etiquetas para datos no etiquetados, solo aprenden de los datos ya etiquetados."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/es/compare/the-difference-between-machine-learning-supervised-and-unsupervised/"
+        ]
+      }
+    ],
+    "categories": {
+      "genai": {
+        "label": "Fundamentos de IA Generativa",
+        "color": "#8b5cf6"
+      },
+      "aiml": {
+        "label": "Fundamentos de IA y ML",
+        "color": "#3b82f6"
+      },
+      "fm_apps": {
+        "label": "Aplicaciones de los modelos fundacionales",
+        "color": "#f59e0b"
+      },
+      "responsible_ai": {
+        "label": "Directrices para una IA Responsable",
+        "color": "#ec4899"
+      },
+      "security": {
+        "label": "Seguridad, normativa y gobernanza de las soluciones de IA",
+        "color": "#ef4444"
+      }
+    }
   }
 ];

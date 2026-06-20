@@ -1130,3 +1130,272 @@ nav.topnav {
   height: 8px;
   border-radius: 50%;
 }
+
+/* ─── SIMULACRO 2-COLUMN EXAM LAYOUT ──────────────────────────────────────── */
+main.sim-active {
+  max-width: none;
+  padding: 0;
+  height: calc(100vh - 56px);
+  overflow: hidden;
+}
+
+.sim-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sim-sidebar {
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sim-sidebar-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.sim-sidebar-title {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-hi);
+  line-height: 1.3;
+}
+
+.sim-end-btn {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-xs);
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid var(--red);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+.sim-end-btn:hover { background: var(--red); color: #fff; }
+
+.sim-q-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+.sim-q-list::-webkit-scrollbar { width: 4px; }
+.sim-q-list::-webkit-scrollbar-track { background: transparent; }
+.sim-q-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.sim-q-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background var(--transition), border-color var(--transition);
+}
+.sim-q-item:hover { background: var(--bg-hover); }
+.sim-q-item.current {
+  background: var(--accent-bg);
+  border-left-color: var(--accent);
+}
+
+.sim-q-num {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+  min-width: 22px;
+  text-align: right;
+  padding-top: 2px;
+}
+.sim-q-item.current .sim-q-num { color: var(--accent); }
+
+.sim-q-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  min-width: 0;
+  flex: 1;
+}
+
+.sim-q-status {
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  padding-top: 1px;
+  min-width: 12px;
+}
+.sim-q-item.answered-ok   .sim-q-status { color: var(--green); }
+.sim-q-item.answered-fail .sim-q-status { color: var(--red); }
+
+.sim-q-preview {
+  font-size: 11px;
+  color: var(--text-lo);
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Main panel */
+.sim-main {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+
+.sim-main-top {
+  flex-shrink: 0;
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-surface);
+}
+
+.sim-prog-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sim-prog-track {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-raised);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sim-prog-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  transition: width .4s ease;
+}
+
+.sim-prog-label {
+  font-size: 11px;
+  color: var(--text-lo);
+  white-space: nowrap;
+}
+
+.sim-score-chips { display: flex; gap: 8px; }
+
+.sim-chip {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--text-muted);
+}
+.sim-chip.ok   { border-color: var(--green); color: var(--green); background: var(--green-bg); }
+.sim-chip.fail { border-color: var(--red);   color: var(--red);   background: var(--red-bg); }
+
+.sim-main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 36px;
+}
+.sim-main-content::-webkit-scrollbar { width: 6px; }
+.sim-main-content::-webkit-scrollbar-track { background: transparent; }
+.sim-main-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+.sim-question-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.sim-bottom-nav {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.sim-nav-btn {
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: var(--bg-raised);
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.sim-nav-btn:hover { border-color: var(--border-hi); background: var(--bg-hover); }
+.sim-nav-btn.skip { color: var(--text-muted); font-size: 12px; }
+.sim-nav-btn.skip:hover { color: var(--text); }
+.sim-nav-btn.next { background: var(--accent); color: #fff; border-color: var(--accent); }
+.sim-nav-btn.next:hover { background: var(--accent-hi); border-color: var(--accent-hi); }
+
+/* Radio / Checkbox indicators inside sim-option */
+.sim-radio,
+.sim-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border-hi);
+  flex-shrink: 0;
+  transition: all var(--transition);
+  background: transparent;
+  margin-top: 2px;
+  display: inline-block;
+}
+.sim-checkbox { border-radius: 4px; }
+
+.sim-option.selected       .sim-radio,
+.sim-option.selected       .sim-checkbox { border-color: var(--accent); background: var(--accent); }
+.sim-option.correct        .sim-radio,
+.sim-option.correct        .sim-checkbox { border-color: var(--green); background: var(--green); }
+.sim-option.correct-missed .sim-radio,
+.sim-option.correct-missed .sim-checkbox { border-color: var(--green); }
+.sim-option.wrong          .sim-radio,
+.sim-option.wrong          .sim-checkbox { border-color: var(--red); background: var(--red); }
+
+.sim-opt-text {
+  flex: 1;
+  text-align: left;
+  line-height: 1.55;
+}
+
+/* Pre-exam order selection */
+.sim-order-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 560px;
+}
+
+@media (max-width: 768px) {
+  .sim-layout { grid-template-columns: 1fr; }
+  .sim-sidebar { display: none; }
+  .sim-main-content { padding: 20px 16px; }
+  .sim-bottom-nav { padding: 10px 16px; }
+  .sim-nav-btn { padding: 8px 14px; font-size: 12px; }
+}

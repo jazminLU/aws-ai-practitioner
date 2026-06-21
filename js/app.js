@@ -115,50 +115,30 @@ function navigate(view, opts = {}) {
   });
 
   const app = document.getElementById('app');
+  app.classList.remove('sim-active');
   app.innerHTML = '';
 
   const div = document.createElement('div');
   div.className = 'view';
 
   switch (view) {
-    case 'home':       div.innerHTML = renderHome();       break;
-    case 'flashcards': div.innerHTML = renderFlashcards(); break;
-    case 'quiz':       div.innerHTML = renderQuizShell();  break;
-    case 'results':    div.innerHTML = renderResults();    break;
+    case 'home':       div.innerHTML = renderHome();          break;
+    case 'flashcards': div.innerHTML = renderFlashcards();    break;
+    case 'quiz':       div.innerHTML = renderQuizShell();     break;
+    case 'results':    div.innerHTML = renderResults();       break;
+    case 'simulacro':  div.innerHTML = renderSimulacro();     break;
+    case 'sim-results':div.innerHTML = renderSimResults();    break;
   }
 
   app.appendChild(div);
-  updateFooter(view);
 
   if (view === 'quiz') {
     initQuiz();
     setTimeout(() => showQuestion(), 0);
   }
+  // simulacro landing needs no init — user picks an exam card
 }
 
-/* ─── Footer keyboard hints ────────────────────────────────────────────── */
-function updateFooter(view) {
-  const footer = document.getElementById('footer-hints');
-  const hints = {
-    flashcards: [
-      ['Space', 'Voltear'],
-      ['←', 'Anterior'],
-      ['→', 'Siguiente'],
-      ['1', 'Lo sabía'],
-      ['2', 'Regular'],
-      ['3', 'No sabía'],
-    ],
-    quiz: [
-      ['A B C D', 'Responder'],
-      ['Enter', 'Siguiente'],
-    ],
-  };
-
-  const list = hints[view] || [];
-  footer.innerHTML = list.map(([k, v]) =>
-    `<span class="kbd-hint"><kbd>${k}</kbd>${v}</span>`
-  ).join('');
-}
 
 /* ─── HOME ──────────────────────────────────────────────────────────────── */
 function renderHome() {
@@ -218,7 +198,7 @@ function renderHome() {
 
     ${weakBanner}
 
-    <div class="home-modes">
+    <div class="home-modes" style="grid-template-columns:repeat(3,1fr)">
       <button class="mode-card" onclick="navigate('flashcards')">
         <div class="mode-card-icon">🃏</div>
         <div class="mode-card-title">Flashcards</div>
@@ -230,6 +210,12 @@ function renderHome() {
         <div class="mode-card-title">Quiz</div>
         <div class="mode-card-desc">Opción múltiple. Elegí si querés identificar nombres, descripciones o modo mixto.</div>
         <span class="mode-card-tag">4 opciones</span>
+      </button>
+      <button class="mode-card" onclick="navigate('simulacro')">
+        <div class="mode-card-icon">📝</div>
+        <div class="mode-card-title">Simulacro</div>
+        <div class="mode-card-desc">65 preguntas reales del examen AIF-C01 con explicaciones detalladas por opción.</div>
+        <span class="mode-card-tag" style="background:#2d1b69;color:#a78bfa;border-color:#7c3aed">${EXAMS.reduce((s,e)=>s+e.questions.length,0)} preguntas</span>
       </button>
     </div>
 
@@ -270,11 +256,11 @@ function renderFlashcards() {
   initFC();
 
   const pills = buildPills();
-  const s = State.fc.list[State.fc.index];
+  const rated = State.fc.list.filter(s => Progress.data[s.name]).length;
 
   return `
     <div class="page-title">Flashcards</div>
-    <div class="page-subtitle">Click en la tarjeta para ver la descripción.</div>
+    <div class="page-subtitle" id="fc-subtitle">${State.fc.list.length} servicios</div>
 
     <div class="pill-bar" id="pill-bar">${pills}</div>
 
@@ -282,55 +268,70 @@ function renderFlashcards() {
       <div class="progress-track">
         <div class="progress-fill" id="fc-prog" style="width:${fcProgress()}%"></div>
       </div>
-      <div class="progress-label" id="fc-prog-label">${State.fc.index + 1} / ${State.fc.list.length}</div>
+      <div class="progress-label" id="fc-prog-label">${rated} / ${State.fc.list.length} calificadas</div>
     </div>
 
-    <div class="fc-layout">
-      <div class="fc-hint">
-        <kbd>Space</kbd> voltear &nbsp;·&nbsp; <kbd>←</kbd><kbd>→</kbd> navegar
-      </div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:16px">
+      <button class="fc-shuffle-btn" onclick="shuffleFC()">⟳ Barajar</button>
+      <button class="fc-shuffle-btn" onclick="sortFC()">A–Z Ordenar</button>
+    </div>
 
-      ${buildFlipCard(s)}
+    <div class="fc-grid" id="fc-grid">
+      ${State.fc.list.map((s, idx) => buildGridCard(s, idx)).join('')}
+    </div>
+  `;
+}
 
-      <div class="fc-rating hidden" id="fc-rating">
-        <button class="rating-btn knew"   onclick="rateFC(true, true)"  title="1">✓ Lo sabía</button>
-        <button class="rating-btn unsure" onclick="rateFC(false, false)" title="2">~ Regular</button>
-        <button class="rating-btn didnt"  onclick="rateFC(false, true)"  title="3">✗ No sabía</button>
-      </div>
+function buildGridCard(s, idx) {
+  const tips = s.tips && s.tips.length
+    ? `<div class="fc-tips">${s.tips.map(t => `<div class="fc-tip">💡 ${t}</div>`).join('')}</div>`
+    : '';
 
-      <div class="fc-nav">
-        <button class="icon-btn" id="fc-prev" onclick="fcNav(-1)" ${State.fc.index === 0 ? 'disabled' : ''}>←</button>
-        <span class="fc-counter" id="fc-counter">${State.fc.index + 1} / ${State.fc.list.length}</span>
-        <button class="icon-btn" id="fc-next" onclick="fcNav(1)" ${State.fc.index === State.fc.list.length - 1 ? 'disabled' : ''}>→</button>
-        <button class="fc-shuffle-btn" onclick="shuffleFC()">⟳ Barajar</button>
+  const prog = Progress.get(s.name);
+  const total = prog.ok + prog.fail;
+  let stateClass = '';
+  if (total > 0) {
+    if (prog.ok > 0 && prog.fail === 0) stateClass = 'card-knew';
+    else if (prog.fail > 0 && prog.ok === 0) stateClass = 'card-didnt';
+    else stateClass = 'card-unsure';
+  }
+
+  return `
+    <div class="fc-grid-card ${stateClass}">
+      <span class="fc-cat-badge">${catLabel(s.cat)}</span>
+      <div class="fc-service-name">${s.name}</div>
+      <div class="fc-service-short">${s.short}</div>
+      <hr class="divider" style="margin:8px 0">
+      <div class="fc-desc">${s.desc}</div>
+      ${tips}
+      <div class="fc-card-rating">
+        <button class="rating-btn knew"   onclick="rateGridCard(${idx}, true,  true)">✓ Sabía</button>
+        <button class="rating-btn unsure" onclick="rateGridCard(${idx}, false, false)">~ Regular</button>
+        <button class="rating-btn didnt"  onclick="rateGridCard(${idx}, false, true)">✗ No sabía</button>
       </div>
     </div>
   `;
 }
 
-function buildFlipCard(s) {
-  const tips = s.tips && s.tips.length
-    ? `<div class="fc-tips">${s.tips.map(t => `<div class="fc-tip">💡 ${t}</div>`).join('')}</div>`
-    : '';
+function rateGridCard(idx, known, recordIt) {
+  const s = State.fc.list[idx];
+  if (recordIt) Progress.record(s.name, known);
 
-  return `
-    <div class="flip-scene" id="flip-scene" onclick="flipFC()">
-      <div class="flip-card" id="flip-card">
-        <div class="flip-face flip-face-front">
-          <span class="fc-cat-badge">${catLabel(s.cat)}</span>
-          <div class="fc-side-label">Servicio AWS</div>
-          <div class="fc-service-name">${s.name}</div>
-          <div class="fc-service-short">${s.short}</div>
-        </div>
-        <div class="flip-face flip-face-back">
-          <span class="fc-cat-badge">${catLabel(s.cat)}</span>
-          <div class="fc-side-label">Descripción</div>
-          <div class="fc-desc">${s.desc}</div>
-          ${tips}
-        </div>
-      </div>
-    </div>
-  `;
+  const cards = document.querySelectorAll('.fc-grid-card');
+  const card = cards[idx];
+  if (card) {
+    card.classList.remove('card-knew', 'card-unsure', 'card-didnt');
+    if (known) card.classList.add('card-knew');
+    else if (!recordIt) card.classList.add('card-unsure');
+    else card.classList.add('card-didnt');
+  }
+
+  const rated = State.fc.list.filter(sv => Progress.data[sv.name]).length;
+  const pct = State.fc.list.length > 0 ? (rated / State.fc.list.length) * 100 : 0;
+  const prog = document.getElementById('fc-prog');
+  const progLbl = document.getElementById('fc-prog-label');
+  if (prog) prog.style.width = pct + '%';
+  if (progLbl) progLbl.textContent = `${rated} / ${State.fc.list.length} calificadas`;
 }
 
 function initFC() {
@@ -344,57 +345,25 @@ function initFC() {
 
   State.fc.list = shuffle(services.length ? services : getFiltered());
   State.fc.index = 0;
-  State.fc.flipped = false;
   State.weakOnly = false;
 }
 
 function fcProgress() {
-  return ((State.fc.index + 1) / State.fc.list.length) * 100;
-}
-
-function flipFC() {
-  State.fc.flipped = !State.fc.flipped;
-  document.getElementById('flip-card').classList.toggle('flipped', State.fc.flipped);
-  document.getElementById('fc-rating').classList.toggle('hidden', !State.fc.flipped);
-}
-
-function fcNav(dir) {
-  const len = State.fc.list.length;
-  State.fc.index = Math.max(0, Math.min(len - 1, State.fc.index + dir));
-  State.fc.flipped = false;
-  refreshFC();
-}
-
-function rateFC(known, recordIt) {
-  if (recordIt) {
-    Progress.record(State.fc.list[State.fc.index].name, known);
-  }
-  fcNav(1);
+  if (!State.fc.list.length) return 0;
+  const rated = State.fc.list.filter(s => Progress.data[s.name]).length;
+  return (rated / State.fc.list.length) * 100;
 }
 
 function shuffleFC() {
   State.fc.list = shuffle(State.fc.list);
-  State.fc.index = 0;
-  State.fc.flipped = false;
-  refreshFC();
+  const grid = document.getElementById('fc-grid');
+  if (grid) grid.innerHTML = State.fc.list.map((s, idx) => buildGridCard(s, idx)).join('');
 }
 
-function refreshFC() {
-  const s = State.fc.list[State.fc.index];
-  const len = State.fc.list.length;
-
-  // Replace the flip scene in-place without losing references to siblings
-  const scene = document.getElementById('flip-scene');
-  const tmp = document.createElement('div');
-  tmp.innerHTML = buildFlipCard(s);
-  scene.replaceWith(tmp.firstElementChild);
-
-  document.getElementById('fc-rating').classList.add('hidden');
-  document.getElementById('fc-prev').disabled = State.fc.index === 0;
-  document.getElementById('fc-next').disabled = State.fc.index === len - 1;
-  document.getElementById('fc-counter').textContent = `${State.fc.index + 1} / ${len}`;
-  document.getElementById('fc-prog').style.width = fcProgress() + '%';
-  document.getElementById('fc-prog-label').textContent = `${State.fc.index + 1} / ${len}`;
+function sortFC() {
+  State.fc.list = [...State.fc.list].sort((a, b) => a.name.localeCompare(b.name));
+  const grid = document.getElementById('fc-grid');
+  if (grid) grid.innerHTML = State.fc.list.map((s, idx) => buildGridCard(s, idx)).join('');
 }
 
 /* ─── QUIZ ──────────────────────────────────────────────────────────────── */
@@ -664,14 +633,17 @@ function setFilter(cat, btn) {
 
   if (State.view === 'flashcards') {
     initFC();
-    State.fc.list = shuffle(getFiltered());
-    State.fc.index = 0;
-    State.fc.flipped = false;
-    refreshFC();
-    document.getElementById('fc-counter').textContent = `1 / ${State.fc.list.length}`;
-    document.getElementById('fc-prog-label').textContent = `1 / ${State.fc.list.length}`;
-    document.getElementById('fc-prev').disabled = true;
-    document.getElementById('fc-next').disabled = State.fc.list.length <= 1;
+    const grid = document.getElementById('fc-grid');
+    if (grid) {
+      grid.innerHTML = State.fc.list.map((s, idx) => buildGridCard(s, idx)).join('');
+    }
+    const rated = State.fc.list.filter(s => Progress.data[s.name]).length;
+    const prog = document.getElementById('fc-prog');
+    const progLbl = document.getElementById('fc-prog-label');
+    const sub = document.getElementById('fc-subtitle');
+    if (prog) prog.style.width = fcProgress() + '%';
+    if (progLbl) progLbl.textContent = `${rated} / ${State.fc.list.length} calificadas`;
+    if (sub) sub.textContent = `${State.fc.list.length} servicios`;
   } else if (State.view === 'quiz') {
     initQuiz();
     showQuestion();
@@ -681,15 +653,6 @@ function setFilter(cat, btn) {
 /* ─── Keyboard shortcuts ────────────────────────────────────────────────── */
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-
-  if (State.view === 'flashcards') {
-    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipFC(); }
-    if (e.key === 'ArrowLeft')  fcNav(-1);
-    if (e.key === 'ArrowRight') fcNav(1);
-    if (e.key === '1') rateFC(true,  true);
-    if (e.key === '2') rateFC(false, false);
-    if (e.key === '3') rateFC(false, true);
-  }
 
   if (State.view === 'quiz') {
     if (State.quiz.answered) {
@@ -707,6 +670,583 @@ document.addEventListener('keydown', e => {
     }
   }
 });
+
+/* ─── SIMULACRO ─────────────────────────────────────────────────────────── */
+
+/* Session persistence in localStorage */
+const SimStorage = {
+  KEY: 'aip-sim-sessions',
+  MAX_PER_EXAM: 2,
+
+  load() {
+    try { return JSON.parse(localStorage.getItem(this.KEY)) || []; }
+    catch { return []; }
+  },
+
+  save(sessions) {
+    try { localStorage.setItem(this.KEY, JSON.stringify(sessions)); }
+    catch {}
+  },
+
+  getForExam(examId) {
+    return this.load().filter(s => s.examId === examId);
+  },
+
+  saveSession(session) {
+    let all = this.load().filter(s => s.id !== session.id);
+    const forExam = all.filter(s => s.examId === session.examId);
+    if (forExam.length >= this.MAX_PER_EXAM) {
+      const oldest = forExam.sort((a, b) => a.startedAt - b.startedAt)[0];
+      all = all.filter(s => s.id !== oldest.id);
+    }
+    all.push(session);
+    this.save(all);
+  },
+
+  deleteSession(id) {
+    this.save(this.load().filter(s => s.id !== id));
+  },
+};
+
+const Sim = {
+  exam:            null,
+  filter:          'all',
+  order:           'random',
+  queue:           [],
+  index:           0,
+  answers:         {},
+  pendingSelected: new Set(),
+  ok:              0,
+  fail:            0,
+  catStats:        {},
+  sessionId:       null,
+  sessionStartedAt: 0,
+};
+
+function simCatColor(key) {
+  const cats = Sim.exam ? Sim.exam.categories : {};
+  return (cats[key] || {}).color || '#8b949e';
+}
+function simCatLabel(key) {
+  const cats = Sim.exam ? Sim.exam.categories : {};
+  return (cats[key] || {}).label || key;
+}
+
+/* Landing: list of all available exams */
+function renderSimulacro() {
+  const examCards = EXAMS.map(exam => {
+    const total      = exam.questions.length;
+    const cats       = Object.keys(exam.categories);
+    const dots       = cats.map(k =>
+      `<span class="exam-cat-dot" style="background:${exam.categories[k].color}" title="${exam.categories[k].label}"></span>`
+    ).join('');
+    const multiCount = exam.questions.filter(q => q.multiSelect).length;
+    return `
+      <button class="exam-card" onclick="showSimPreExam('${exam.id}')">
+        <div class="exam-card-icon">📝</div>
+        <div class="exam-card-title">${exam.title}</div>
+        <div class="exam-card-meta">
+          <span>${total} preguntas</span>
+          ${multiCount ? `<span>${multiCount} multi-select</span>` : ''}
+          <span>${cats.length} categorías</span>
+        </div>
+        <div class="exam-cat-dots">${dots}</div>
+      </button>`;
+  }).join('');
+
+  return `
+    <div class="page-title">Simulacro</div>
+    <div class="page-subtitle">Elegí un examen de práctica para comenzar.</div>
+    <div class="exam-grid">${examCards}</div>
+  `;
+}
+
+/* Pre-exam: order selection screen */
+function showSimPreExam(examId) {
+  Sim.exam = EXAMS.find(e => e.id === examId) || EXAMS[0];
+  const exam = Sim.exam;
+
+  const app = document.getElementById('app');
+  app.classList.remove('sim-active');
+  app.innerHTML = '';
+
+  // Build saved sessions section
+  const saved = SimStorage.getForExam(examId)
+    .sort((a, b) => b.startedAt - a.startedAt);
+
+  const sessionsHTML = saved.length > 0 ? `
+    <div style="margin-bottom:32px">
+      <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px">
+        Sesiones guardadas
+      </div>
+      ${saved.map(s => {
+        const answered  = Object.keys(s.answers).length;
+        const total     = s.queueIds.length;
+        const pct       = answered > 0 ? Math.round((s.ok / answered) * 100) : 0;
+        const pctColor  = pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)';
+        const orderIcon = s.order === 'category' ? '📂' : '🔀';
+        const date      = new Date(s.startedAt).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+        const isDone    = !!s.completedAt;
+        const statusHTML = isDone
+          ? `<span style="color:${pctColor};font-weight:700">${pct}% — Completado</span>
+             <span style="color:var(--text-muted)"> · ✓ ${s.ok} &nbsp;✗ ${s.fail}</span>`
+          : `<span>${answered}/${total} respondidas &nbsp;·&nbsp; ✓ ${s.ok} &nbsp;✗ ${s.fail}</span>`;
+        return `
+          <div class="sim-session-card">
+            <div class="sim-session-info">
+              <div class="sim-session-meta">${orderIcon} ${date}</div>
+              <div class="sim-session-progress">${statusHTML}</div>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0">
+              ${!isDone
+                ? `<button class="btn-primary"   style="padding:6px 14px;font-size:12px" onclick="resumeSimSession('${s.id}')">Reanudar</button>`
+                : `<button class="btn-secondary" style="padding:6px 14px;font-size:12px" onclick="viewSimSession('${s.id}')">Ver resultado</button>`
+              }
+              <button class="sim-del-btn" onclick="deleteSimSession('${s.id}','${examId}')" title="Eliminar">✕</button>
+            </div>
+          </div>`;
+      }).join('')}
+    </div>
+  ` : '';
+
+  const div = document.createElement('div');
+  div.className = 'view';
+  div.innerHTML = `
+    <button class="btn-secondary" onclick="navigate('simulacro')"
+      style="margin-bottom:24px;display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:8px 16px">
+      ← Volver
+    </button>
+    <div class="page-title">${exam.title}</div>
+    <div class="page-subtitle">${exam.questions.length} preguntas · ${Object.keys(exam.categories).length} categorías</div>
+
+    ${sessionsHTML}
+
+    <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px">
+      Nueva sesión
+    </div>
+    <div class="sim-order-cards">
+      <button class="mode-card" onclick="startSimExam('${exam.id}','random')">
+        <div class="mode-card-icon">🔀</div>
+        <div class="mode-card-title">Aleatorio</div>
+        <div class="mode-card-desc">Las preguntas aparecen en orden aleatorio, como en el examen real.</div>
+        <span class="mode-card-tag">Recomendado</span>
+      </button>
+      <button class="mode-card" onclick="startSimExam('${exam.id}','category')">
+        <div class="mode-card-icon">📂</div>
+        <div class="mode-card-title">Por temática A-Z</div>
+        <div class="mode-card-desc">Las preguntas se agrupan por tema, ordenadas alfabéticamente.</div>
+        <span class="mode-card-tag" style="background:var(--bg-raised);color:var(--text-lo);border-color:var(--border)">Estudio</span>
+      </button>
+    </div>
+  `;
+  app.appendChild(div);
+}
+
+function startSimExam(examId, order) {
+  if (!Sim.exam || Sim.exam.id !== examId) {
+    Sim.exam = EXAMS.find(e => e.id === examId) || EXAMS[0];
+  }
+  Sim.order            = order || 'random';
+  Sim.filter           = 'all';
+  Sim.sessionId        = `${examId}_${Date.now()}`;
+  Sim.sessionStartedAt = Date.now();
+  initSim();
+  SimStorage.saveSession(simCurrentSession());
+  renderSimExamShell();
+  showSimQuestion(0);
+}
+
+function initSim() {
+  const pool = Sim.filter === 'all'
+    ? Sim.exam.questions
+    : Sim.exam.questions.filter(q => q.cat === Sim.filter);
+
+  if (Sim.order === 'category') {
+    Sim.queue = [...pool].sort((a, b) => {
+      const la = simCatLabel(a.cat), lb = simCatLabel(b.cat);
+      if (la !== lb) return la.localeCompare(lb, 'es');
+      return a.id - b.id;
+    });
+  } else {
+    Sim.queue = shuffle([...pool]);
+  }
+
+  Sim.index           = 0;
+  Sim.answers         = {};
+  Sim.pendingSelected = new Set();
+  Sim.ok              = 0;
+  Sim.fail            = 0;
+  Sim.catStats        = {};
+}
+
+function renderSimExamShell() {
+  const exam = Sim.exam;
+  const app  = document.getElementById('app');
+  app.innerHTML = '';
+  app.classList.add('sim-active');
+
+  const sidebarItems = Sim.queue.map((q, i) => {
+    const preview = q.text.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').substring(0, 70);
+    return `
+      <div class="sim-q-item" id="sim-q-item-${i}" onclick="simNavigateTo(${i})">
+        <div class="sim-q-num">${i + 1}</div>
+        <div class="sim-q-info">
+          <span class="sim-q-status">○</span>
+          <span class="sim-q-preview">${preview}</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  const layout = document.createElement('div');
+  layout.className = 'sim-layout';
+  layout.innerHTML = `
+    <aside class="sim-sidebar">
+      <div class="sim-sidebar-header">
+        <div class="sim-sidebar-title">${exam.title}</div>
+        <button class="sim-end-btn" onclick="endSimExam()">Acabar</button>
+      </div>
+      <div class="sim-q-list" id="sim-q-list">${sidebarItems}</div>
+    </aside>
+    <div class="sim-main">
+      <div class="sim-main-top">
+        <div class="sim-prog-row">
+          <div class="sim-prog-track">
+            <div class="sim-prog-fill" id="sim-prog-fill" style="width:0%"></div>
+          </div>
+          <span class="sim-prog-label" id="sim-prog-label">0 / ${Sim.queue.length}</span>
+        </div>
+        <div class="sim-score-chips">
+          <span class="sim-chip ok"   id="sim-chip-ok">✓ 0</span>
+          <span class="sim-chip fail" id="sim-chip-fail">✗ 0</span>
+        </div>
+      </div>
+      <div class="sim-main-content" id="sim-main-content">
+        <div id="sim-question-area"></div>
+      </div>
+      <div class="sim-bottom-nav">
+        <button class="sim-nav-btn"      onclick="simNavigatePrev()">← Atrás</button>
+        <button class="sim-nav-btn skip" onclick="simSkip()">Saltar pregunta</button>
+        <button class="sim-nav-btn next" id="sim-nav-next" onclick="simNavigateNext()">Siguiente →</button>
+      </div>
+    </div>
+  `;
+  app.appendChild(layout);
+}
+
+function showSimQuestion(idx) {
+  if (idx === undefined) idx = Sim.index;
+  Sim.index = idx;
+
+  const q     = Sim.queue[idx];
+  const total = Sim.queue.length;
+  if (!q) return;
+
+  const answeredCount = Object.keys(Sim.answers).length;
+  const pct = total > 0 ? Math.round((answeredCount / total) * 100) : 0;
+
+  const fill     = document.getElementById('sim-prog-fill');
+  const lbl      = document.getElementById('sim-prog-label');
+  const chipOk   = document.getElementById('sim-chip-ok');
+  const chipFail = document.getElementById('sim-chip-fail');
+  const navNext  = document.getElementById('sim-nav-next');
+  if (fill)     fill.style.width      = pct + '%';
+  if (lbl)      lbl.textContent       = `${answeredCount} / ${total}`;
+  if (chipOk)   chipOk.textContent    = `✓ ${Sim.ok}`;
+  if (chipFail) chipFail.textContent  = `✗ ${Sim.fail}`;
+  if (navNext)  navNext.textContent   = idx === total - 1 ? 'Finalizar →' : 'Siguiente →';
+
+  // Sidebar: highlight current, scroll into view
+  document.querySelectorAll('.sim-q-item').forEach((el, i) => {
+    el.classList.toggle('current', i === idx);
+  });
+  const activeItem = document.getElementById(`sim-q-item-${idx}`);
+  if (activeItem) activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+
+  // Build question content
+  const area = document.getElementById('sim-question-area');
+  if (!area) return;
+
+  const letters    = ['A','B','C','D','E','F'];
+  const ans        = Sim.answers[idx];
+  const isAnswered = !!ans;
+  const correctSet = new Set(q.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0));
+
+  const multiHint = (q.multiSelect && !isAnswered)
+    ? `<div class="sim-multi-hint">Selecciona <strong>${q.selectCount}</strong> opciones y luego confirma.</div>`
+    : '';
+
+  const optionsHTML = q.options.map((o, i) => {
+    let optCls = '';
+    const indCls = q.multiSelect ? 'sim-checkbox' : 'sim-radio';
+
+    if (isAnswered) {
+      const isCor = correctSet.has(i);
+      const isSel = ans.selected.has(i);
+      if      (isCor && isSel) optCls = 'correct';
+      else if (isCor)          optCls = 'correct-missed';
+      else if (isSel)          optCls = 'wrong';
+      else                     optCls = 'dim';
+    } else if (Sim.pendingSelected.has(i)) {
+      optCls = 'selected';
+    }
+
+    const disabled = isAnswered ? 'disabled' : '';
+    const handler  = isAnswered ? '' : `onclick="simSelect(this,${q.multiSelect})"`;
+    return `
+      <button class="sim-option ${optCls}" data-idx="${i}" ${disabled} ${handler}>
+        <span class="${indCls}"></span>
+        <span class="sim-opt-text"><strong>${letters[i]}.</strong> ${o.text}</span>
+      </button>`;
+  }).join('');
+
+  const confirmBtn = (q.multiSelect && !isAnswered)
+    ? `<button class="btn-primary" id="sim-confirm" onclick="answerSim()" style="width:100%;margin-top:14px">
+         Confirmar selección
+       </button>`
+    : '';
+
+  let feedbackHTML = '';
+  if (isAnswered) {
+    const expRows = q.options.map((o, i) => {
+      const isCor = correctSet.has(i);
+      const exp   = o.explanation
+        ? `<span class="exp-text">${o.explanation}</span>`
+        : '';
+      return `<div class="exp-row ${isCor ? 'exp-row-correct' : 'exp-row-wrong'}">
+        <span class="exp-icon">${isCor ? '✓' : '✗'}</span>
+        <div><strong>${letters[i]}. ${o.text}</strong>${exp ? '<br>' + exp : ''}</div>
+      </div>`;
+    }).join('');
+
+    const imgs = (q.images || []).map(url =>
+      `<img src="${url}" alt="Diagrama" loading="lazy">`
+    ).join('');
+    const imgWrap = imgs ? `<div class="sim-img-wrap">${imgs}</div>` : '';
+
+    feedbackHTML = `
+      <div class="quiz-feedback show ${ans.correct ? 'ok' : 'bad'}" style="margin-top:16px">
+        <strong>${ans.correct ? '✓ Correcto' : '✗ Incorrecto'}</strong>
+        <div class="sim-exp-wrap">${expRows}</div>
+        ${imgWrap}
+      </div>`;
+  }
+
+  area.innerHTML = `
+    <div class="sim-question-header">
+      <span class="q-meta-label">Pregunta ${idx + 1} de ${total}</span>
+      <span class="q-cat-badge" style="border-color:${simCatColor(q.cat)};color:${simCatColor(q.cat)}">
+        ${simCatLabel(q.cat)}
+      </span>
+    </div>
+    ${multiHint}
+    <div class="q-text" style="margin:20px 0">${q.text}</div>
+    <div id="sim-options">${optionsHTML}</div>
+    ${confirmBtn}
+    ${feedbackHTML}
+  `;
+
+  const content = document.getElementById('sim-main-content');
+  if (content) content.scrollTop = 0;
+}
+
+function simSelect(btn, isMulti) {
+  const idx = parseInt(btn.dataset.idx);
+  if (!isMulti) {
+    document.querySelectorAll('.sim-option').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    answerSim(new Set([idx]));
+  } else {
+    if (Sim.pendingSelected.has(idx)) {
+      Sim.pendingSelected.delete(idx);
+      btn.classList.remove('selected');
+    } else {
+      Sim.pendingSelected.add(idx);
+      btn.classList.add('selected');
+    }
+  }
+}
+
+function answerSim(selectedSet) {
+  const idx = Sim.index;
+  if (Sim.answers[idx]) return;
+
+  const selected   = selectedSet || Sim.pendingSelected;
+  if (selected.size === 0) return;
+
+  const q          = Sim.queue[idx];
+  const correctSet = new Set(q.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0));
+  const isRight    = [...correctSet].every(i => selected.has(i))
+                  && [...selected].every(i => correctSet.has(i));
+
+  Sim.answers[idx] = { selected: new Set(selected), correct: isRight };
+  Sim.pendingSelected = new Set();
+
+  if (!Sim.catStats[q.cat]) Sim.catStats[q.cat] = { ok: 0, total: 0 };
+  Sim.catStats[q.cat].total++;
+  if (isRight) { Sim.ok++; Sim.catStats[q.cat].ok++; }
+  else         { Sim.fail++; }
+
+  SimStorage.saveSession(simCurrentSession());
+
+  const item = document.getElementById(`sim-q-item-${idx}`);
+  if (item) {
+    item.classList.remove('answered-ok', 'answered-fail');
+    item.classList.add(isRight ? 'answered-ok' : 'answered-fail');
+    const status = item.querySelector('.sim-q-status');
+    if (status) status.textContent = isRight ? '✓' : '✗';
+  }
+
+  showSimQuestion(idx);
+}
+
+function simNavigatePrev() {
+  Sim.pendingSelected = new Set();
+  if (Sim.index > 0) showSimQuestion(Sim.index - 1);
+}
+
+function simNavigateNext() {
+  Sim.pendingSelected = new Set();
+  if (Sim.index < Sim.queue.length - 1) showSimQuestion(Sim.index + 1);
+  else endSimExam();
+}
+
+function simNavigateTo(idx) {
+  Sim.pendingSelected = new Set();
+  showSimQuestion(idx);
+}
+
+function simSkip() {
+  Sim.pendingSelected = new Set();
+  for (let i = Sim.index + 1; i < Sim.queue.length; i++) {
+    if (!Sim.answers[i]) { showSimQuestion(i); return; }
+  }
+  for (let i = 0; i < Sim.index; i++) {
+    if (!Sim.answers[i]) { showSimQuestion(i); return; }
+  }
+  endSimExam();
+}
+
+function endSimExam() {
+  const answered = Object.keys(Sim.answers).length;
+  const total    = Sim.queue.length;
+  if (answered < total) {
+    if (!confirm(`Quedan ${total - answered} pregunta${total - answered !== 1 ? 's' : ''} sin responder. ¿Terminar igualmente?`)) return;
+  }
+  const session = simCurrentSession();
+  session.completedAt = Date.now();
+  SimStorage.saveSession(session);
+  document.getElementById('app').classList.remove('sim-active');
+  navigate('sim-results');
+}
+
+/* ─── Session helpers ───────────────────────────────────────────────────── */
+function simCurrentSession() {
+  return {
+    id:           Sim.sessionId,
+    examId:       Sim.exam.id,
+    order:        Sim.order,
+    queueIds:     Sim.queue.map(q => q.id),
+    answers:      Object.fromEntries(
+      Object.entries(Sim.answers).map(([k, v]) => [k, { selected: Array.from(v.selected), correct: v.correct }])
+    ),
+    index:        Sim.index,
+    ok:           Sim.ok,
+    fail:         Sim.fail,
+    catStats:     Sim.catStats,
+    startedAt:    Sim.sessionStartedAt,
+    completedAt:  null,
+  };
+}
+
+function loadSimSession(sessionId) {
+  const session = SimStorage.load().find(s => s.id === sessionId);
+  if (!session) return false;
+  Sim.exam             = EXAMS.find(e => e.id === session.examId);
+  Sim.order            = session.order;
+  Sim.sessionId        = session.id;
+  Sim.sessionStartedAt = session.startedAt;
+  Sim.queue            = session.queueIds.map(id => Sim.exam.questions.find(q => q.id === id)).filter(Boolean);
+  Sim.answers          = Object.fromEntries(
+    Object.entries(session.answers).map(([k, v]) => [k, { selected: new Set(v.selected), correct: v.correct }])
+  );
+  Sim.index            = session.index;
+  Sim.ok               = session.ok;
+  Sim.fail             = session.fail;
+  Sim.catStats         = session.catStats;
+  Sim.pendingSelected  = new Set();
+  Sim.filter           = 'all';
+  return true;
+}
+
+function resumeSimSession(sessionId) {
+  if (!loadSimSession(sessionId)) return;
+  renderSimExamShell();
+  showSimQuestion(Sim.index);
+}
+
+function viewSimSession(sessionId) {
+  if (!loadSimSession(sessionId)) return;
+  navigate('sim-results');
+}
+
+function deleteSimSession(sessionId, examId) {
+  if (!confirm('¿Eliminar esta sesión guardada?')) return;
+  SimStorage.deleteSession(sessionId);
+  showSimPreExam(examId);
+}
+
+/* ─── Simulacro Results ─────────────────────────────────────────────────── */
+function renderSimResults() {
+  const total    = Sim.ok + Sim.fail;
+  const pct      = total > 0 ? Math.round((Sim.ok / total) * 100) : 0;
+  const cls      = pctClass(pct);
+  const answered = Object.keys(Sim.answers).length;
+  const skipped  = Sim.queue.length - answered;
+  const msgs  = {
+    great: `¡Excelente resultado! ${pct >= 90 ? 'Estás listo para el examen.' : 'Seguís en muy buen camino.'}`,
+    ok:    'Buen resultado, pero revisá las preguntas que erraste.',
+    needs: 'Necesitás más práctica. Repasá los temas con más errores.',
+  };
+
+  const breakdownRows = Object.entries(Sim.catStats)
+    .map(([cat, st]) => {
+      const p = st.total > 0 ? Math.round((st.ok / st.total) * 100) : 0;
+      return { cat, pct: p, ok: st.ok, total: st.total };
+    })
+    .sort((a, b) => a.pct - b.pct)
+    .map(row => `
+      <div class="breakdown-row">
+        <div class="breakdown-cat" style="width:200px;flex-shrink:0">${simCatLabel(row.cat)}</div>
+        <div class="breakdown-bar-wrap">
+          <div class="breakdown-bar" style="width:${row.pct}%;background:${pctBarColor(row.pct)}"></div>
+        </div>
+        <div class="breakdown-score" style="color:${pctBarColor(row.pct)}">${row.pct}%</div>
+      </div>
+    `).join('');
+
+  return `
+    <div class="results-card">
+      <div class="results-title">${Sim.exam ? Sim.exam.title : 'Simulacro'}</div>
+      <div class="results-pct ${cls}">${pct}%</div>
+      <div class="results-msg">
+        ${Sim.ok} correctas · ${Sim.fail} incorrectas${skipped ? ` · ${skipped} omitidas` : ''} de ${Sim.queue.length} preguntas.<br>${msgs[cls] || ''}
+      </div>
+      ${breakdownRows ? `
+        <div class="results-breakdown">
+          <div class="breakdown-title">Por categoría</div>
+          ${breakdownRows}
+        </div>
+      ` : ''}
+      <div class="results-actions">
+        <button class="btn-primary"   onclick="showSimPreExam('${Sim.exam ? Sim.exam.id : ''}')">
+          Reintentar este test
+        </button>
+        <button class="btn-secondary" onclick="navigate('simulacro')">Elegir otro test</button>
+        <button class="btn-secondary" onclick="navigate('home')">Inicio</button>
+      </div>
+    </div>
+  `;
+}
 
 /* ─── Bootstrap ─────────────────────────────────────────────────────────── */
 Progress.load();

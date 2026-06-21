@@ -14182,5 +14182,2946 @@ const EXAMS = [
         "color": "#ec4899"
       }
     }
+  },
+  {
+    "id": "test7",
+    "title": "Simulacro Test 7",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Which of the following is NOT a basic element of a well-structured prompt?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Input data",
+            "correct": false,
+            "explanation": "Context is crucial in a well-structured prompt as it helps the individual understand the background or scenario in which the task is set. Context provides relevant information that aids in interpreting and responding to the prompt accurately."
+          },
+          {
+            "text": "Validation",
+            "correct": true,
+            "explanation": "Instructions are essential in a well-structured prompt as they provide guidance on what needs to be done or achieved. Without clear instructions, the prompt may be confusing or ambiguous, leading to incorrect responses."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 2,
+        "text": "A company wants to integrate Amazon Comprehend's functionality into their application to analyze real-time customer reviews. What should they do?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Use Amazon Comprehend's real-time API to analyze customer reviews as they are submitted",
+            "correct": true,
+            "explanation": "**Amazon Comprehend Medical** is specifically for extracting medical information, which is not relevant for general customer review analysis."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 3,
+        "text": "How can you test and fine-tune prompts and parameters before using them in an application with Amazon Bedrock?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "By using the Bedrock playground",
+            "correct": true,
+            "explanation": "Deploying the model in a live environment is not the ideal approach for testing and fine-tuning prompts and parameters in Amazon Bedrock. It may introduce unnecessary risks and potential issues when experimenting with different configurations and inputs."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/playgrounds.html",
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/getting-started-console.html"
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Which of the following is **not** an element typically found in a prompt used in prompt engineering?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Output indicator",
+            "correct": false,
+            "explanation": "Output indicator is an important element in a prompt used in prompt engineering as it specifies the expected output or outcome that the AI model should generate based on the input data and instructions provided. The output indicator helps evaluate the performance and accuracy of the AI model."
+          },
+          {
+            "text": "Fine-tuning dataset",
+            "correct": true,
+            "explanation": "Input data is a crucial element in a prompt used in prompt engineering as it provides the information that the AI model needs to process and generate the output. The quality and relevance of the input data directly impact the performance of the AI model."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 5,
+        "text": "In the development of AI agents, which two factors are most critical for ensuring that the agent can effectively adapt to new and unpredictable environments? (Select Two.)",
+        "cat": "fm_apps",
+        "catLabel": "Design Considerations for Foundational Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Pre-programming a comprehensive set of rules for every possible scenario",
+            "correct": false,
+            "explanation": "Relying on a static dataset that contains all possible interactions the agent might encounter would restrict the agent's ability to adapt to new and unpredictable environments. Without the ability to learn from real-time feedback and adjust its actions, the agent would be limited to the interactions predefined in the dataset."
+          },
+          {
+            "text": "Enabling the agent to receive real-time feedback and adjust its actions accordingly",
+            "correct": true,
+            "explanation": "Limiting the agent's decision-making process to predefined outcomes for consistency may hinder its ability to adapt to new and unpredictable environments. By restricting the agent to predefined outcomes, it may not be able to respond effectively to novel situations or adjust its actions based on real-time feedback."
+          },
+          {
+            "text": "Incorporating reinforcement learning to allow the agent to learn from its environment over time",
+            "correct": true,
+            "explanation": "Incorporating reinforcement learning allows the AI agent to learn from its environment over time through trial and error. This adaptive learning process enables the agent to adjust its actions based on the feedback it receives, making it more capable of effectively adapting to new and unpredictable environments."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 6,
+        "text": "A company is building an AI-powered application that requires frequent scaling to handle unpredictable user traffic. They want to minimize operational overhead and ensure cost efficiency.\nWhich advantage of Amazon Bedrock's serverless environment makes it the most suitable choice for this scenario?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "It guarantees the lowest latency for AI inference compared to other deployment options.",
+            "correct": false,
+            "explanation": "This is the opposite of a serverless environment’s value proposition. Serverless architectures abstract hardware management, whereas fine-grained control over GPUs or memory is typically a feature of managed instances or custom infrastructure setups."
+          },
+          {
+            "text": "It automatically provisions and scales infrastructure based on demand, eliminating the need to manage servers or clusters.",
+            "correct": true,
+            "explanation": "Serverless environments optimize costs for variable workloads but are not universally cheaper for *all* scenarios. For sustained, predictable workloads, provisioning dedicated instances might be more cost-effective. Additionally, \"strict resource limits\" are not a feature of Bedrock’s serverless model—it scales resources dynamically."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 7,
+        "text": "When configuring a generative AI model in Amazon Bedrock, adjusting the temperature parameter can significantly influence the model's output. Which of the following best describes the impact of setting a high temperature value (e.g., 1.0) compared to a low temperature value (e.g., 0.2)?",
+        "cat": "fm_apps",
+        "catLabel": "Design Considerations for Foundational Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "A high temperature value ensures the model always generates the most accurate and factual responses, while a low temperature value introduces more errors.",
+            "correct": false,
+            "explanation": "Temperature parameter does not restrict or expand the model's vocabulary. Instead, it influences how the model selects words from its existing vocabulary based on their probabilities."
+          },
+          {
+            "text": "A high temperature value increases the randomness and creativity of the model's responses, while a low temperature value makes the output more deterministic and focused.",
+            "correct": true,
+            "explanation": "Temperature parameter does not directly affect computational requirements or processing time. It only influences the probability distribution of the model's outputs, not the underlying computational workload."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/",
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Which of the following are key data governance strategies for AI and generative AI workloads? (Select Two)",
+        "cat": "responsible_ai",
+        "catLabel": "Responsible AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Reducing data redundancy",
+            "correct": false,
+            "explanation": "Reducing data redundancy is not a key data governance strategy for AI and generative AI workloads. While minimizing data redundancy can improve storage efficiency and processing speed, data governance in AI primarily focuses on ensuring data quality, integrity, and security throughout the AI lifecycle."
+          },
+          {
+            "text": "Establishing data quality standards",
+            "correct": true,
+            "explanation": "Reducing model complexity is not a key data governance strategy for AI and generative AI workloads. While model complexity can impact performance and interpretability, data governance strategies focus more on ensuring the quality, integrity, and security of the data used in AI processes."
+          },
+          {
+            "text": "Implementing data validation and cleansing techniques",
+            "correct": true,
+            "explanation": "Implementing data validation and cleansing techniques is a key data governance strategy for AI and generative AI workloads as it ensures that the data used for training and inference is accurate, consistent, and free from errors or biases. This helps improve the overall quality and reliability of AI models and outputs."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 9,
+        "text": "What is the primary metric used to measure how much revenue is generated per user over a given period?",
+        "cat": "fm_apps",
+        "catLabel": "Foundation Model Evaluation Criteria",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Conversion Rate",
+            "correct": false,
+            "explanation": "Conversion Rate is a metric used to measure the percentage of users who take a desired action, such as making a purchase or signing up for a service. While conversion rate is important for measuring the effectiveness of marketing and sales efforts, it is not the primary metric used to measure revenue generated per user over a given period."
+          },
+          {
+            "text": "Average Revenue Per User (ARPU)",
+            "correct": true,
+            "explanation": "Efficiency is a broad term that can refer to various aspects of business operations, such as cost-effectiveness, resource utilization, or productivity. While efficiency is important for maximizing revenue and profitability, it is not the primary metric used to measure how much revenue is generated per user over a given period."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 10,
+        "text": "A machine learning engineer is optimizing a language model's text generation process by implementing top-k sampling. What is the primary advantage of using top-k sampling in this context?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "It allows the model to randomly choose any word from the entire vocabulary, increasing the unpredictability of generated text.",
+            "correct": false,
+            "explanation": "Contrary to the statement, top-k sampling does not increase the likelihood of generating repetitive or deterministic text. By focusing on a fixed set of outputs and limiting the choices to the top k most probable words, it actually helps in introducing controlled diversity and avoiding monotonous outputs."
+          },
+          {
+            "text": "It limits the model's choices to the top k most probable words, introducing controlled diversity while avoiding low-probability, nonsensical outputs.",
+            "correct": true,
+            "explanation": "The primary advantage of using top-k sampling in text generation is that it restricts the model's choices to the top k most probable words. This approach helps introduce controlled diversity in the generated text while avoiding low-probability and nonsensical outputs, ultimately improving the quality of the language model."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 11,
+        "text": "In the evaluation of a foundational AI model, why is it important to consider the model's interpretability alongside its accuracy?",
+        "cat": "fm_apps",
+        "catLabel": "Foundation Model Evaluation Criteria",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Interpretability allows stakeholders to understand and trust the model’s decisions, especially in high-stakes applications.",
+            "correct": true,
+            "explanation": "Focusing on interpretability does not necessarily reduce the need for large datasets during training. The size of the dataset required is more related to the complexity of the problem being solved and the model architecture, rather than its interpretability."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/whitepapers/latest/model-explainability-aws-ai-ml/model-explainability-aws-ai-ml.html",
+          "https://docs.aws.amazon.com/whitepapers/latest/ml-best-practices-healthcare-life-sciences/model-interpretability.html"
+        ]
+      },
+      {
+        "id": 12,
+        "text": "In the context of AI agents, what is the **primary role** of reinforcement learning (RL), and how does it enhance the agent’s performance?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "RL enables agents to learn optimal actions through trial-and-error interactions with an environment, maximizing cumulative rewards.",
+            "correct": true,
+            "explanation": "Describes  *supervised learning* , not RL. RL does not require labeled datasets; agents learn from rewards, not direct human examples."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/reinforcement-learning.html"
+        ]
+      },
+      {
+        "id": 13,
+        "text": "How does Amazon Textract enhance the processing of financial forms?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "By storing the documents securely in a cloud database",
+            "correct": false,
+            "explanation": "Storing documents securely in a cloud database is not a direct feature of Amazon Textract. While Textract can extract data from documents, it does not specifically enhance document storage security."
+          },
+          {
+            "text": "By accurately extracting critical business data such as mortgage rates and invoice totals",
+            "correct": true,
+            "explanation": "Manually configuring OCR settings for each form is not necessary with Amazon Textract. Textract uses machine learning algorithms to automatically extract text and data from various types of documents, eliminating the need for manual configuration."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 14,
+        "text": "Which of the following is **not** a typical task that AI agents perform in generative AI applications?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Manually coding new rules for each task",
+            "correct": true,
+            "explanation": "AI agents are often used in inventory management systems to track stock levels and ensure real-time updates. This helps businesses maintain optimal stock levels and reorder items as needed, making it a typical task for AI agents in certain applications."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/",
+          "https://aws.amazon.com/blogs/machine-learning/enabling-complex-generative-ai-applications-with-amazon-bedrock-agents/"
+        ]
+      },
+      {
+        "id": 15,
+        "text": "A company wants to automate the process of identifying and categorizing objects in images uploaded to an Amazon S3 bucket. They plan to use Amazon Rekognition for image analysis and AWS Lambda to trigger the process automatically when new images are uploaded. Which of the following steps should the company take to implement this solution?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Set up an S3 event notification to trigger an AWS Lambda function whenever a new image is uploaded, which then calls Amazon Rekognition to analyze the image and store the results.",
+            "correct": true,
+            "explanation": "AWS Lambda functions are managed in the AWS Lambda console, not within Amazon Rekognition."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 16,
+        "text": "What is the primary role of **Machine Learning** within the broader field of  **Artificial Intelligence** ?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To explicitly program machines to perform tasks",
+            "correct": false,
+            "explanation": "his describes traditional programming, not machine learning. In traditional programming, tasks are explicitly defined, whereas in ML, machines learn to make decisions based on data."
+          },
+          {
+            "text": "To enable machines to learn from data and make predictions without explicit programming",
+            "correct": true,
+            "explanation": "While machine learning models can be used in game AI, it is not the only application. ML has far wider uses, including image recognition, natural language processing, and more."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 17,
+        "text": "A company wants to configure an AI agent to provide real-time currency exchange rates. Which of the following steps is crucial for this setup? (Select Two)",
+        "cat": "fm_apps",
+        "catLabel": "Design Considerations for Foundational Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Using historical data to predict future rates",
+            "correct": false,
+            "explanation": "Manual updates are time-consuming and prone to errors, making this approach inefficient for real-time currency exchange services. Automated integration with an API is a more robust solution."
+          },
+          {
+            "text": "Ensuring the agent can call relevant Lambda functions",
+            "correct": true,
+            "explanation": "Hardcoding exchange rates is impractical for a system that needs to provide real-time data. Exchange rates fluctuate frequently, so relying on hardcoded values would lead to outdated and inaccurate information."
+          },
+          {
+            "text": "Integrating the agent with a real-time exchange rate API",
+            "correct": true,
+            "explanation": "To ensure the AI agent provides accurate and up-to-date currency exchange rates, it is crucial to integrate it with a real-time exchange rate API. This allows the agent to pull the latest data directly from a reliable source."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/lambda/",
+          "https://aws.amazon.com/api-gateway/",
+          "https://aws.amazon.com/serverless/"
+        ]
+      },
+      {
+        "id": 18,
+        "text": "What is the primary function of a prompt in the context of large language models?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To serve as the input or query that generates a response from the model",
+            "correct": true,
+            "explanation": "The size of the model is not reduced by using a prompt. The prompt itself is used as input to the model and does not directly impact the model's efficiency in terms of size."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 19,
+        "text": "What is the primary purpose of Amazon Kendra?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To provide a highly accurate and intelligent search service for enterprise data.",
+            "correct": true,
+            "explanation": "Optimizing data warehouse queries is a feature of Amazon Redshift, not Amazon Kendra. Kendra focuses on retrieving information from diverse data sources based on natural language input."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 20,
+        "text": "Which of the following is NOT a use case for Amazon Textract?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Processing loan applications in financial services",
+            "correct": false,
+            "explanation": "Extracting patient data from health intake forms in healthcare is a valid use case for Amazon Textract. Textract can accurately extract text, tables, and forms from various types of documents, including healthcare forms, to streamline data entry and processing tasks in the healthcare industry."
+          },
+          {
+            "text": "Translating documents into different languages",
+            "correct": true,
+            "explanation": "Translating documents into different languages is NOT a use case for Amazon Textract. Textract is primarily focused on extracting and analyzing text and data from documents, rather than translating the content into different languages. Translation tasks would require a different service or tool specifically designed for language translation."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 21,
+        "text": "Which concept involves the systematic recording of data related to the processing of an AI workload?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Data logging",
+            "correct": true,
+            "explanation": "Data residency pertains to the physical or geographical location where data is stored and processed. It is important for compliance and regulatory purposes but is not directly related to the systematic recording of data for AI workload processing, which is the focus of data logging."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 22,
+        "text": "How does Amazon Q Business ensure accurate and relevant responses from its AI assistant?",
+        "cat": "responsible_ai",
+        "catLabel": "Responsible AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "By allowing users to manually update the AI model",
+            "correct": false,
+            "explanation": "Allowing users to manually update the AI model may help in refining the model over time, but it is not the primary method for ensuring accurate and relevant responses. Manual updates can be useful for fine-tuning the AI model based on user feedback, but they do not directly address the mechanism for generating responses."
+          },
+          {
+            "text": "By integrating with a knowledge base and employing retrieval augmented generation (RAG)",
+            "correct": true,
+            "explanation": "Providing real-time monitoring of all interactions is important for tracking the performance of the AI assistant and identifying any issues or inaccuracies in responses. However, real-time monitoring alone does not guarantee accurate and relevant responses. It is a monitoring tool rather than a method for actively improving response accuracy."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 23,
+        "text": "What is a primary method for mitigating the risk of prompt injection attacks in generative AI models?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Validate and sanitize user input before processing it in the model.",
+            "correct": true,
+            "explanation": "Increasing the model's response length to limit malicious instructions is not an effective method for mitigating prompt injection attacks in generative AI models. The focus should be on validating and sanitizing user input to prevent malicious code injection."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 24,
+        "text": "A retail company is using Amazon Personalize to enhance their product recommendation engine. They want to provide customers with personalized shopping experiences by recommending products based on their browsing behavior and purchase history. Which two features of Amazon Personalize should they focus on to achieve this goal? (Select Two)",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "User segmentation to group customers into predefined categories for targeted marketing",
+            "correct": false,
+            "explanation": "User segmentation categorizes users but doesn't directly contribute to dynamic, personalized recommendations."
+          },
+          {
+            "text": "Real-time recommendations to dynamically suggest products as customers browse the website",
+            "correct": true,
+            "explanation": "Real-time recommendations allow the company to offer personalized product suggestions as customers interact with the website, enhancing the shopping experience."
+          },
+          {
+            "text": "Personalized ranking to reorder product lists based on each customer's preferences",
+            "correct": true,
+            "explanation": "While batch inference updates the model, it doesn’t provide the immediacy needed for real-time interaction."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 25,
+        "text": "A developer wants to use **Amazon Polly** to generate speech in real-time for an interactive voice response (IVR) system. The system must dynamically adjust the speech output based on user inputs and provide varying speech rates and emotions for a better customer experience. Which feature of Amazon Polly would allow the developer to meet these requirements?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Speech Marks",
+            "correct": false,
+            "explanation": "**Lexicons** are useful for customizing word pronunciations, but they do not provide control over the rate or tone of speech."
+          },
+          {
+            "text": "Speech Synthesis Markup Language (SSML)",
+            "correct": true,
+            "explanation": "**Speech Synthesis Markup Language (SSML)** allows the developer to control various aspects of speech, such as speech rate, volume, pitch, and emotional tone, making it ideal for dynamic adjustments in an IVR system."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/polly/latest/dg/supportedtags.html",
+          "https://docs.aws.amazon.com/polly/latest/dg/supportedtags.html#prosody-tag",
+          "https://docs.aws.amazon.com/polly/latest/dg/supportedtags.html#break-tag"
+        ]
+      },
+      {
+        "id": 26,
+        "text": "Which technique allows you to improve a pre-trained machine learning model by adding new layers and retraining it on a specific dataset to adjust for a new task?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Data augmentation",
+            "correct": false,
+            "explanation": "**Feature engineering** involves selecting or creating features from raw data, but it does not involve fine-tuning pre-trained models."
+          },
+          {
+            "text": "Transfer learning",
+            "correct": true,
+            "explanation": "**Transfer learning** is the technique where a pre-trained model is adapted for a new task by adding new layers and retraining it on a specific dataset"
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 27,
+        "text": "What is the main purpose of feature engineering in the machine learning lifecycle?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To create new features from existing data to improve model performance",
+            "correct": true,
+            "explanation": "Gathering and preprocessing raw data is an essential step in the machine learning process, but it is distinct from feature engineering. Feature engineering involves creating new features or transforming existing ones to better represent the underlying patterns in the data."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 28,
+        "text": "In the context of AI governance, which two practices are essential for ensuring that AI systems are developed and deployed responsibly within an organization? (Select Two)",
+        "cat": "responsible_ai",
+        "catLabel": "Responsible AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Prioritizing the speed of AI deployment over thorough testing and ethical considerations",
+            "correct": false,
+            "explanation": "Focusing solely technical performance metrics ignores other crucial aspects like ethical considerations and social impact."
+          },
+          {
+            "text": "Establishing clear accountability frameworks that define who is responsible for AI outcomes",
+            "correct": true,
+            "explanation": "Clear accountability frameworks are essential to define responsibilities and ensure that any negative outcomes from AI systems are properly addressed and managed."
+          },
+          {
+            "text": "Implementing transparency mechanisms to ensure that AI decision-making processes are understandable and explainable",
+            "correct": true,
+            "explanation": "Implementing transparency mechanisms is crucial in AI governance to ensure that decisions made by AI systems can be understood and explained, which builds trust and accountability."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 29,
+        "text": "A company is implementing Amazon Kendra to enhance their internal search capabilities across various document types, including PDFs, Word documents, and HTML files. They want to ensure that employees can quickly find accurate information using natural language queries. Which of the following features of Amazon Kendra is most relevant to achieving this goal?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Integration with Amazon Rekognition to analyze image content within documents",
+            "correct": false,
+            "explanation": "Real-time indexing of social media posts is not a primary feature of Amazon Kendra, which focuses more on structured and unstructured enterprise data."
+          },
+          {
+            "text": "Semantic search capabilities that understand the intent behind natural language queries to deliver more accurate results",
+            "correct": true,
+            "explanation": "While translation can be useful, it is not directly related to enhancing search accuracy based on query intent."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 30,
+        "text": "In the context of Amazon Bedrock, what does the *Provisioned Throughput* pricing model offer?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "It enables users to pay only for the resources they use without long-term commitments",
+            "correct": false,
+            "explanation": "This describes the on-demand pricing model."
+          },
+          {
+            "text": "It provides pre-purchased capacity units for steady workloads",
+            "correct": true,
+            "explanation": "This describes the on-demand pricing model, not provisioned throughput."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 31,
+        "text": "A financial company needs to extract important data from large volumes of scanned financial documents and then fine-tune a model to analyze the extracted data for trends and predictions. Which combination of AWS services should they use?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon Bedrock and Amazon Lex",
+            "correct": false,
+            "explanation": "Comprehend analyzes text, and Glue manages data, but neither focuses on document extraction and predictive model fine-tuning."
+          },
+          {
+            "text": "Amazon Textract and Amazon SageMaker",
+            "correct": true,
+            "explanation": "Polly is for text-to-speech, which is unrelated to document processing or trend analysis."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/textract/",
+          "https://aws.amazon.com/sagemaker/"
+        ]
+      },
+      {
+        "id": 32,
+        "text": "A startup wants to build a text-based AI assistant but doesn’t want to spend time training a model from scratch. They need a service that provides pre-trained foundation models they can integrate into their application with minimal setup. Which AWS service should they use?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon Bedrock",
+            "correct": true,
+            "explanation": "Lex is a service for building conversational interfaces but doesn’t provide access to large pre-trained foundation models."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/",
+          "https://aws.amazon.com/blogs/aws/customize-models-in-amazon-bedrock-with-your-own-data-using-fine-tuning-and-continued-pre-training/"
+        ]
+      },
+      {
+        "id": 33,
+        "text": "Which functionalities can Amazon Comprehend perform on unstructured text? (Select Two)",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Generating new content",
+            "correct": false,
+            "explanation": "Amazon Comprehend is focused on analyzing and understanding existing text rather than generating new content. Content generation is typically the domain of generative AI models, not text analysis tools like Comprehend."
+          },
+          {
+            "text": "Classifying documents",
+            "correct": true,
+            "explanation": "Arithmetic calculations are outside the scope of Amazon Comprehend's capabilities. Comprehend specializes in natural language processing, not numerical analysis."
+          },
+          {
+            "text": "Extracting entities",
+            "correct": true,
+            "explanation": "Amazon Comprehend is designed to analyze unstructured text and identify entities such as names, organizations, dates, and other relevant information. This capability is essential for understanding the key elements within a body of text."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 34,
+        "text": "A healthcare company is developing a secure mobile app where patients can interact with an Amazon Lex chatbot to schedule appointments and access medical records. The chatbot must authenticate users and maintain session-specific data securely. Which AWS service should be integrated with Amazon Lex to **manage user identities and authentication** in this scenario?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "AWS Identity and Access Management (IAM)",
+            "correct": false,
+            "explanation": "IAM manages AWS resource access for  *AWS services and users* , not end-user authentication in applications. It is used to define permissions for AWS entities (e.g., roles for Lambda functions), not to authenticate patients in a mobile app."
+          },
+          {
+            "text": "Amazon Cognito",
+            "correct": true,
+            "explanation": "API Gateway manages, secures, and scales APIs. While it could route requests between the mobile app and backend services, it does not directly manage user identities or authentication for Lex interactions."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 35,
+        "text": "Which scenario best demonstrates the use of a few-shot prompt in combination with chain-of-thought prompting?",
+        "cat": "fm_apps",
+        "catLabel": "Design Considerations for Foundational Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "A prompt specifying that the model should limit its vocabulary to a fixed set of pre-selected words.",
+            "correct": false,
+            "explanation": "This is an example of standard zero-shot prompting, not few-shot with chain-of-thought."
+          },
+          {
+            "text": "A prompt providing an example of a complex reasoning task solved in steps, followed by a new task with instructions to follow the same format.",
+            "correct": true,
+            "explanation": "Few-shot prompting with chain-of-thought involves providing one or more examples of a reasoning task solved step-by-step. The model uses these examples as a guide to solve subsequent tasks in the same structured format."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 36,
+        "text": "What is the primary purpose of admin controls and guardrails in Amazon Q Business?",
+        "cat": "responsible_ai",
+        "catLabel": "Responsible AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To enhance response accuracy by retrieving information from a knowledge base",
+            "correct": false,
+            "explanation": "Enhancing response accuracy by retrieving information from a knowledge base is not the primary purpose of admin controls and guardrails in Amazon Q Business. While knowledge base integration may contribute to response accuracy, admin controls and guardrails primarily focus on security, compliance, and data protection within the AI assistant environment."
+          },
+          {
+            "text": "To prevent the AI assistant from providing sensitive or unwanted information",
+            "correct": true,
+            "explanation": "Integrating with third-party applications like Jira and Salesforce is not the primary purpose of admin controls and guardrails in Amazon Q Business. While integration capabilities may exist within the platform, the main focus of admin controls and guardrails is on managing and securing the AI assistant environment."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 37,
+        "text": "Which of the following is a key feature of Amazon Bedrock that allows users to customize foundation models with their own data?",
+        "cat": "fm_apps",
+        "catLabel": "Design Considerations for Foundational Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Provisioned throughput",
+            "correct": false,
+            "explanation": "This is not a feature of Amazon Bedrock for model customization."
+          },
+          {
+            "text": "Fine-tuning",
+            "correct": true,
+            "explanation": "These are the base models provided by Bedrock, but they require fine-tuning to be customized."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/",
+          "https://aws.amazon.com/blogs/aws/customize-models-in-amazon-bedrock-with-your-own-data-using-fine-tuning-and-continued-pre-training/"
+        ]
+      },
+      {
+        "id": 38,
+        "text": "A development team is using Amazon Bedrock to implement an AI solution for customer support, where the model needs to generate accurate and context-aware responses based on customer queries. Which feature of Amazon Bedrock is most beneficial for this purpose?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "The requirement to code and deploy models using only custom frameworks",
+            "correct": false,
+            "explanation": "Amazon Bedrock is designed to reduce the complexity of AI development by providing ready-to-use models. It does not require developers to use custom frameworks, making it easier to deploy models quickly and efficiently."
+          },
+          {
+            "text": "The ability to select and fine-tune from multiple pre-trained foundational models",
+            "correct": true,
+            "explanation": "Focus here is on using pre-trained models rather than manually labeling data and training a model from the ground up. While manual labeling is important for certain tasks, it does not leverage the primary strengths of Amazon Bedrock."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/bedrock/",
+          "https://aws.amazon.com/blogs/aws/customize-models-in-amazon-bedrock-with-your-own-data-using-fine-tuning-and-continued-pre-training/"
+        ]
+      },
+      {
+        "id": 39,
+        "text": "A company in a regulated industry needs to access AWS compliance reports, such as SOC 2 and ISO certifications, to demonstrate cloud compliance for an internal audit. Which AWS service should the company use to obtain these reports?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "AWS Inspector",
+            "correct": false,
+            "explanation": "AWS Inspector assesses application security for vulnerabilities but does not offer compliance reports."
+          },
+          {
+            "text": "AWS Artifact",
+            "correct": true,
+            "explanation": "AWS CloudTrail records account activity and API calls but does not provide compliance documentation."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/artifact/",
+          "https://aws.amazon.com/compliance/programs/",
+          "https://aws.amazon.com/compliance/"
+        ]
+      },
+      {
+        "id": 40,
+        "text": "What are the basic units of text that large language models use for processing?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Embeddings",
+            "correct": false,
+            "explanation": "Pixels are the smallest units of an image and are not relevant to text processing in large language models."
+          },
+          {
+            "text": "Tokens",
+            "correct": true,
+            "explanation": "Vectors are mathematical representations of data that can be used in machine learning models, but they are not the basic units of text used for processing in large language models."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/blogs/machine-learning/tokenization-in-natural-language-processing/",
+          "https://docs.aws.amazon.com/machine-learning/latest/dg/natural-language-processing.html"
+        ]
+      },
+      {
+        "id": 41,
+        "text": "How do embeddings and vectors contribute to the functionality of a large language model when processing and generating text?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "They provide numerical representations of tokens to capture semantic meaning and contextual relationships.",
+            "correct": true,
+            "explanation": "While some models are multimodal, embeddings and vectors specifically facilitate text processing, not visual data conversion."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 42,
+        "text": "How long does AWS CloudTrail retain management event history **without** configuring a trail?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Indefinitely",
+            "correct": false,
+            "explanation": "To retain logs beyond 90 days, you must create a trail to store logs in S3. Without a trail, events older than 90 days are deleted."
+          },
+          {
+            "text": "90 days",
+            "correct": true,
+            "explanation": "CloudTrail automatically retains the last **90 days** of management event history in its console-based event history."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+        ]
+      },
+      {
+        "id": 43,
+        "text": "An online customer support platform wants to use Amazon Lex to create a chatbot that can answer user queries and perform specific actions such as booking an appointment or checking order status. The platform needs the chatbot to understand a variety of user expressions and maintain context across multiple turns in the conversation. Additionally, the development team wants to log each interaction for later analysis and to improve the chatbot's performance. Which combination of actions should the team take to achieve these goals? (Choose TWO.)",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Configure Amazon CloudWatch Logs to capture and store conversation logs from Amazon Lex for analysis.",
+            "correct": true,
+            "explanation": "Amazon Kinesis is primarily used for real-time data streaming and is not specifically intended for logging or monitoring Amazon Lex conversations directly."
+          },
+          {
+            "text": "Use Amazon Lex session attributes to maintain context across multiple turns in the conversation.",
+            "correct": true,
+            "explanation": "Amazon Lex session attributes allow the chatbot to carry contextual information across multiple turns, which helps it maintain a more conversational flow."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 44,
+        "text": "What does Amazon Textract provide along with extracted text to help verify the accuracy of the extraction?",
+        "cat": "fm_apps",
+        "catLabel": "Foundation Model Evaluation Criteria",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Manual extraction options",
+            "correct": false,
+            "explanation": "Amazon Textract does not offer manual extraction options as it is designed to automate the extraction process from documents and images. Manual extraction would defeat the purpose of using Textract for automated text extraction."
+          },
+          {
+            "text": "Confidence scores",
+            "correct": true,
+            "explanation": "Amazon Textract does not provide real-time translation services. Its primary function is to extract text and data from documents and images, not to translate text in real-time."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 45,
+        "text": "When using the chain of thought prompting technique with large language models, which of the following benefits are typically observed? (Select Two)",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Decreased computational resources required for generating responses",
+            "correct": false,
+            "explanation": "Decreased computational resources required for generating responses are not typically observed when using the chain of thought prompting technique with large language models. While the technique may improve efficiency and accuracy in reasoning, it does not directly impact the computational resources needed for response generation."
+          },
+          {
+            "text": "Enhanced ability to handle tasks with complex logical dependencies",
+            "correct": true,
+            "explanation": "The chain of thought prompting technique enhances the ability of large language models to handle tasks with complex logical dependencies by providing a structured approach to reasoning. This technique helps the model navigate through intricate relationships and dependencies in the input data, leading to more accurate and contextually relevant responses."
+          },
+          {
+            "text": "Improved accuracy in tasks requiring multi-step reasoning",
+            "correct": true,
+            "explanation": "Faster response generation is not typically observed when using the chain of thought prompting technique with large language models. While the technique may help improve accuracy and handle complex tasks, it does not necessarily simplify reasoning to the extent of speeding up response generation."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 46,
+        "text": "What is the primary difference between the \"top-p\" and \"top-k\" parameters in generative AI models?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Top-p adjusts the randomness of the output, while top-k controls the diversity of the words used.",
+            "correct": false,
+            "explanation": "Neither top-p nor top-k deals with dynamic adjustments based on training data."
+          },
+          {
+            "text": "Top-p limits the number of tokens based on their cumulative probabilities, while top-k specifies a fixed number of most probable tokens to consider.",
+            "correct": true,
+            "explanation": "The top-p parameter (nucleus sampling) dynamically selects candidate tokens based on cumulative probabilities (e.g., the smallest set of tokens whose combined probabilities reach a specified threshold like 0.5). Top-k, on the other hand, uses a fixed number of most probable tokens (e.g., top 50) for token selection."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 47,
+        "text": "Which two features of Amazon Q Business help in maintaining control over data and ensuring security? (Select Two)",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Multi-region data replication",
+            "correct": false,
+            "explanation": "Multi-region data replication enhances availability and disaster recovery but does not specifically focus on security or maintaining control over data. This feature is more about ensuring data is available across different locations rather than securing it."
+          },
+          {
+            "text": "Guardrails and topic-specific controls",
+            "correct": true,
+            "explanation": "A fully managed infrastructure is designed to simplify operations and reduce the need for manual code management. However, it does not inherently address issues related to data control and security."
+          },
+          {
+            "text": "Encryption of data and user permissions",
+            "correct": true,
+            "explanation": "Encryption is a critical feature that ensures data is protected both at rest and in transit. By implementing user permissions, Amazon Q Business allows administrators to control who has access to sensitive data, thereby enhancing security."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 48,
+        "text": "What is Amazon Polly's primary function?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To generate synthetic data",
+            "correct": false,
+            "explanation": "Amazon Polly is not primarily used to translate text into different languages. Its main function is to generate speech from written text, not to perform language translation."
+          },
+          {
+            "text": "To convert written text into natural-sounding speech",
+            "correct": true,
+            "explanation": "Amazon Polly's main purpose is to convert written text into natural-sounding speech. It provides lifelike speech output using advanced deep learning technologies."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/polly/",
+          "https://docs.aws.amazon.com/polly/",
+          "https://aws.amazon.com/polly/faqs/"
+        ]
+      },
+      {
+        "id": 49,
+        "text": "What is the role of the discriminator in a Generative Adversarial Network (GAN)?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To evaluate and classify data as real or fake",
+            "correct": true,
+            "explanation": "The discriminator in a Generative Adversarial Network (GAN) does not add noise to data. Its main function is to assess the authenticity of the generated data by distinguishing between real and fake samples, contributing to the adversarial training process between the generator and discriminator."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 50,
+        "text": "What is the primary difference between labeled and unlabeled data in machine learning?",
+        "cat": "fm_apps",
+        "catLabel": "Design Considerations for Foundational Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Labeled data contains input features, while unlabeled data contains output features",
+            "correct": false,
+            "explanation": "This is incorrect because  **both labeled and unlabeled data can be structured or unstructured** . Structured data is organized in a predefined format, like tables, while unstructured data includes things like text or images. Labeled data can be structured (e.g., a table with labels) or unstructured (e.g., labeled images). The same applies to unlabeled data, which may or may not follow a structured format."
+          },
+          {
+            "text": "Labeled data comes with corresponding output labels, while unlabeled data does not",
+            "correct": true,
+            "explanation": "**Labeled data is primarily used for training models in supervised learning** . The model learns by being shown input-output pairs. **Inferencing** occurs **after** the model is trained, where it makes predictions on new, unseen data. Unlabeled data, on the other hand, is often used for training in **unsupervised learning** algorithms that don’t require output labels."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/data-labeling/",
+          "https://aws.amazon.com/machine-learning/"
+        ]
+      },
+      {
+        "id": 51,
+        "text": "Which two steps are involved in the process of diffusion models? (Select Two)",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Backward diffusion",
+            "correct": true,
+            "explanation": "Data augmentation is a technique used to artificially increase the size of a dataset by creating modified or augmented versions of existing data samples. While data augmentation is a common practice in machine learning to improve model performance, it is not directly related to the process of diffusion models."
+          },
+          {
+            "text": "Forward diffusion",
+            "correct": true,
+            "explanation": "Tokenization is a process of breaking down text or data into smaller units called tokens, which can be words, phrases, or symbols. While tokenization is a common preprocessing step in natural language processing tasks, it is not specifically related to the process of diffusion models in AI."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/ai/generative-ai/",
+          "https://aws.amazon.com/what-is/stable-diffusion/"
+        ]
+      },
+      {
+        "id": 52,
+        "text": "What is the primary purpose of diffusion models in generative AI?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To generate high-quality samples from noisy data",
+            "correct": true,
+            "explanation": "Diffusion models are not primarily used for classifying images accurately. While they can be used in image processing tasks, their main purpose is different."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/ai/generative-ai/",
+          "https://aws.amazon.com/what-is/stable-diffusion/"
+        ]
+      },
+      {
+        "id": 53,
+        "text": "What are the key features of Amazon Q Business that enhance its functionality for business operations? (Select Two)",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Limited third-party integration options",
+            "correct": false,
+            "explanation": "Amazon Q Business does not natively include this. Businesses would need to integrate with other tools or services to obtain real-time analytics."
+          },
+          {
+            "text": "Easy-to-use interface for deployment and configuration",
+            "correct": true,
+            "explanation": "The service is designed with a user-friendly interface that makes deployment and configuration straightforward, even for users without deep technical expertise. This accessibility enhances productivity and reduces the time needed to get the service up and running."
+          },
+          {
+            "text": "Fully managed infrastructure",
+            "correct": true,
+            "explanation": "Amazon Q Business offers a fully managed infrastructure. This greatly simplifies the process, allowing businesses to focus on operations without worrying about the underlying technical setup."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 54,
+        "text": "Which of the following can Amazon Comprehend NOT do?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Translate text from one language to another",
+            "correct": true,
+            "explanation": "Amazon Comprehend can detect the language of a document accurately, making it easier to process and analyze text data in different languages."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 55,
+        "text": "What is the primary characteristic of a pre-trained model in the context of machine learning?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "It is a model trained on a large, general-purpose dataset and can be fine-tuned for specific tasks.",
+            "correct": true,
+            "explanation": "This describes a model trained from scratch for a specific task, not a pre-trained model. Pre-trained models are general-purpose before fine-tuning."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 56,
+        "text": "An e-commerce company uses a model to answer product questions. Users complain that responses are outdated for new items. The team integrates Amazon Kendra to fetch real-time product data and inject it into prompts. Which technique does this illustrate?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Retrieval-augmented generation (RAG)",
+            "correct": true,
+            "explanation": "These involve example-based or instruction-only prompts, not real-time data integration."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 57,
+        "text": "A retail company wants to extract relevant data such as product names, prices, and reviews from thousands of receipts and invoices to streamline their financial auditing process. They need to automate this task to reduce manual data entry and errors. Which AWS service would best help the company meet these requirements?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon Polly",
+            "correct": false,
+            "explanation": "Amazon Rekognition is more focused on image and video analysis tasks such as facial recognition, object detection, and scene understanding. While it can extract text from images, it may not be as accurate or efficient as Amazon Textract for extracting structured data from documents like receipts and invoices."
+          },
+          {
+            "text": "Amazon Textract",
+            "correct": true,
+            "explanation": "Amazon Textract is the correct choice for this scenario as it is specifically designed for extracting text and data from scanned documents such as receipts and invoices. It uses machine learning algorithms to accurately identify and extract key information like product names, prices, and reviews, which is essential for automating the financial auditing process."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 58,
+        "text": "A media company wants to automatically tag objects, scenes, and text in videos, as well as transcribe the audio into text for captioning purposes. Which two AWS AI services should they use?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon Textract",
+            "correct": false,
+            "explanation": "Amazon Textract is not the best choice for automatically tagging objects, scenes, and text in videos or transcribing audio into text. Textract is primarily designed for extracting text and data from scanned documents, making it less suitable for the media company's specific needs."
+          },
+          {
+            "text": "Amazon Transcribe",
+            "correct": true,
+            "explanation": "Amazon Polly is a text-to-speech service and is not designed for automatically tagging objects, scenes, and text in videos or transcribing audio into text. While Polly can be used to generate speech from text, it does not provide the functionality required by the media company for their video processing needs."
+          },
+          {
+            "text": "Amazon Rekognition",
+            "correct": true,
+            "explanation": "Amazon Rekognition is a suitable AWS AI service for automatically tagging objects, scenes, and text in videos. It provides powerful image and video analysis capabilities, including object and scene detection, facial analysis, and text recognition, making it ideal for the media company's requirements."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/rekognition/",
+          "https://aws.amazon.com/transcribe/"
+        ]
+      },
+      {
+        "id": 59,
+        "text": "What is the primary goal of a Generative Adversarial Network (GAN)?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To encode data into a compressed format",
+            "correct": false,
+            "explanation": "GANs are not designed for image classification tasks. Their primary goal is to generate new data, not classify existing data into categories."
+          },
+          {
+            "text": "To generate new data that is similar to real data",
+            "correct": true,
+            "explanation": "The main objective of a Generative Adversarial Network (GAN) is to generate new data that closely resembles real data. This is achieved through a generator network that creates synthetic data and a discriminator network that evaluates the authenticity of the generated data."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 60,
+        "text": "Which scenario best demonstrates the use of an agent in a multimodal generative AI system?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "A foundational model training process being monitored and fine-tuned for better performance.",
+            "correct": false,
+            "explanation": "This represents the functionality of a multimodal foundational model, not the role of an agent."
+          },
+          {
+            "text": "An agent retrieving data from a CRM, interpreting a customer request, and providing a product recommendation.",
+            "correct": true,
+            "explanation": "An agent acts as a bridge between the AI model and external systems (e.g., CRM), interprets user input, retrieves relevant data, and provides actionable outputs like product recommendations."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 61,
+        "text": "Which AWS service can be integrated with Amazon Bedrock to enhance monitoring and logging capabilities?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon Redshift",
+            "correct": false,
+            "explanation": "Amazon Inspector is a vulnerability management service used to assess security vulnerabilities in your AWS environment. While it can provide insights into security risks, it does not offer general monitoring or logging capabilities. Amazon Inspector is focused on security and compliance, not operational monitoring of services like Amazon Bedrock."
+          },
+          {
+            "text": "AWS CloudWatch",
+            "correct": true,
+            "explanation": "AWS CloudWatch is the correct choice as it is a monitoring and observability service provided by AWS. It can be integrated with Amazon Bedrock to enhance monitoring and logging capabilities by collecting and tracking metrics, monitoring logs, setting alarms, and reacting to changes in your AWS resources."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring.html",
+          "https://aws.amazon.com/cloudwatch/"
+        ]
+      },
+      {
+        "id": 62,
+        "text": "Which AWS service provides a detailed view of the configuration of AWS resources in your account?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "AWS CloudTrail",
+            "correct": false,
+            "explanation": "AWS Trusted Advisor is not the correct choice for this question. Trusted Advisor provides recommendations to help you optimize your AWS infrastructure, but it does not offer a detailed view of the configuration of AWS resources in your account."
+          },
+          {
+            "text": "AWS Config",
+            "correct": true,
+            "explanation": "AWS Config is the correct choice as it provides a detailed view of the configuration of AWS resources in your account. It allows you to assess, audit, and evaluate the configurations of your AWS resources, track changes, and maintain compliance with configurations over time."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 63,
+        "text": "In what way do AI agents enhance the integration of generative AI models with back-end systems?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "By translating natural language prompts directly into API requests or database queries.",
+            "correct": true,
+            "explanation": "Agents do not modify foundational model architectures; their purpose is operational, not architectural."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 64,
+        "text": "Which metric would be most useful for understanding the speed and resource efficiency of deploying a generative AI model?",
+        "cat": "fm_apps",
+        "catLabel": "Foundation Model Evaluation Criteria",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Conversion Rate",
+            "correct": false,
+            "explanation": "Conversion Rate measures the effectiveness of driving desired outcomes."
+          },
+          {
+            "text": "Efficiency",
+            "correct": true,
+            "explanation": "User Satisfaction relates to the end user experience."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 65,
+        "text": "Which AWS service can be used to store the outputs generated by Amazon Bedrock models for further analysis?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon S3",
+            "correct": true,
+            "explanation": "Amazon RDS is a relational database, not optimized for storing large volumes of model outputs."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/s3/",
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-analyze.html"
+        ]
+      }
+    ],
+    "categories": {
+      "genai": {
+        "label": "Prompt Engineering",
+        "color": "#8b5cf6"
+      },
+      "fm_apps": {
+        "label": "Use Cases of AI, ML and Generative AI",
+        "color": "#f59e0b"
+      },
+      "ml_lifecycle": {
+        "label": "Model Training and Fine Tuning",
+        "color": "#10b981"
+      },
+      "responsible_ai": {
+        "label": "Responsible AI",
+        "color": "#ec4899"
+      },
+      "security": {
+        "label": "Security and Compliance for AI Systems",
+        "color": "#ef4444"
+      }
+    }
+  },
+  {
+    "id": "test8",
+    "title": "Simulacro Test 8",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Which prompting technique would be most suitable for a task that requires logical reasoning across multiple steps?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Chain-of-thought prompting",
+            "correct": true,
+            "explanation": "Negative prompting prevents unwanted content but does not aid in logical reasoning."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 2,
+        "text": "Which AWS service can help an organization manage their risk and compliance with regulations by automating evidence collection?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "AWS Config",
+            "correct": false,
+            "explanation": "Amazon Inspector is a security assessment service that helps organizations improve the security and compliance of applications deployed on AWS. While it can assist in identifying security vulnerabilities and compliance issues, it is not focused on automating evidence collection for risk and compliance management with regulations."
+          },
+          {
+            "text": "AWS Audit Manager",
+            "correct": true,
+            "explanation": "AWS Artifact is a service that provides on-demand access to AWS compliance reports and other documentation. While it can be useful for accessing compliance-related information, it does not automate evidence collection for risk and compliance management with regulations like AWS Audit Manager does."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 3,
+        "text": "A healthcare application uses Amazon Bedrock agents to provide accurate answers about drug interactions. The agents frequently reference the latest clinical guidelines to ensure reliability. Which feature of Bedrock agents primarily enables this capability?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Integration with Amazon Comprehend Medical for entity extraction",
+            "correct": false,
+            "explanation": "While Comprehend Medical extracts medical entities, Bedrock’s knowledge base integration ensures up-to-date reference material."
+          },
+          {
+            "text": "Knowledge base grounding using retrieval-augmented generation (RAG)",
+            "correct": true,
+            "explanation": "Translation is unrelated to leveraging clinical guidelines."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 4,
+        "text": "Which AWS service allows you to download security and compliance documents, such as PCI reports or SOC certifications?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon Inspector",
+            "correct": false,
+            "explanation": "AWS CloudTrail is a service that provides a record of actions taken by a user, role, or an AWS service in your account. It helps with monitoring and auditing AWS API calls, but it does not offer the capability to download security and compliance documents such as PCI reports or SOC certifications."
+          },
+          {
+            "text": "AWS Artifact",
+            "correct": true,
+            "explanation": "AWS Config is a service that provides a detailed view of the configuration of AWS resources in your account. It helps with assessing, auditing, and evaluating the configurations for compliance purposes, but it does not specifically provide access to security and compliance documents like PCI reports or SOC certifications."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 5,
+        "text": "An insurance company wants to automatically categorize customer emails into \"Claims,\" \"Policy Updates,\" or \"Billing Issues\" based on their content. Which Amazon Comprehend feature is most appropriate for this task?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Sentiment Analysis",
+            "correct": false,
+            "explanation": "Keyphrase Extraction highlights important phrases but doesn’t group documents into predefined labels."
+          },
+          {
+            "text": "Text Classification",
+            "correct": true,
+            "explanation": "Text Classification allows users to define custom categories (e.g., \"Claims\" or \"Billing Issues\") and automatically sort text into those categories."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 6,
+        "text": "How can AI agents use real-time data to make better decisions?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "By enabling fast similarity searches in vector databases",
+            "correct": true,
+            "explanation": "Ignoring user input can limit the AI agent's ability to consider valuable insights and preferences provided by users in real-time. User input can provide important context and feedback that can enhance the decision-making process of AI agents, so disregarding it may result in less effective decisions."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 7,
+        "text": "A company is developing an AI model and wants to ensure it does not discriminate against any group. Which two core dimensions of responsible AI should they focus on? (Select two)",
+        "cat": "responsible_ai",
+        "catLabel": "Responsible AI",
+        "multiSelect": true,
+        "selectCount": 2,
+        "images": [],
+        "options": [
+          {
+            "text": "Transparency",
+            "correct": true,
+            "explanation": "Transparency ensures that the AI model's decisions and processes are understandable and explainable, which is key to detecting and correcting potential biases."
+          },
+          {
+            "text": "Fairness",
+            "correct": true,
+            "explanation": "Safety ensures the model avoids harmful outcomes."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 8,
+        "text": "A retail company uses a general-purpose LLM to generate product descriptions but faces inconsistent brand voice and inaccuracies. What optimization strategy ensures alignment with brand guidelines while maintaining scalability?",
+        "cat": "fm_apps",
+        "catLabel": "Design considerations for Foundation Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Fine-tune the foundational model on curated datasets of past marketing materials",
+            "correct": true,
+            "explanation": "Human reviews add latency and cost, negating automation benefits."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 9,
+        "text": "Which step in the data preprocessing phase involves handling missing values and outliers?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Feature engineering",
+            "correct": false,
+            "explanation": "Model evaluation occurs after the data preprocessing phase and involves assessing the performance of the trained model. It does not directly involve handling missing values and outliers, which are addressed during the data cleaning step."
+          },
+          {
+            "text": "Data cleaning",
+            "correct": true,
+            "explanation": "Data cleaning is the step in the data preprocessing phase that involves handling missing values and outliers. This process ensures that the data is accurate, complete, and ready for analysis by addressing data quality issues such as missing values and outliers."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 10,
+        "text": "A company wants to use Amazon Comprehend to analyze customer feedback from social media posts and online reviews. Which two capabilities of Amazon Comprehend are most relevant for this task? (Select Two)",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Translating feedback from multiple languages into English",
+            "correct": false,
+            "explanation": "While translating feedback from multiple languages is important, it is not a function of Amazon Comprehend. This task would require a different service, such as Amazon Translate, which specializes in language translation."
+          },
+          {
+            "text": "Detecting specific entities such as product names, locations, and dates",
+            "correct": true,
+            "explanation": "Generating new customer feedback based on existing reviews is not a feature of Amazon Comprehend. This would involve content generation, which requires different AI models designed for that purpose, rather than text analysis."
+          },
+          {
+            "text": "Identifying the sentiment (positive, negative, neutral) expressed in the feedback",
+            "correct": true,
+            "explanation": "Amazon Comprehend is highly effective at **identifying the sentiment** expressed in text. By analyzing customer feedback, it can determine whether the sentiment is positive, negative, or neutral. This capability is crucial for companies to gauge customer satisfaction and identify areas for improvement."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html",
+          "https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html"
+        ]
+      },
+      {
+        "id": 11,
+        "text": "What is the primary purpose of neural networks in deep learning?",
+        "cat": "aiml",
+        "catLabel": "Fundamental Concepts and Terminologies of AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To store vast amounts of data for retrieval",
+            "correct": false,
+            "explanation": "Neural networks in deep learning require training on labeled data to make accurate predictions. They do not generate real-time predictions without prior training. Training involves adjusting the weights and biases of the network to minimize prediction errors."
+          },
+          {
+            "text": "To simulate the structure and function of the human brain",
+            "correct": true,
+            "explanation": "The primary purpose of neural networks in deep learning is to simulate the structure and function of the human brain. By using interconnected layers of artificial neurons, neural networks can learn complex patterns and relationships in data, similar to how the human brain processes information."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 12,
+        "text": "A customer support chatbot powered by an LLM occasionally invents product features that don’t exist, confusing users. Which approach most effectively reduces these hallucinations while maintaining response relevance?",
+        "cat": "aiml",
+        "catLabel": "Fundamental Concepts and Terminologies of AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Increasing the model’s temperature setting to encourage creativity",
+            "correct": false,
+            "explanation": "Broad fine-tuning dilutes domain-specific accuracy and risks introducing more errors."
+          },
+          {
+            "text": "Implementing retrieval-augmented generation (RAG) with a curated knowledge base",
+            "correct": true,
+            "explanation": "Token limits may cut off useful info but don’t address factual inaccuracies."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 13,
+        "text": "A company wants to use Amazon Rekognition to create a searchable database of their employee ID photos. Which feature will allow them to search and match photos accurately?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Object detection",
+            "correct": false,
+            "explanation": "Object detection in Amazon Rekognition is used to identify and locate objects within images, not to search and match photos accurately in a database of employee ID photos. It is not the feature that will enable accurate photo matching."
+          },
+          {
+            "text": "Face indexing",
+            "correct": true,
+            "explanation": "Text detection in Amazon Rekognition is used to detect and extract text from images, not to search and match photos accurately in a database of employee ID photos. It is not the feature that will allow accurate photo matching."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 14,
+        "text": "Which feature of Amazon Macie enables organizations to automatically identify and safeguard sensitive data within their Amazon S3 buckets?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Automated Data Discovery",
+            "correct": true,
+            "explanation": "It is part of  **AWS Identity and Access Management (IAM) Access Analyzer** , which is designed to help you analyze and monitor access to your AWS resources. **AWS IAM Access Analyzer** enables you to identify resources in your organization or account, such as S3 buckets, KMS keys, Lambda functions, and more, that are shared with external entities (like other AWS accounts or publicly). It generates findings based on resource policies to help you understand unintended access or overexposed resources."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 15,
+        "text": "Which aspect of responsible AI involves providing detailed records of data processing activities?",
+        "cat": "responsible_ai",
+        "catLabel": "Responsible AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Security",
+            "correct": false,
+            "explanation": "Security protects data and systems from threats."
+          },
+          {
+            "text": "Transparency",
+            "correct": true,
+            "explanation": "Fairness ensures non-discrimination."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 16,
+        "text": "A financial institution is deploying a generative AI model to optimize portfolio strategies. The team observes that the model occasionally generates different outputs for identical inputs. What approach should they take to reduce variability and enhance output consistency?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Implement cross-verification and conduct multiple runs of the model.",
+            "correct": true,
+            "explanation": "Rule-based algorithms limit flexibility and are unsuitable for complex generative tasks."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/machine-learning/latest/dg/cross-validation.html",
+          "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html",
+          "https://docs.aws.amazon.com/prescriptive-guidance/latest/micro-frontends-aws/governance.html"
+        ]
+      },
+      {
+        "id": 17,
+        "text": "Which AWS service is recommended for storing large datasets used for fine-tuning models in Amazon Bedrock?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon DynamoDB",
+            "correct": false,
+            "explanation": "Amazon RDS is a relational database service and is not typically used for storing large datasets for machine learning model training. While it can be used for certain types of data storage, it is not the recommended service for storing large datasets used for fine-tuning models in Amazon Bedrock."
+          },
+          {
+            "text": "Amazon S3",
+            "correct": true,
+            "explanation": "AWS CloudTrail is a service that provides governance, compliance, and operational auditing of AWS account activities. It is not intended for storing large datasets for machine learning model training, and therefore, it is not the recommended service for storing datasets used in Amazon Bedrock."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 18,
+        "text": "What is the primary advantage of using Retrieval-Augmented Generation (RAG) in large language models?",
+        "cat": "fm_apps",
+        "catLabel": "Design considerations for Foundation Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "It reduces the size of the knowledge base required for large language models to generate accurate responses.",
+            "correct": false,
+            "explanation": "Pre-trained embeddings are integral to RAG workflows as they enable semantic similarity searches. RAG does not bypass this step."
+          },
+          {
+            "text": "It enables large language models to dynamically incorporate reliable external information into responses without retraining.",
+            "correct": true,
+            "explanation": "RAG allows large language models to dynamically retrieve and incorporate reliable, external information from a knowledge base, ensuring up-to-date and accurate responses without the need to retrain the model."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+        ]
+      },
+      {
+        "id": 19,
+        "text": "A company deploying a generative AI application is concerned about the risks of jailbreaking. What is the MOST effective strategy to mitigate this risk?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Use a high top-p value to allow for broader output generation and reduce malicious content.",
+            "correct": false,
+            "explanation": "While encryption protects prompt data in transit and at rest, it does not prevent the model from generating outputs that violate its intended constraints."
+          },
+          {
+            "text": "Implement guardrails that restrict specific outputs and continuously monitor for vulnerabilities in the model.",
+            "correct": true,
+            "explanation": "Guardrails, such as filtering mechanisms and constraints, are essential to prevent the model from executing unauthorized actions or bypassing ethical restrictions. Regular monitoring ensures new vulnerabilities are addressed promptly."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/blogs/machine-learning/build-safe-and-responsible-generative-ai-applications-with-guardrails/",
+          "https://aws.amazon.com/machine-learning/responsible-ai/"
+        ]
+      },
+      {
+        "id": 20,
+        "text": "A retail company wants to implement a solution to detect when shelves are empty by analyzing images. Which two Amazon Rekognition features would be most useful for this task? (Select two)",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": true,
+        "selectCount": 2,
+        "images": [],
+        "options": [
+          {
+            "text": "Label detection",
+            "correct": true,
+            "explanation": "Face recognition is not the most useful feature for detecting empty shelves in images. This feature is more geared towards identifying and analyzing human faces within images, which is not directly related to detecting empty shelves."
+          },
+          {
+            "text": "Object detection",
+            "correct": true,
+            "explanation": "Object detection is a crucial Amazon Rekognition feature for detecting and locating objects within images. This feature can be highly beneficial for identifying empty shelves by recognizing the absence of items or products on the shelves, making it a valuable tool for the task at hand."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/rekognition/latest/dg/labels.html",
+          "https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/understanding-custom-labels.html"
+        ]
+      },
+      {
+        "id": 21,
+        "text": "Which of the following scenarios describes a misuse of prompting that can negatively impact the accuracy, fairness, or reliability of a large language model's output? (Choose Two)",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Limiting the cumulative probability of candidate words using a low top-p value.",
+            "correct": false,
+            "explanation": "Adjusting top-p values is a standard method to control word diversity, not a misuse of prompting."
+          },
+          {
+            "text": "Constructing prompts to bypass safety constraints in the model, such as generating harmful or unethical content.",
+            "correct": true,
+            "explanation": "A low temperature setting ensures deterministic outputs and is not misuse but rather a design choice."
+          },
+          {
+            "text": "Embedding specific instructions within a prompt to manipulate the model’s behavior toward unintended outputs.",
+            "correct": true,
+            "explanation": "While exposing sensitive training data is a valid risk (related to exposure), it is not directly tied to misuse of prompting techniques."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/blogs/machine-learning/build-safe-and-responsible-generative-ai-applications-with-guardrails/",
+          "https://aws.amazon.com/machine-learning/responsible-ai/"
+        ]
+      },
+      {
+        "id": 22,
+        "text": "A company needs to automate the process of extracting structured data from scanned invoices and forms. Which feature of Amazon Textract is most suitable for this task?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Automatically identifying and extracting key-value pairs",
+            "correct": true,
+            "explanation": "Generating summaries of large text documents is not a function of Amazon Textract, which focuses on extracting data rather than summarizing content."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/textract/features/",
+          "https://docs.aws.amazon.com/textract/latest/dg/how-it-works-kvp.html"
+        ]
+      },
+      {
+        "id": 23,
+        "text": "What should a company do to use Amazon Comprehend for analyzing a large set of documents stored in an S3 bucket for entities and key phrases?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Use real-time analysis",
+            "correct": false,
+            "explanation": "Manually analyzing documents stored in an S3 bucket is not a practical approach for analyzing a large set of documents. It is time-consuming, error-prone, and inefficient compared to utilizing automated batch processing jobs in Amazon Comprehend."
+          },
+          {
+            "text": "Schedule batch processing jobs",
+            "correct": true,
+            "explanation": "Training a custom model with labeled data in Amazon Comprehend is a valid approach for specific and customized analysis tasks. However, for analyzing a large set of documents stored in an S3 bucket for entities and key phrases, scheduling batch processing jobs would be a more appropriate and efficient method."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 24,
+        "text": "A retail company plans to use Amazon Personalize to improve customer experience by generating personalized product recommendations. The team wants to ensure the model performs effectively across varying customer data patterns. Which of the following approaches should the team adopt to optimize results? (Choose Two)",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Use Amazon Personalize's exploration-weight feature to balance personalized recommendations and new item discovery.",
+            "correct": true,
+            "explanation": "Relying on default hyperparameters may simplify the setup but can lead to suboptimal model performance. Fine-tuning is often necessary to achieve the best results."
+          },
+          {
+            "text": "Use real-time event tracking to continuously update recommendations based on recent user interactions.",
+            "correct": true,
+            "explanation": "Batch inference is suitable for non-real-time use cases but does not optimize real-time personalization."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html",
+          "https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-configure-exploration.html"
+        ]
+      },
+      {
+        "id": 25,
+        "text": "A company wants to protect its AI models from unauthorized access and data theft. Which of the following actions should they take?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Implement strong access controls and encryption",
+            "correct": true,
+            "explanation": "Prompt filtering and validation address prompt injection attacks."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 26,
+        "text": "Which feature of Amazon Textract can be used to extract structured data from invoices and receipts?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Table detection",
+            "correct": false,
+            "explanation": "Document analysis in Amazon Textract is used to extract text, tables, and other elements from documents, but it is not specifically designed for extracting structured data from invoices and receipts."
+          },
+          {
+            "text": "Key-value pairs extraction",
+            "correct": true,
+            "explanation": "Key-value pairs extraction in Amazon Textract is specifically designed to extract structured data such as key-value pairs from documents like invoices and receipts. This feature helps in accurately extracting important information like invoice numbers, dates, amounts, and more, making it the ideal choice for this use case."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 27,
+        "text": "A customer support team wants to implement a text classification system using Amazon Comprehend. They need to categorize support tickets into \"Urgent\", \"General Inquiry\", and \"Feedback\" without providing extensive labeled datasets. Which prompting technique would be most effective for initial implementation?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Fine-tuning with transfer learning",
+            "correct": false,
+            "explanation": "Semantic similarity matching is a technique used to compare the similarity between texts based on their meanings. While it can be useful for tasks like information retrieval or question answering, it may not be the most effective prompting technique for the initial implementation of a text classification system for support tickets without extensive labeled datasets."
+          },
+          {
+            "text": "Zero-shot learning",
+            "correct": true,
+            "explanation": "Zero-shot learning is the most effective prompting technique for the initial implementation of a text classification system using Amazon Comprehend in this scenario. It allows the model to classify text into predefined categories without the need for extensive labeled datasets, making it ideal for categorizing support tickets into \"Urgent\", \"General Inquiry\", and \"Feedback\" based on the existing knowledge of the model."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 28,
+        "text": "An ML engineer needs to label a large dataset of medical images stored in Amazon S3. Which SageMaker service streamlines this process while ensuring compliance and cost efficiency?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "SageMaker Data Wrangler for automated feature engineering",
+            "correct": false,
+            "explanation": "Feature Store manages features, not raw image labeling."
+          },
+          {
+            "text": "SageMaker Ground Truth with private workforce labeling",
+            "correct": true,
+            "explanation": "Experiments tracks ML trials, not labeling tasks."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 29,
+        "text": "A developer configures an LLM with a temperature of 0.2 and top-p value of 0.9 to generate technical documentation. Despite the high top-p setting, outputs remain repetitive. What explains this behavior?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Top-k sampling is conflicting with nucleus sampling (top-p)",
+            "correct": false,
+            "explanation": "Token length controls response size but doesn’t directly affect word diversity."
+          },
+          {
+            "text": "Low temperature overrides top-p by emphasizing high-probability words",
+            "correct": true,
+            "explanation": "Temperature scales the probability distribution *before* top-p sampling. A low temperature (0.2) sharpens the distribution, making the model favor the most likely tokens even with a high top-p."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 30,
+        "text": "Which of the following parameters can influence the creativity of a language model's output? (Select Two)",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Model size",
+            "correct": false,
+            "explanation": "Model size refers to the number of parameters in the language model. While larger models generally perform better and can generate more nuanced responses, the size itself does not directly dictate creativity. Creativity is more about how the model generates outputs rather than the model's capacity."
+          },
+          {
+            "text": "Temperature",
+            "correct": true,
+            "explanation": "Context length refers to the amount of input text that the model takes into account when generating a response. While it affects the relevance and coherence of the output, it does not directly influence creativity."
+          },
+          {
+            "text": "Top-p",
+            "correct": true,
+            "explanation": "Both temperature and top-p influence the creativity of the model’s output. Temperature controls the randomness of the response, with higher values leading to more creative and varied responses. Top-p, or nucleus sampling, limits the pool of candidate words based on cumulative probability, allowing the model to consider a broader or narrower range of words, thus influencing the creativity."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 31,
+        "text": "What is the primary function of AWS Config in the context of compliance and governance?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To automate the creation of compliance reportsIt provides real-time transaction details",
+            "correct": false,
+            "explanation": "This is a function of AWS Audit Manager, not AWS Config."
+          },
+          {
+            "text": "To monitor and track resource configurations for compliance",
+            "correct": true,
+            "explanation": "Trusted Advisor optimizes costs and performance."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 32,
+        "text": "Which task ensures the confidentiality and integrity of data at rest and in transit in AI systems?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Threat detection",
+            "correct": false,
+            "explanation": "Infrastructure protection focuses on securing the underlying infrastructure of AI systems, such as servers, networks, and storage. While important for overall system security, infrastructure protection does not directly ensure the confidentiality and integrity of data at rest and in transit."
+          },
+          {
+            "text": "Data encryption",
+            "correct": true,
+            "explanation": "Data encryption is a critical task that ensures the confidentiality and integrity of data at rest and in transit in AI systems. By encrypting data, unauthorized users cannot access or tamper with sensitive information, providing a secure way to protect data."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 33,
+        "text": "An organization is evaluating trade-offs in responsible AI while building a machine learning model. Which of the following trade-offs are accurately described? (Choose Two)",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "**Safety vs. Controllability** : Enhancing safety often involves sacrificing the developer's ability to influence model behavior.",
+            "correct": false,
+            "explanation": "The trade-off described mixes safety with transparency, not controllability. Safety vs. Transparency is a separate trade-off."
+          },
+          {
+            "text": "**Controllability vs. Complexity** : Controllable models are typically simpler but may not handle large datasets as effectively as complex models.",
+            "correct": true,
+            "explanation": "Simpler models are easier to control and debug, but they may lack the sophistication to handle large datasets or complex patterns as effectively as complex models."
+          },
+          {
+            "text": "**Interpretability vs. Performance** : Simpler models like decision trees offer higher interpretability but may not perform well on complex tasks.",
+            "correct": true,
+            "explanation": "Transparency and variance are not directly related; overfitting (variance issue) occurs due to sensitivity to noise, regardless of model transparency."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/whitepapers/latest/model-explainability-aws-ai-ml/interpretability-versus-explainability.html",
+          "https://docs.aws.amazon.com/whitepapers/latest/model-explainability-aws-ai-ml/model-explainability-assessment.html"
+        ]
+      },
+      {
+        "id": 34,
+        "text": "Which approach is best for ensuring an AI model can handle a wide range of scenarios during inference?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Reducing the model's complexity",
+            "correct": false,
+            "explanation": "Reducing the model's complexity may limit its capacity to capture the complexity of different scenarios during inference. A more complex model with sufficient training data is often better equipped to handle a wide range of scenarios and make accurate predictions."
+          },
+          {
+            "text": "Applying domain adaptation techniques",
+            "correct": true,
+            "explanation": "Using a small, specific dataset may limit the AI model's ability to generalize and handle a wide range of scenarios during inference. It is important for the model to be trained on diverse and representative data to ensure robust performance across various scenarios."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 35,
+        "text": "A healthcare organization uses Amazon Kendra to search patient records across PDFs, clinical notes, and databases. Despite accurate queries, results often miss critical unstructured data. Which configuration ensures Kendra prioritizes context-aware understanding over keyword matching?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Increase the number of index replicas for faster query processing",
+            "correct": false,
+            "explanation": "Data location doesn’t impact Kendra’s ability to analyze content contextually."
+          },
+          {
+            "text": "Enable natural language processing (NLP) enhancements in the index settings",
+            "correct": true,
+            "explanation": "Manual tagging is time-intensive and doesn’t leverage Kendra’s built-in ML."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/kendra/faqs/",
+          "https://aws.amazon.com/kendra/connectors/"
+        ]
+      },
+      {
+        "id": 36,
+        "text": "Which feature of Amazon Q Business ensures that responses align with an organization's specific needs and context?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Prebuilt connectors",
+            "correct": false,
+            "explanation": "User permissions in Amazon Q Business control access to different features and functionalities within the platform. While user permissions are crucial for maintaining security and data privacy, they do not directly impact the alignment of responses with an organization's specific needs and context."
+          },
+          {
+            "text": "Retrieval augmented generation (RAG)",
+            "correct": true,
+            "explanation": "Retrieval augmented generation (RAG) in Amazon Q Business is a feature that combines information retrieval and natural language generation to produce responses that are tailored to an organization's specific needs and context. This feature helps ensure that the responses generated by the system are relevant and aligned with the organization's requirements."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 37,
+        "text": "How do AI agents enhance productivity and reduce operational costs in a business environment?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "By autonomously performing tasks, reducing the burden of repetitive work and minimizing human errors",
+            "correct": true,
+            "explanation": "Agents improve strategic decision-making by processing large data sets, but they do not limit employee involvement."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 38,
+        "text": "A hospital wants to use Amazon Comprehend Medical to enhance their medical data analysis. Which two of the following capabilities would help them achieve this goal? (Select two)",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": true,
+        "selectCount": 2,
+        "images": [],
+        "options": [
+          {
+            "text": "Identify medical entities such as symptoms, diagnoses, and medications in clinical notes",
+            "correct": true,
+            "explanation": "Amazon Comprehend Medical is not designed to generate synthetic data. Its role is to extract medical insights from existing unstructured data rather than creating new, artificial data for AI model training. Synthetic data generation requires different techniques and tools, which are not part of the functionality of Amazon Comprehend Medical."
+          },
+          {
+            "text": "De-identify patient information to comply with data privacy regulations",
+            "correct": true,
+            "explanation": "Amazon Comprehend Medical has the ability to automatically detect and remove Protected Health Information (PHI) from medical documents. This is crucial for compliance with privacy laws like HIPAA, which mandate the removal of identifiable patient information in certain contexts. De-identification ensures that healthcare organizations can analyze data while safeguarding patient privacy."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 39,
+        "text": "How can regularization help in improving a machine learning model?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "By adding more features to the model",
+            "correct": false,
+            "explanation": "Reducing the training data size is not a common approach to improving a machine learning model. Regularization techniques are more effective in preventing overfitting and improving the model's generalization performance."
+          },
+          {
+            "text": "By penalizing extreme model parameters to prevent overfitting",
+            "correct": true,
+            "explanation": "Regularization does not aim to increase the model's complexity. In fact, regularization techniques are used to prevent overfitting by adding a penalty term to the model's loss function based on the complexity of the model."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 40,
+        "text": "Which data source is NOT natively supported by Amazon Kendra?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon S3",
+            "correct": false,
+            "explanation": "Amazon S3 is natively supported."
+          },
+          {
+            "text": "Amazon DynamoDB",
+            "correct": true,
+            "explanation": "Google Drive is natively supported."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html",
+          "https://aws.amazon.com/blogs/machine-learning/adding-custom-data-sources-to-amazon-kendra/"
+        ]
+      },
+      {
+        "id": 41,
+        "text": "What are the key elements of a well-structured prompt? (Select Two)",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "User Feedback",
+            "correct": false,
+            "explanation": "Error logs are useful for debugging and identifying issues in model performance, but they are not part of the prompt itself. They serve a different purpose in the development and maintenance of AI systems."
+          },
+          {
+            "text": "Input Data",
+            "correct": true,
+            "explanation": "Input data provides the necessary context or content that the model will process to generate a response. It is essential for ensuring that the output is relevant and aligned with the user's needs."
+          },
+          {
+            "text": "Instructions",
+            "correct": true,
+            "explanation": "Instructions are a critical element of a well-structured prompt. They clearly specify the task that the AI model needs to perform, guiding the model towards generating the desired response. Without clear instructions, the model may produce irrelevant or inaccurate outputs."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 42,
+        "text": "A company is developing an AI-powered application that requires large-scale model training and deployment. They need to train a custom machine learning model and later integrate a pre-trained large language model for natural language processing tasks. Which combination of AWS services should the company use to meet both of these requirements?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Use Amazon SageMaker for both training the custom model and integrating the pre-trained language model",
+            "correct": false,
+            "explanation": "Bedrock is not used for custom model training; it focuses on integrating and running pre-trained models."
+          },
+          {
+            "text": "Use Amazon SageMaker to train the custom machine learning model and Amazon Bedrock to integrate the pre-trained large language model",
+            "correct": true,
+            "explanation": "AWS Lambda is not designed for AI model deployment or integration with large language models; SageMaker and Bedrock are more appropriate for this task."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 43,
+        "text": "Which two AWS AI services are commonly used for extracting insights from unstructured text?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon Kendra",
+            "correct": true,
+            "explanation": "AWS Translate is a machine translation service that provides language translation capabilities. While it can be used to translate text from one language to another, it is not commonly used for extracting insights from unstructured text in the same way as Amazon Comprehend and Amazon Kendra."
+          },
+          {
+            "text": "Amazon Comprehend",
+            "correct": true,
+            "explanation": "Amazon Rekognition is primarily used for image and video analysis, including object detection, facial recognition, and content moderation. It is not commonly used for extracting insights from unstructured text."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 44,
+        "text": "In few-shot prompting, what is the primary goal of including examples in the prompt?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To improve the model's computation speed",
+            "correct": false,
+            "explanation": "Chain-of-thought reduces task complexity, not few-shot."
+          },
+          {
+            "text": "To guide the model on how the task should be done",
+            "correct": true,
+            "explanation": "Few-shot prompting helps with task completion, not focusing on one task."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 45,
+        "text": "What is the main challenge faced when a model is highly accurate on training data but fails on new data?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Overfitting",
+            "correct": true,
+            "explanation": "Regularization is a technique used to prevent overfitting by adding a penalty term to the model's loss function. While regularization can help improve generalization performance, it is not the main challenge faced when a model is highly accurate on training data but fails on new data."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 46,
+        "text": "What technique helps prevent AI models from generating harmful content by defining what should be avoided?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Zero-shot prompting",
+            "correct": false,
+            "explanation": "Chain-of-thought prompting aids in logical reasoning but doesn't prevent harmful content."
+          },
+          {
+            "text": "Negative prompting",
+            "correct": true,
+            "explanation": "Few-shot prompting guides the model with examples but doesn't prevent harmful content."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 47,
+        "text": "A retail company is using Amazon Bedrock to generate personalized product recommendations based on customer behavior. To improve accuracy, the team wants to enhance the model using internal data sources. How can they achieve this most effectively?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Upload all customer data to an S3 bucket for direct use by Bedrock’s foundation models.",
+            "correct": false,
+            "explanation": "Rule-based filtering systems are not part of Bedrock’s primary functionality and may limit the flexibility of generative AI models."
+          },
+          {
+            "text": "Configure Bedrock agents to access internal data via APIs and retrieve real-time insights.",
+            "correct": true,
+            "explanation": "SageMaker can enhance models but is not directly used within Bedrock for fine-tuning or real-time data access."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/blogs/machine-learning/enhance-customer-support-with-amazon-bedrock-agents-by-integrating-enterprise-data-apis/",
+          "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+          "https://aws.amazon.com/solutions/guidance/building-custom-chatbots-for-order-recommendations-using-agents-for-amazon-bedrock/"
+        ]
+      },
+      {
+        "id": 48,
+        "text": "A company is using Amazon Polly to convert written content into speech for their customer support hotline. Which feature of Amazon Polly would allow the company to create a more natural and engaging customer experience?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Automatically transcribing customer calls into text",
+            "correct": false,
+            "explanation": "Transcribing speech into text is a function of Amazon Transcribe, not Amazon Polly."
+          },
+          {
+            "text": "Selecting different voices and adjusting speech rate and pitch",
+            "correct": true,
+            "explanation": "Amazon Polly focuses on text-to-speech conversion and does not handle translation tasks, which would require a service like Amazon Translate."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 49,
+        "text": "A healthcare company is building an application to analyze thousands of patient feedback forms submitted through their portal. The feedback is in free-text format, and the company wants to automatically identify common themes, determine whether the sentiment is positive, negative, or neutral, and extract mentions of specific medical conditions, treatments, and medications from the text. The solution should require minimal machine learning expertise and provide pre-built capabilities for natural language processing. Which AWS service should the company use to meet these requirements?",
+        "cat": "genai",
+        "catLabel": "Prompt Engineering",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon Transcribe Medical to convert the feedback text into structured data and identify medical entities automatically.",
+            "correct": false,
+            "explanation": "**Amazon Textract** is an OCR (Optical Character Recognition) service that extracts text, tables, and forms from scanned documents, PDFs, and images. Since the feedback is already in text format (not images or scanned documents), Textract is unnecessary. Additionally, using SageMaker to build custom NLP models contradicts the requirement for \"minimal machine learning expertise\" and would require significant development effort, when Amazon Comprehend Medical provides these capabilities out-of-the-box."
+          },
+          {
+            "text": "Amazon Comprehend Medical to perform sentiment analysis, topic modeling, and extract medical entities such as conditions, medications, and treatments from the unstructured text.",
+            "correct": true,
+            "explanation": "**Amazon Lex** is a service for building conversational interfaces (chatbots and voice assistants) using natural language understanding. While it can parse text and identify intents, it's designed for: * Interactive conversations with predefined dialog flows\n* Intent recognition and slot filling for specific tasks\n* Building Q&A or task-oriented bots It's not designed for analyzing large volumes of existing feedback text, performing sentiment analysis on batches of documents, or extracting medical entities from unstructured feedback forms."
+          }
+        ],
+        "references": [
+          "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html",
+          "https://aws.amazon.com/comprehend/features/",
+          "https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html",
+          "https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html",
+          "https://docs.aws.amazon.com/comprehend/latest/dg/how-key-phrases.html",
+          "https://docs.aws.amazon.com/comprehend/latest/dg/best-practices.html"
+        ]
+      },
+      {
+        "id": 50,
+        "text": "A healthcare compliance team wants Amazon Q Business to avoid generating responses about experimental treatments not yet approved by regulators. Which feature enforces this requirement?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Guardrails with topic blocking for restricted subjects",
+            "correct": true,
+            "explanation": "Keyword filtering to block terms like \"experimental\" can help prevent certain keywords from triggering responses, but it may not be comprehensive enough to cover all variations or contexts related to experimental treatments. It may not provide a robust solution for enforcing the requirement to avoid generating responses about unapproved treatments."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 51,
+        "text": "You are training a deep neural network for a binary image classification task. You set aside 30% of the dataset as a validation set and use early stopping to optimize the training process.\nWhich of the following statements best describes the role and interplay of the validation set and early stopping in this scenario?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "The validation set evaluates the model’s performance on unseen data, and early stopping halts training when validation performance stops improving.",
+            "correct": true,
+            "explanation": "Early stopping tracks validation metrics, not training loss, to determine when to stop training. The validation set is not used to update model weights; weight updates occur using the training set during backpropagation."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 52,
+        "text": "Which machine learning technique does Amazon Fraud Detector use to identify patterns indicative of fraudulent activity?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Unsupervised learning",
+            "correct": false,
+            "explanation": "Reinforcement learning is not typically used for fraud detection."
+          },
+          {
+            "text": "Supervised learning",
+            "correct": true,
+            "explanation": "This technique is used to train models on historical data that contains labeled examples of both fraudulent and legitimate transactions. By learning from these labeled datasets, the model can classify new, unlabeled transactions as either likely fraudulent or not."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 53,
+        "text": "Which principle of responsible AI ensures that AI systems provide understandable and justifiable reasons for their decisions?",
+        "cat": "responsible_ai",
+        "catLabel": "Responsible AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Privacy",
+            "correct": false,
+            "explanation": "Fairness in responsible AI focuses on ensuring that AI systems do not exhibit bias or discrimination towards certain individuals or groups. While fairness is an important principle, it does not directly address the need for AI systems to provide understandable and justifiable reasons for their decisions."
+          },
+          {
+            "text": "Explainability",
+            "correct": true,
+            "explanation": "Veracity in responsible AI focuses on the accuracy, reliability, and truthfulness of AI systems and the data they use. While veracity is essential for ensuring the integrity of AI systems, it does not specifically address the requirement for AI systems to provide understandable and justifiable reasons for their decisions."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 54,
+        "text": "Which of the following features is **NOT** included in AWS Trusted Advisor?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Security best practices checks",
+            "correct": false,
+            "explanation": "**Cost optimization recommendations** are provided by Trusted Advisor to help reduce costs by identifying underutilized resources like idle EC2 instances."
+          },
+          {
+            "text": "Detailed billing reports",
+            "correct": true,
+            "explanation": "**Fault tolerance checks** are part of Trusted Advisor’s functionality, helping to ensure high availability and resilience in AWS environments."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 55,
+        "text": "A retail company wants to personalize product recommendations for each user based on their past behavior. Which Amazon Personalize feature should they use?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Faceted search",
+            "correct": false,
+            "explanation": "Batch inference in Amazon Personalize is used for generating recommendations in bulk for a large number of users or items. It is not suitable for real-time personalized recommendations based on individual user behavior."
+          },
+          {
+            "text": "Real-time recommendations",
+            "correct": true,
+            "explanation": "Data connectors in Amazon Personalize are used to import data from external sources into the service for training recommendation models. While data connectors are essential for providing relevant data for personalized recommendations, they do not directly generate personalized product recommendations for individual users."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 56,
+        "text": "Which Amazon Textract feature allows the extraction of key-value pairs from forms and documents?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Table Extraction",
+            "correct": false,
+            "explanation": "Content Moderation is unrelated to data extraction and is typically associated with filtering inappropriate content."
+          },
+          {
+            "text": "Form Analysis",
+            "correct": true,
+            "explanation": "Text Detection refers to the basic capability of identifying and extracting text from documents but does not specifically handle key-value pairs."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 57,
+        "text": "Which feature of Amazon Q Business allows the AI assistant to interact with third-party applications like Jira and Salesforce?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Retrieval augmented generation (RAG)",
+            "correct": false,
+            "explanation": "Guardrails and controls are mechanisms used to enforce policies, security measures, and compliance standards within the AI system. They are not specifically related to enabling the AI assistant to interact with third-party applications like Jira and Salesforce."
+          },
+          {
+            "text": "Plugins",
+            "correct": true,
+            "explanation": "Plugins are the feature of Amazon Q Business that allows the AI assistant to interact with third-party applications like Jira and Salesforce. By using plugins, the AI assistant can seamlessly connect with external systems and perform actions within those applications to enhance productivity and automation."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 58,
+        "text": "An e-commerce company wants to automate its product review and approval process by using Amazon Bedrock. The process involves analyzing product images, generating detailed descriptions, and integrating these outputs into their platform. Which combination of services is best suited for this use case?",
+        "cat": "fm_apps",
+        "catLabel": "Use Cases of AI, ML and Generative AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Amazon SageMaker for image recognition, Amazon DynamoDB for task automation, and Amazon Bedrock for content creation.",
+            "correct": false,
+            "explanation": "API Gateway facilitates user input but lacks the automation capabilities required in this pipeline. Athena is designed for querying, not storing or fine-tuning outputs."
+          },
+          {
+            "text": "Amazon Rekognition for image analysis, Lambda for triggering tasks, and Amazon Bedrock for generating product descriptions.",
+            "correct": true,
+            "explanation": "Amazon Rekognition identifies objects in images, Lambda manages task automation, and Bedrock generates detailed product descriptions, aligning with the architecture described."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/rekognition/",
+          "https://aws.amazon.com/blogs/machine-learning/automating-product-description-generation-with-amazon-bedrock/",
+          "https://aws.amazon.com/solutions/guidance/generating-product-descriptions-with-amazon-bedrock/"
+        ]
+      },
+      {
+        "id": 59,
+        "text": "How can foundational model optimization help businesses reduce operational costs?",
+        "cat": "fm_apps",
+        "catLabel": "Design considerations for Foundation Models",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "By increasing the amount of resources required to train the model",
+            "correct": false,
+            "explanation": "Optimization reduces, not increases, the need for human intervention."
+          },
+          {
+            "text": "By automating complex tasks, reducing human errors, and minimizing the need for manual labor",
+            "correct": true,
+            "explanation": "Optimizing foundational models allows businesses to automate complex and repetitive tasks, minimizing the need for human intervention and reducing the risk of errors. This not only cuts down on labor costs but also ensures more efficient task execution, leading to overall cost savings."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 60,
+        "text": "Which tool in Amazon SageMaker provides a low-code or no-code interface for data import, preparation, and transformation?",
+        "cat": "ml_lifecycle",
+        "catLabel": "Model Training and Fine Tuning",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "SageMaker Data Wrangler",
+            "correct": true,
+            "explanation": "SageMaker Studio Classic integrates with Amazon EMR and AWS Glue for large-scale data processing."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 61,
+        "text": "Which of the following business metrics measures the effectiveness of a generative AI solution in driving user actions like purchases or sign-ups?",
+        "cat": "aiml",
+        "catLabel": "Fundamental Concepts and Terminologies of AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Conversion rate",
+            "correct": true,
+            "explanation": "User satisfaction measures how pleased users are with the AI system, often gauged through surveys, reviews, or engagement metrics like session duration. While user satisfaction is important, it doesn't directly measure how well the system is converting user interest into meaningful actions like purchases or sign-ups. Satisfaction indicates the user's overall experience, but not their likelihood of completing a specific action."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 62,
+        "text": "Which AWS service provides a unified view of security data across your AWS environment, helping you gain insight into your overall security posture?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "AWS Artifact",
+            "correct": false,
+            "explanation": "AWS Artifact is a portal that provides access to compliance reports and agreements. While it is useful for compliance-related information, it does not offer a unified view of security data from AWS services to gain insight into the security posture of your environment."
+          },
+          {
+            "text": "AWS Security Hub",
+            "correct": true,
+            "explanation": "AWS Trusted Advisor is a service that provides recommendations to help you optimize your AWS environment for security, cost, performance, and fault tolerance. While it offers valuable insights and recommendations, it does not provide a unified view of security data from AWS services."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 63,
+        "text": "What is the purpose of encryption in securing AI systems?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "To prevent unauthorized access by limiting data storage",
+            "correct": false,
+            "explanation": "Limiting data storage is unrelated to encryption, which is about protecting data."
+          },
+          {
+            "text": "To transform readable data into unreadable text using a cipher",
+            "correct": true,
+            "explanation": "Encryption protects data but does not analyze vulnerabilities; that’s part of threat detection or vulnerability management."
+          }
+        ],
+        "references": []
+      },
+      {
+        "id": 64,
+        "text": "A social media platform wants to ensure that user-uploaded images do not contain any inappropriate content. Which Amazon Rekognition service should they utilize?",
+        "cat": "security",
+        "catLabel": "Security and Compliance for AI Systems",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Content moderation",
+            "correct": true,
+            "explanation": "Celebrity recognition in Amazon Rekognition is used to identify celebrities in images. This service is not suitable for detecting inappropriate content in user-uploaded images, as it is focused on recognizing well-known personalities rather than moderating content."
+          }
+        ],
+        "references": [
+          "https://aws.amazon.com/rekognition/content-moderation/",
+          "https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html"
+        ]
+      },
+      {
+        "id": 65,
+        "text": "A healthcare provider uses an AI model to prioritize patient care but discovers it systematically underestimates the urgency of conditions in elderly patients. Which strategy best aligns with Responsible AI principles to address this bias?",
+        "cat": "responsible_ai",
+        "catLabel": "Responsible AI",
+        "multiSelect": false,
+        "selectCount": 1,
+        "images": [],
+        "options": [
+          {
+            "text": "Remove age-related features entirely from the input data",
+            "correct": false,
+            "explanation": "Black-box models reduce transparency, conflicting with accountability."
+          },
+          {
+            "text": "Integrate fairness metrics to audit and reweight underrepresented age groups",
+            "correct": true,
+            "explanation": "Larger datasets may perpetuate or amplify existing biases."
+          }
+        ],
+        "references": []
+      }
+    ],
+    "categories": {
+      "genai": {
+        "label": "Prompt Engineering",
+        "color": "#8b5cf6"
+      },
+      "security": {
+        "label": "Security and Compliance for AI Systems",
+        "color": "#ef4444"
+      },
+      "fm_apps": {
+        "label": "Use Cases of AI, ML and Generative AI",
+        "color": "#f59e0b"
+      },
+      "responsible_ai": {
+        "label": "Responsible AI",
+        "color": "#ec4899"
+      },
+      "ml_lifecycle": {
+        "label": "Model Training and Fine Tuning",
+        "color": "#10b981"
+      },
+      "aiml": {
+        "label": "Fundamental Concepts and Terminologies of AI",
+        "color": "#3b82f6"
+      }
+    }
   }
 ];

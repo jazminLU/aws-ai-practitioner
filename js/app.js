@@ -672,17 +672,55 @@ document.addEventListener('keydown', e => {
 });
 
 /* ─── SIMULACRO ─────────────────────────────────────────────────────────── */
+
+/* Session persistence in localStorage */
+const SimStorage = {
+  KEY: 'aip-sim-sessions',
+  MAX_PER_EXAM: 2,
+
+  load() {
+    try { return JSON.parse(localStorage.getItem(this.KEY)) || []; }
+    catch { return []; }
+  },
+
+  save(sessions) {
+    try { localStorage.setItem(this.KEY, JSON.stringify(sessions)); }
+    catch {}
+  },
+
+  getForExam(examId) {
+    return this.load().filter(s => s.examId === examId);
+  },
+
+  saveSession(session) {
+    let all = this.load().filter(s => s.id !== session.id);
+    const forExam = all.filter(s => s.examId === session.examId);
+    if (forExam.length >= this.MAX_PER_EXAM) {
+      const oldest = forExam.sort((a, b) => a.startedAt - b.startedAt)[0];
+      all = all.filter(s => s.id !== oldest.id);
+    }
+    all.push(session);
+    this.save(all);
+  },
+
+  deleteSession(id) {
+    this.save(this.load().filter(s => s.id !== id));
+  },
+};
+
 const Sim = {
-  exam:            null,     // { id, title, questions, categories }
+  exam:            null,
   filter:          'all',
-  order:           'random', // 'random' | 'category'
+  order:           'random',
   queue:           [],
   index:           0,
-  answers:         {},       // { [queueIdx]: { selected: Set, correct: bool } }
+  answers:         {},
   pendingSelected: new Set(),
   ok:              0,
   fail:            0,
   catStats:        {},
+  sessionId:       null,
+  sessionStartedAt: 0,
 };
 
 function simCatColor(key) {
@@ -732,6 +770,45 @@ function showSimPreExam(examId) {
   app.classList.remove('sim-active');
   app.innerHTML = '';
 
+  // Build saved sessions section
+  const saved = SimStorage.getForExam(examId)
+    .sort((a, b) => b.startedAt - a.startedAt);
+
+  const sessionsHTML = saved.length > 0 ? `
+    <div style="margin-bottom:32px">
+      <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px">
+        Sesiones guardadas
+      </div>
+      ${saved.map(s => {
+        const answered  = Object.keys(s.answers).length;
+        const total     = s.queueIds.length;
+        const pct       = answered > 0 ? Math.round((s.ok / answered) * 100) : 0;
+        const pctColor  = pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)';
+        const orderIcon = s.order === 'category' ? '📂' : '🔀';
+        const date      = new Date(s.startedAt).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+        const isDone    = !!s.completedAt;
+        const statusHTML = isDone
+          ? `<span style="color:${pctColor};font-weight:700">${pct}% — Completado</span>
+             <span style="color:var(--text-muted)"> · ✓ ${s.ok} &nbsp;✗ ${s.fail}</span>`
+          : `<span>${answered}/${total} respondidas &nbsp;·&nbsp; ✓ ${s.ok} &nbsp;✗ ${s.fail}</span>`;
+        return `
+          <div class="sim-session-card">
+            <div class="sim-session-info">
+              <div class="sim-session-meta">${orderIcon} ${date}</div>
+              <div class="sim-session-progress">${statusHTML}</div>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0">
+              ${!isDone
+                ? `<button class="btn-primary"   style="padding:6px 14px;font-size:12px" onclick="resumeSimSession('${s.id}')">Reanudar</button>`
+                : `<button class="btn-secondary" style="padding:6px 14px;font-size:12px" onclick="viewSimSession('${s.id}')">Ver resultado</button>`
+              }
+              <button class="sim-del-btn" onclick="deleteSimSession('${s.id}','${examId}')" title="Eliminar">✕</button>
+            </div>
+          </div>`;
+      }).join('')}
+    </div>
+  ` : '';
+
   const div = document.createElement('div');
   div.className = 'view';
   div.innerHTML = `
@@ -741,7 +818,12 @@ function showSimPreExam(examId) {
     </button>
     <div class="page-title">${exam.title}</div>
     <div class="page-subtitle">${exam.questions.length} preguntas · ${Object.keys(exam.categories).length} categorías</div>
-    <div style="margin:8px 0 28px;font-size:14px;color:var(--text-lo)">Elegí el orden de las preguntas:</div>
+
+    ${sessionsHTML}
+
+    <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px">
+      Nueva sesión
+    </div>
     <div class="sim-order-cards">
       <button class="mode-card" onclick="startSimExam('${exam.id}','random')">
         <div class="mode-card-icon">🔀</div>
@@ -764,9 +846,12 @@ function startSimExam(examId, order) {
   if (!Sim.exam || Sim.exam.id !== examId) {
     Sim.exam = EXAMS.find(e => e.id === examId) || EXAMS[0];
   }
-  Sim.order  = order || 'random';
-  Sim.filter = 'all';
+  Sim.order            = order || 'random';
+  Sim.filter           = 'all';
+  Sim.sessionId        = `${examId}_${Date.now()}`;
+  Sim.sessionStartedAt = Date.now();
   initSim();
+  SimStorage.saveSession(simCurrentSession());
   renderSimExamShell();
   showSimQuestion(0);
 }
@@ -1001,6 +1086,8 @@ function answerSim(selectedSet) {
   if (isRight) { Sim.ok++; Sim.catStats[q.cat].ok++; }
   else         { Sim.fail++; }
 
+  SimStorage.saveSession(simCurrentSession());
+
   const item = document.getElementById(`sim-q-item-${idx}`);
   if (item) {
     item.classList.remove('answered-ok', 'answered-fail');
@@ -1045,8 +1132,67 @@ function endSimExam() {
   if (answered < total) {
     if (!confirm(`Quedan ${total - answered} pregunta${total - answered !== 1 ? 's' : ''} sin responder. ¿Terminar igualmente?`)) return;
   }
+  const session = simCurrentSession();
+  session.completedAt = Date.now();
+  SimStorage.saveSession(session);
   document.getElementById('app').classList.remove('sim-active');
   navigate('sim-results');
+}
+
+/* ─── Session helpers ───────────────────────────────────────────────────── */
+function simCurrentSession() {
+  return {
+    id:           Sim.sessionId,
+    examId:       Sim.exam.id,
+    order:        Sim.order,
+    queueIds:     Sim.queue.map(q => q.id),
+    answers:      Object.fromEntries(
+      Object.entries(Sim.answers).map(([k, v]) => [k, { selected: Array.from(v.selected), correct: v.correct }])
+    ),
+    index:        Sim.index,
+    ok:           Sim.ok,
+    fail:         Sim.fail,
+    catStats:     Sim.catStats,
+    startedAt:    Sim.sessionStartedAt,
+    completedAt:  null,
+  };
+}
+
+function loadSimSession(sessionId) {
+  const session = SimStorage.load().find(s => s.id === sessionId);
+  if (!session) return false;
+  Sim.exam             = EXAMS.find(e => e.id === session.examId);
+  Sim.order            = session.order;
+  Sim.sessionId        = session.id;
+  Sim.sessionStartedAt = session.startedAt;
+  Sim.queue            = session.queueIds.map(id => Sim.exam.questions.find(q => q.id === id)).filter(Boolean);
+  Sim.answers          = Object.fromEntries(
+    Object.entries(session.answers).map(([k, v]) => [k, { selected: new Set(v.selected), correct: v.correct }])
+  );
+  Sim.index            = session.index;
+  Sim.ok               = session.ok;
+  Sim.fail             = session.fail;
+  Sim.catStats         = session.catStats;
+  Sim.pendingSelected  = new Set();
+  Sim.filter           = 'all';
+  return true;
+}
+
+function resumeSimSession(sessionId) {
+  if (!loadSimSession(sessionId)) return;
+  renderSimExamShell();
+  showSimQuestion(Sim.index);
+}
+
+function viewSimSession(sessionId) {
+  if (!loadSimSession(sessionId)) return;
+  navigate('sim-results');
+}
+
+function deleteSimSession(sessionId, examId) {
+  if (!confirm('¿Eliminar esta sesión guardada?')) return;
+  SimStorage.deleteSession(sessionId);
+  showSimPreExam(examId);
 }
 
 /* ─── Simulacro Results ─────────────────────────────────────────────────── */

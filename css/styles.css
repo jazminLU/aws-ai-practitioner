@@ -1384,6 +1384,49 @@ main.sim-active {
   line-height: 1.55;
 }
 
+/* Saved session cards */
+.sim-session-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+
+.sim-session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.sim-session-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.sim-session-progress {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.sim-del-btn {
+  padding: 5px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.sim-del-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
+
 /* Pre-exam order selection */
 .sim-order-cards {
   display: grid;
